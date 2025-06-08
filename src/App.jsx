@@ -10,14 +10,18 @@ import "./styles/theme.css";
 
 function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
-  
+
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 rounded-full bg-card-bg border border-border hover:bg-card-hover transition-colors"
+      className="p-1 rounded-full bg-card-bg border border-border hover:bg-card-hover transition-colors"
       aria-label="Toggle theme"
     >
-      {theme === 'light' ? <Moon className="text-text" /> : <Sun className="text-text" />}
+      {theme === "light" ? (
+        <Moon className="text-text" />
+      ) : (
+        <Sun className="text-text" />
+      )}
     </button>
   );
 }
@@ -56,12 +60,13 @@ function AppContent() {
       </header> */}
 
       {/* Main Content */}
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col justify-between w-full lg:flex-row relative gap-5 min-h-screen">
+      <div className="container mx-auto sm:px-4 px-0">
+        <div className="flex flex-col justify-between w-full xl:flex-row relative gap-5 min-h-screen">
           <SideBar />
           <div className="flex-1 pt-20 pb-10 relative border border-border bg-card-bg rounded-md p-5">
-                {/* <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-2 bg-gradient-to-b from-accent to-transparent rounded-b-md"></div> */}
-                <Navbar children={<ThemeToggle />} />
+            <Navbar>
+              <ThemeToggle />
+            </Navbar>
             <About />
             <Skills />
             <Projects />

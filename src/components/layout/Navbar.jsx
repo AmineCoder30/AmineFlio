@@ -1,14 +1,17 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import navItems from "../../constants/navItems";
 import { Menu, X } from "lucide-react";
+import logo from "../../assets/logo.svg"; // Adjust the path as necessary
+import PropTypes from "prop-types";
 
-function Navbar({children}) {
+function Navbar({ children }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <div className="absolute top-0 left-0 w-full border-b border-border  flex-1 p-2 flex justify-between items-center">
-  {/* Logo */}
-              <h1 className="text-2xl font-bold text-text">Amine</h1>
+      {/* Logo */}
+      {/* <h1 className="text-2xl font-bold text-text">Amine</h1> */}
+      <img src={logo} className="h-10" alt="amiine logo" loading="lazy" />
 
       {/* Mobile Menu Button */}
       <button
@@ -16,7 +19,11 @@ function Navbar({children}) {
         className="lg:hidden p-2 rounded-md hover:bg-card-hover transition-colors"
         aria-label="Toggle menu"
       >
-        {isMenuOpen ? <X size={24} className="text-text" /> : <Menu size={24} className="text-text" />}
+        {isMenuOpen ? (
+          <X size={24} className="text-text" />
+        ) : (
+          <Menu size={24} className="text-text" />
+        )}
       </button>
       {/* Desktop Navigation */}
       <nav className="hidden lg:flex items-center gap-8 ">
@@ -37,7 +44,9 @@ function Navbar({children}) {
       {/* Mobile Navigation */}
       <div
         className={`lg:hidden absolute z-50  top-12 right-0 mt-2 w-full bg-card-bg border border-border rounded-lg shadow-lg transition-all duration-300 ${
-          isMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 pointer-events-none"
+          isMenuOpen
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 -translate-y-2 pointer-events-none"
         }`}
       >
         <nav className="flex flex-col gap-2 p-2">
@@ -55,9 +64,11 @@ function Navbar({children}) {
           {children}
         </nav>
       </div>
-
     </div>
   );
 }
+Navbar.propTypes = {
+  children: PropTypes.node,
+};
 
 export default Navbar;
