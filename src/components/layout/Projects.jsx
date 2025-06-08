@@ -58,17 +58,33 @@ function Projects() {
                 alt={project.altText}
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
               />
-              {/* Overlay with links */}
-              <div className="absolute inset-0 bg-background/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+                  <span className=" absolute top-1 left-1 px-2 py-1 text-xs rounded-full bg-amber-600 text-white">
+                  {project.category}
+                </span>
+            </div>
+
+            {/* Project Info */}
+            <div className="p-4">
+              <div className="mb-2">
+
+                <h3 className="text-2xl font-bold text-text">{project.title}</h3>
+              </div>
+              <p className="text-text-secondary text-sm line-clamp-3">
+                {project.description}
+              </p>
+            </div>
+                        {/* Overlay with links */}
+              <div className="    flex items-center  gap-4 p-4">
                 {project.code && (
                   <a
                     href={project.code}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 rounded-full bg-card-bg hover:bg-accent hover:text-white transition-colors duration-300"
+                    className="px-3 py-1 rounded-full text-white flex items-center gap-2 bg-accent hover:bg-accent hover:text-white transition-colors duration-300"
                     title="View Code"
-                  >
-                    <Github size={24} />
+                >
+                    <p>Code</p>
+                    <Github size={18} />
                   </a>
                 )}
                 {project.demo && (
@@ -76,27 +92,14 @@ function Projects() {
                     href={project.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 rounded-full bg-card-bg hover:bg-accent hover:text-white transition-colors duration-300"
+                    className="px-3 py-1 border border-border rounded-full flex items-center gap-2 bg-card-bg hover:bg-accent hover:text-white transition-colors duration-300"
                     title="View Demo"
-                  >
-                    <ExternalLink size={24} />
+                >
+                    <p>Demo</p>
+                    <ExternalLink size={18} />
                   </a>
                 )}
               </div>
-            </div>
-
-            {/* Project Info */}
-            <div className="p-6">
-              <div className=" mb-2">
-                <h3 className="text-xl font-bold text-text">{project.title}</h3>
-                <span className="px-2 py-1 text-xs rounded-full bg-card-hover text-text-secondary">
-                  {project.category}
-                </span>
-              </div>
-              <p className="text-text-secondary text-sm">
-                {project.altText.replace(" screenshot", "")}
-              </p>
-            </div>
           </div>
         ))}
       </div>
