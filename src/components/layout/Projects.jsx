@@ -58,9 +58,9 @@ function Projects() {
                 alt={project.altText}
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
               />
-                  <span className=" absolute top-1 left-1 px-2 py-1 text-xs rounded-full bg-amber-600 text-white">
-                  {project.category}
-                </span>
+       <span className="absolute top-4 left-4 -translate-y-8 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 px-3 py-1 text-xs rounded-full bg-amber-600 text-white z-10">
+                {project.category}
+              </span>
             </div>
 
             {/* Project Info */}
