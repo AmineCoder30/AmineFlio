@@ -42,10 +42,10 @@ function SideBar() {
           }`}
         >
           <ContactInfo />
-          <ul className="w-full flex justify-center items-center gap-2 text-text-secondary">
+          <ul className="w-full mt-5 flex justify-center items-center gap-2 text-text-secondary">
             {socialMediaLinks.map((item, index) => {
               return (
-                <li className="hover:text-accent transition-colors" key={index}>
+                <li className="hover:text-accent hover:bg-card-hover transition-colors p-2 border border-border rounded-md" key={index}>
                   <a href={item.url} target="_blank" rel="noreferrer" className="text-text-secondary hover:text-accent">
                     {item.icon}
                   </a>
