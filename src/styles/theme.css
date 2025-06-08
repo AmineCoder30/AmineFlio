@@ -1,0 +1,29 @@
+:root {
+  /* Light Theme - Sunset Citrus */
+--color-primary: #ff7a00;             /* rich orange */
+  --color-primary-hover: #e66a00;       /* slightly darker orange */
+  --color-background: #fdfdfd;          /* soft neutral white */
+  --color-sidebar-bg: #f9f5f2;          /* warm light beige */
+  --color-text: #1e293b;                /* slate-800 - dark readable */
+  --color-text-secondary: #64748b;      /* slate-500 - modern muted */
+  --color-border: #e2e8f0;              /* slate-200 - subtle border */
+  --color-card-bg: #ffffff;             /* pure white */
+  --color-card-hover: #fefce8;          /* light soft yellow */
+  --color-accent: #fb923c;              /* vibrant orange accent */
+  --color-accent-hover: #f97316;        /* deeper vibrant orange */      /* deep vibrant orange */
+}
+
+[data-theme="dark"] {
+  /* Dark Theme - Midnight Citrus */
+  --color-primary: #fcd34d;             /* warm yellow */
+  --color-primary-hover: #fbbf24;       /* deeper yellow */
+  --color-background: #0c0a09;          /* deep dark */
+  --color-sidebar-bg: #1c1917;          /* dark muted brown */
+  --color-text: #f5f5f4;                /* light stone */
+  --color-text-secondary: #a8a29e;      /* muted gray-brown */
+  --color-border: #3f3f46;              /* zinc-700 */
+  --color-card-bg: #1c1917;             /* same as sidebar */
+  --color-card-hover: #292524;          /* slightly lighter */
+  --color-accent: #f97316;              /* vibrant orange */
+  --color-accent-hover: #ea580c;        /* vivid deep orange */
+}
