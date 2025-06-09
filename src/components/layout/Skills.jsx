@@ -20,9 +20,9 @@ function Skills() {
               className="flex flex-col items-center p-4 bg-card-bg border border-border rounded-lg hover:shadow-lg transition-shadow opacity-100"
             >
               <div className="text-accent mb-2">{tech.icon}</div>
-              <h3 className="text-text font-semibold text-center">
+              <h4 className="text-text text-xl font-semibold text-center">
                 {tech.name}
-              </h3>
+              </h4>
               <p className="text-text-secondary text-sm text-center mt-1">
                 {tech.description}
               </p>

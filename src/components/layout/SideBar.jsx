@@ -54,6 +54,7 @@ function SideBar() {
                     target="_blank"
                     rel="noreferrer"
                     className="text-text-secondary hover:text-accent"
+                    aria-label={item.name}
                   >
                     {item.icon}
                   </a>

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import Title from "../ui/Title";
 import { useAnimation } from "../../hooks/useAnimation";
@@ -170,6 +170,7 @@ function Contact() {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               className="w-full h-full"
+              title="Google Map of Meknes, Morocco"
             ></iframe>
           </div>
           <div className="mt-6 space-y-4">

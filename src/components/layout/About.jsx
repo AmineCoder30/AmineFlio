@@ -1,4 +1,3 @@
-import React from "react";
 import Title from "../ui/Title";
 import ServiceCard from "../ui/ServicesCard";
 import services from "../../constants/servicesList";
@@ -21,19 +20,25 @@ function About() {
 
       <div className="flex gap-5 md:gap-10 mt-16">
         <div className="text-text">
-          <h2 className="text-4xl md:text-5xl lg:text-7xl font-extrabold">+4</h2>
+          <h2 className="text-4xl md:text-5xl lg:text-7xl font-extrabold">
+            +4
+          </h2>
           <p className="text-text-secondary uppercase text-sm sm:text-lg break-words">
             Years of <br /> Experience
           </p>
         </div>
         <div className="text-text">
-          <h2 className="text-4xl md:text-5xl lg:text-7xl font-extrabold">+40</h2>
+          <h2 className="text-4xl md:text-5xl lg:text-7xl font-extrabold">
+            +40
+          </h2>
           <p className="text-text-secondary uppercase text-sm sm:text-lg break-words">
             Projects <br /> Completed
           </p>
         </div>
         <div className="text-text">
-          <h2 className="text-4xl md:text-5xl lg:text-7xl font-extrabold">+10</h2>
+          <h2 className="text-4xl md:text-5xl lg:text-7xl font-extrabold">
+            +10
+          </h2>
           <p className="text-text-secondary uppercase text-sm sm:text-lg break-words">
             WORLDWIDE <br /> CLIENTS
           </p>
@@ -56,7 +61,7 @@ function About() {
         type="submit"
         className="cursor-pointer mt-4 text-white bg-gradient-to-r from-accent to-accent-hover w-28 h-10 rounded-md border border-border hover:scale-105 duration-200  hover:border-border hover:from-accent-hover hover:to-accent"
       >
-        <a href="" download={resume}>
+        <a href="" className="w-full h-full" download={resume}>
           My Resume
         </a>
       </button>
