@@ -83,7 +83,7 @@ function CategoryNavigation({ categories, activeCategory, setActiveCategory }) {
 
       <nav
         ref={navRef}
-        className="flex space-x-10 text-lg overflow-x-auto mx-10 scroll-smooth w-full"
+        className="flex space-x-4 text-lg overflow-x-auto mx-10 scroll-smooth w-full"
         style={scrollbarHideStyle}
         onScroll={updateArrowVisibility}
       >
