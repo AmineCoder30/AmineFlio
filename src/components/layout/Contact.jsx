@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import Title from "../ui/Title";
 import { useAnimation } from "../../hooks/useAnimation";
+import NotificationCard from "../ui/NotificationCard";
 
 function Contact() {
   const initialState = {
@@ -13,20 +14,97 @@ function Contact() {
   const formRef = useRef();
   const [sending, setIsSending] = useState(false);
   const [formInfo, setFormInfo] = useState(initialState);
+  const [notification, setNotification] = useState({
+    show: false,
+    message: "",
+    type: "success",
+  });
+  const [errors, setErrors] = useState({
+    email: "",
+    userName: "",
+    message: "",
+  });
   const userId = import.meta.env.VITE_APP_ID_USER;
   const templateId = import.meta.env.VITE_APP_ID_TEMPLATE;
   const serviceId = import.meta.env.VITE_APP_ID_SERVICE;
   const formContainerRef = useAnimation();
   const mapContainerRef = useAnimation();
   const inputsRef = useAnimation();
-
+  // Validate form input
+  const validateField = (name, value) => {
+    let errorMessage = "";
+    
+    switch (name) {
+      case "userName":
+        if (!value.trim()) {
+          errorMessage = "Name is required";
+        } else if (value.trim().length < 3) {
+          errorMessage = "Name must be at least 3 characters";
+        }
+        break;
+        
+      case "email":
+        if (!value.trim()) {
+          errorMessage = "Email is required";
+        } else if (!/\S+@\S+\.\S+/.test(value)) {
+          errorMessage = "Email address is invalid";
+        }
+        break;
+        
+      case "message":
+        if (!value.trim()) {
+          errorMessage = "Message is required";
+        } else if (value.trim().length < 10) {
+          errorMessage = "Message must be at least 10 characters";
+        }
+        break;
+        
+      default:
+        break;
+    }
+    
+    return errorMessage;
+  };
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormInfo({ ...formInfo, [name]: value });
+    
+    // Live validation
+    const errorMessage = validateField(name, value);
+    setErrors(prev => ({ ...prev, [name]: errorMessage }));
+  };
+  
+  const handleBlur = (e) => {
+    const { name, value } = e.target;
+    const errorMessage = validateField(name, value);
+    setErrors(prev => ({ ...prev, [name]: errorMessage }));
+  };const validateForm = () => {
+    // Validate all required fields
+    const newErrors = {
+      userName: validateField("userName", formInfo.userName),
+      email: validateField("email", formInfo.email),
+      message: validateField("message", formInfo.message)
+    };
+    
+    setErrors(newErrors);
+    
+    // Check if any errors exist
+    return !Object.values(newErrors).some(error => error !== "");
   };
 
   const sendEmail = (e) => {
     e.preventDefault();
+    
+    // Validate form before submission
+    if (!validateForm()) {
+      setNotification({
+        show: true,
+        message: "Please fix the errors in the form before submitting.",
+        type: "error",
+      });
+      return;
+    }
+    
     setIsSending(true);
 
     emailjs
@@ -34,9 +112,20 @@ function Contact() {
       .then((result) => {
         console.log("Email sent successfully:", result.text);
         setFormInfo(initialState);
+        setErrors({ email: "", userName: "", message: "" }); // Clear errors
+        setNotification({
+          show: true,
+          message: "Message sent successfully! I'll get back to you soon.",
+          type: "success",
+        });
       })
       .catch((error) => {
         console.error("Error sending email:", error);
+        setNotification({
+          show: true,
+          message: "Failed to send message. Please try again later.",
+          type: "error",
+        });
       })
       .finally(() => {
         setIsSending(false);
@@ -55,54 +144,59 @@ function Contact() {
         >
           <h3 className="text-2xl font-bold text-text mb-6">Get in Touch</h3>
           <form ref={formRef} onSubmit={sendEmail} className="space-y-6">
-            <div ref={inputsRef}>
-              {/* Name Field */}
-              <div>
+            <div ref={inputsRef}>              {/* Name Field */}
+              <div className="mb-4">
                 <label
                   htmlFor="userName"
                   className="block text-text-secondary text-sm mb-2"
                 >
                   Name
-                </label>
-                <input
+                </label>                <input
                   type="text"
                   id="userName"
                   name="userName"
                   placeholder="Your Name"
                   onChange={handleChange}
+                  onBlur={handleBlur}
                   value={formInfo.userName}
-                  className="w-full p-3 border border-border bg-transparent text-text rounded focus:outline-none focus:border-accent"
-                  required
+                  className={`w-full p-3 border ${
+                    errors.userName ? "border-red-500" : "border-border"
+                  } bg-transparent text-text rounded focus:outline-none focus:border-accent`}
                 />
+                {errors.userName && (
+                  <p className="text-red-500 text-xs mt-1">{errors.userName}</p>
+                )}
               </div>
 
               {/* Email Field */}
-              <div>
+              <div className="mb-4">
                 <label
                   htmlFor="email"
                   className="block text-text-secondary text-sm mb-2"
                 >
                   Email
-                </label>
-                <input
+                </label>                <input
                   type="email"
                   id="email"
                   name="email"
                   placeholder="Your Email"
                   onChange={handleChange}
+                  onBlur={handleBlur}
                   value={formInfo.email}
-                  className="w-full p-3 border border-border bg-transparent text-text rounded focus:outline-none focus:border-accent"
-                  required
+                  className={`w-full p-3 border ${
+                    errors.email ? "border-red-500" : "border-border"
+                  } bg-transparent text-text rounded focus:outline-none focus:border-accent`}
                 />
-              </div>
-
-              {/* Budget Field */}
-              <div>
+                {errors.email && (
+                  <p className="text-red-500 text-xs mt-1">{errors.email}</p>
+                )}
+              </div>              {/* Budget Field */}
+              <div className="mb-4">
                 <label
                   htmlFor="budget"
                   className="block text-text-secondary text-sm mb-2"
                 >
-                  Budget
+                  Budget <span className="text-xs text-text-secondary">(Optional)</span>
                 </label>
                 <input
                   type="text"
@@ -113,35 +207,38 @@ function Contact() {
                   value={formInfo.budget}
                   className="w-full p-3 border border-border bg-transparent text-text rounded focus:outline-none focus:border-accent"
                 />
-              </div>
-
-              {/* Message Field */}
-              <div>
+              </div>{/* Message Field */}
+              <div className="mb-4">
                 <label
                   htmlFor="message"
                   className="block text-text-secondary text-sm mb-2"
                 >
                   Message
-                </label>
-                <textarea
+                </label>                <textarea
                   id="message"
                   name="message"
                   placeholder="Message"
                   onChange={handleChange}
+                  onBlur={handleBlur}
                   value={formInfo.message}
                   rows="4"
-                  className="w-full p-3 border border-border bg-transparent text-text rounded focus:outline-none focus:border-accent"
+                  className={`w-full p-3 border ${
+                    errors.message ? "border-red-500" : "border-border"
+                  } bg-transparent text-text rounded focus:outline-none focus:border-accent`}
                 ></textarea>
+                {errors.message && (
+                  <p className="text-red-500 text-xs mt-1">{errors.message}</p>
+                )}
               </div>
-            </div>
-
-            {/* Submit Button */}
+            </div>            {/* Submit Button */}
             <div className="flex justify-end">
               {!sending ? (
                 <button
                   type="submit"
                   onClick={sendEmail}
-                  className="cursor-pointer text-white font-semibold bg-gradient-to-r from-accent to-accent-hover w-28 h-10 rounded-md border border-border hover:scale-105 duration-200 hover:border-border hover:from-accent-hover hover:to-accent"
+                  className={`text-white font-semibold bg-gradient-to-r from-accent to-accent-hover w-28 h-10 rounded-md border border-border hover:scale-105 duration-200 hover:border-border hover:from-accent-hover hover:to-accent ${
+                    Object.values(errors).some(error => error) ? "opacity-70 cursor-not-allowed" : "cursor-pointer"
+                  }`}
                 >
                   Send
                 </button>
@@ -245,10 +342,19 @@ function Contact() {
                 <h4 className="text-text font-semibold">Phone</h4>
                 <p className="text-text-secondary text-sm">+212 651167495</p>
               </div>
-            </div>
+            </div>{" "}
           </div>
         </div>
       </div>
+
+      {/* Notification */}
+      {notification.show && (
+        <NotificationCard
+          message={notification.message}
+          type={notification.type}
+          onClose={() => setNotification({ ...notification, show: false })}
+        />
+      )}
     </div>
   );
 }
