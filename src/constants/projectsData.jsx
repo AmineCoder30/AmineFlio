@@ -9,7 +9,7 @@ const projectsData = [
     code: "https://github.com/AmineCoder30/mernify",
     demo: "",
     description:
-      "A full-stack MERN application that provides a modern task management solution with real-time updates, user authentication, and collaborative features. Built with MongoDB, Express.js, React, and Node.js.",
+      "A Real time chat application built with the MERN stack (MongoDB, Express.js, React, Node.js). It features user authentication, real-time messaging, and a responsive design. Users can create accounts, join chat rooms, and send messages instantly.",
   },
   {
     id: 2,
@@ -57,7 +57,7 @@ const projectsData = [
     code: "https://github.com/AmineCoder30/shopco",
     demo: "https://closhop.netlify.app/",
     description:
-      "A creative agency website showcasing portfolio work and services. Features smooth animations, parallax scrolling effects, and a modern, minimalist design approach.",
+      "A sleek e-commerce website for fashion and lifestyle products, featuring a modern design, product filtering, and a secure checkout process. Built with React and Firebase, it includes user authentication and real-time updates.",
   },
   {
     id: 6,
@@ -74,17 +74,17 @@ const projectsData = [
   {
     id: 7,
     title: "food24",
-    category: "Delivery",
+    category: "landing page",
     imgSrc:
       "https://res.cloudinary.com/djmzvj6yf/image/upload/f_auto,q_auto,w_265/v1745940328/food24_hkxms5.png",
     altText: "food24 application screenshot",
     code: "https://github.com/AmineCoder30/Food24",
     demo: "https://24food.netlify.app/",
     description:
-      "A food delivery platform with real-time order tracking, restaurant listings, and user reviews. Includes features like menu customization, delivery time estimation, and secure payment processing.",
+      "A modern landing page for a food delivery service, featuring a clean design, responsive layout, and interactive elements. Built with HTML, CSS, and JavaScript, it showcases the service's offerings and includes a contact form.",
   },
   {
-    id: 9,
+    id: 8,
     title: "Tasky",
     category: "Dashboards",
     imgSrc:
@@ -94,6 +94,42 @@ const projectsData = [
     demo: "https://task-manager-khaki-eta.vercel.app/",
     description:
       "A modern task management application with user authentication and real-time updates.",
+  },
+  {
+    id: 9,
+    title: "DeliverEase",
+    category: "Delivery",
+    imgSrc:
+      "https://res.cloudinary.com/djmzvj6yf/image/upload/f_auto,q_auto,w_265/v1749559388/Slide_16_9_-_11_ikmbgb.png",
+    altText: "mexant website screenshot",
+    code: "https://github.com/AmineCoder30/DeliverEase",
+    demo: "https://deliverease.netlify.app/",
+    description:
+      "A food delivery application that connects users with local restaurants, offering features like real-time order tracking, restaurant ratings, and secure payment options. Built with React and Firebase.",
+  },
+  {
+    id: 10,
+    title: "Blogfy",
+    category: "Blogs",
+    imgSrc:
+      "https://res.cloudinary.com/djmzvj6yf/image/upload/f_auto,q_auto,w_265/v1749559385/Slide_16_9_-_9_cpljwm.png",
+    altText: "mexant website screenshot",
+    code: "https://github.com/AmineCoder30/blogfy",
+    demo: "https://blog-fy.netlify.app/",
+    description:
+      "A modern blog featuring insightful articles on technology, productivity, development, design, and lifestyle. Join our community of curious minds.",
+  },
+  {
+    id: 11,
+    title: "Oasis Sky",
+    category: "Landing Page",
+    imgSrc:
+      "https://res.cloudinary.com/djmzvj6yf/image/upload/f_auto,q_auto,w_265/v1749559388/Slide_16_9_-_8_jwm8vq.png",
+    altText: "mexant website screenshot",
+    code: "https://github.com/AmineCoder30/OASISKY",
+    demo: "https://oasissky.netlify.app/",
+    description:
+      " A sleek landing page for a fictional tech company, showcasing its innovative products and services. Features include a responsive design, smooth animations, and a modern aesthetic.",
   },
 ];
 
