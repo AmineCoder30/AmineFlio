@@ -74,11 +74,12 @@ const projectsData = [
   {
     id: 7,
     title: "food24",
-    category: "landing page",
+    category: "Landing Pages",
     imgSrc:
       "https://res.cloudinary.com/djmzvj6yf/image/upload/f_auto,q_auto,w_265/v1745940328/food24_hkxms5.png",
     altText: "food24 application screenshot",
     code: "https://github.com/AmineCoder30/Food24",
+    new: true,
     demo: "https://24food.netlify.app/",
     description:
       "A modern landing page for a food delivery service, featuring a clean design, responsive layout, and interactive elements. Built with HTML, CSS, and JavaScript, it showcases the service's offerings and includes a contact form.",
@@ -116,13 +117,14 @@ const projectsData = [
     altText: "mexant website screenshot",
     code: "https://github.com/AmineCoder30/blogfy",
     demo: "https://blog-fy.netlify.app/",
+    new: true,
     description:
       "A modern blog featuring insightful articles on technology, productivity, development, design, and lifestyle. Join our community of curious minds.",
   },
   {
     id: 11,
     title: "Oasis Sky",
-    category: "Landing Page",
+    category: "Landing Pages",
     imgSrc:
       "https://res.cloudinary.com/djmzvj6yf/image/upload/f_auto,q_auto,w_265/v1749559388/Slide_16_9_-_8_jwm8vq.png",
     altText: "mexant website screenshot",

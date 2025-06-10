@@ -1,5 +1,3 @@
-// src/components/ContactInfo.jsx
-import React from "react";
 import { Mail, Phone, Calendar, MapPin } from "lucide-react";
 
 const ContactInfo = () => {
@@ -29,10 +27,7 @@ const ContactInfo = () => {
   return (
     <div className="mt-5 space-y-4">
       {infoItems.map((item, index) => (
-        <div
-          key={index}
-          className="flex items-center gap-3"
-        >
+        <div key={index} className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-full bg-card-hover flex items-center justify-center">
             <item.icon className="text-accent text-xl" />
           </div>
