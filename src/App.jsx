@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
 import { About, Contact, Skills, Projects, Footer } from "./components";
 import { SideBar, Navbar } from "./components";
-import { ArrowUpCircle } from "lucide-react";
 import { ThemeProvider } from "./context/ThemeContext";
 import { useTheme } from "./context/ThemeContext";
-import { Sun, Moon } from "lucide-react";
+import { Sun, Moon, ArrowBigUp } from "lucide-react";
 import "./App.css";
 
 function ThemeToggle() {
@@ -43,21 +42,6 @@ function AppContent() {
 
   return (
     <div className="w-full relative bg-background py-10 px-2">
-      {/* Header */}
-      {/* <header className="mb-10">
-        <div className="container mx-auto px-4">
-          <div className="bg-card-bg border border-border rounded-lg p-4">
-            <div className="flex items-center justify-between">
-            
-
-            
-                
-         
-            </div>
-          </div>
-        </div>
-      </header> */}
-
       {/* Main Content */}
       <div className="container mx-auto sm:px-4 px-0">
         <div className="flex flex-col justify-between w-full xl:flex-row relative gap-5 min-h-screen">
@@ -77,9 +61,9 @@ function AppContent() {
 
       {/* Scroll to Top Button */}
       {isFixed && (
-        <button className="fixed right-3 bottom-2 p-2 rounded-full bg-gradient-to-r from-accent to-accent-hover">
-          <a href="#" className="text-white font-bold py-2 px-4 rounded">
-            <ArrowUpCircle size={30} />
+        <button className="fixed right-3 border border-border bottom-2 flex justify-center items-center  w-10 h-9 rounded-md bg-gradient-to-r from-accent to-accent-hover">
+          <a href="#" className="text-white font-bold  rounded">
+            <ArrowBigUp size={24} />
           </a>
         </button>
       )}
