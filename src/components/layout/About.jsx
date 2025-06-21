@@ -9,7 +9,7 @@ function About() {
       <div>
         <Title partOne="Mern Stack" PartTwo="Developer" />
         <p className="text-text-secondary w-full md:w-[500px] text-wrap text-base sm:text-lg">
-          I am a skilled MERN stack developer with 4 years of experience and a
+          I am a skilled MERN stack developer with 5 years of experience and a
           certificate from the ALX Software Engineering program. I specialize in
           creating intuitive and engaging user experiences, transforming
           innovative ideas into beautifully crafted and functional products. My
@@ -21,7 +21,7 @@ function About() {
       <div className="flex gap-5 md:gap-10 mt-16">
         <div className="text-text">
           <h2 className="text-4xl md:text-5xl lg:text-7xl font-extrabold">
-            +4
+            +5
           </h2>
           <p className="text-text-secondary uppercase text-sm sm:text-lg break-words">
             Years of <br /> Experience
@@ -29,7 +29,7 @@ function About() {
         </div>
         <div className="text-text">
           <h2 className="text-4xl md:text-5xl lg:text-7xl font-extrabold">
-            +40
+            +50
           </h2>
           <p className="text-text-secondary uppercase text-sm sm:text-lg break-words">
             Projects <br /> Completed
@@ -37,7 +37,7 @@ function About() {
         </div>
         <div className="text-text">
           <h2 className="text-4xl md:text-5xl lg:text-7xl font-extrabold">
-            +10
+            +20
           </h2>
           <p className="text-text-secondary uppercase text-sm sm:text-lg break-words">
             WORLDWIDE <br /> CLIENTS
