@@ -1,10 +1,14 @@
 import { ServiceCard, Title } from "../ui";
 import services from "../../constants/servicesList";
 import resume from "../../assets/resume.pdf";
+import useAnimation from "../../hook/useAnimation";
 
 function About() {
+  const boxRef = useAnimation();
+  const boxRef2 = useAnimation();
+  const boxRef3 = useAnimation();
   return (
-    <div className="py-10" id="about">
+    <div ref={boxRef} className="py-10" id="about">
       <div>
         <Title partOne="Mern Stack" PartTwo="Developer" />
         <p className="text-text-secondary w-full md:w-[500px] text-wrap text-base sm:text-lg">
@@ -17,7 +21,7 @@ function About() {
         </p>
       </div>
 
-      <div className="flex gap-5 md:gap-10 mt-16">
+      <div ref={boxRef2} className="flex gap-5 md:gap-10 mt-16">
         <div className="text-text">
           <h2 className="text-4xl md:text-5xl lg:text-7xl font-extrabold">
             +5
@@ -45,7 +49,10 @@ function About() {
       </div>
       <div className="mt-10">
         <Title partOne="what i'am" PartTwo="doing" />
-        <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div
+          ref={boxRef3}
+          className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto"
+        >
           {services.map((service, index) => (
             <ServiceCard
               key={index}

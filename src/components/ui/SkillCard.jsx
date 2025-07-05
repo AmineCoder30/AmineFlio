@@ -7,10 +7,10 @@ function SkillCard({ tech, index }) {
       className="flex group glass  duration-200 transition-tansform relative cursor-pointer flex-col overflow-hidden items-center p-4  border border-border rounded-lg hover:shadow-lg transition-shadow "
     >
       <span
-        className="absolute circle bottom-0 left-0 bg-accent w-10 h-10 bg-gradient-to-br from-accent/60 via-accent-hover/40 to-transparent rounded-full blur-2xl pointer-events-none z-20"
+        className="absolute bx-shadow circle bottom-0 left-0 bg-accent w-4 h-4 bg-gradient-to-br from-accent/60 via-accent-hover/40 to-transparent rounded-full blur-2xl pointer-events-none z-20"
         style={{ transform: "translate(30%,-30%)" }}
       ></span>
-      <div className="absolute flex justify-center items-center top-0 right-0 w-12 h-10 rounded-bl-md duration-200 scale-100 origin-top-right group-hover:scale-100 bg-gradient-to-tr from-accent to-accent-hover pointer-events-none z-0">
+      <div className="absolute flex justify-center items-center top-0 right-0 w-12 h-10 rounded-bl-md duration-200 scale-0 origin-top-right group-hover:scale-100 bg-gradient-to-tr from-accent to-accent-hover pointer-events-none z-0">
         <span className="text-white w-full flex items-center justify-center gap-1 text-xs font-semibold ">
           <span className="group-hover:scale-100 scale-100 duration-200 delay-200 [transition-timing-function:cubic-bezier(0.4,0,0.2,1)]">
             {tech.rating.toFixed(1)}
