@@ -1,8 +1,6 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import Title from "../ui/Title";
-import { useAnimation } from "../../hooks/useAnimation";
-import NotificationCard from "../ui/NotificationCard";
+import { Title, NotificationCard } from "../ui";
 
 function Contact() {
   const initialState = {
@@ -27,13 +25,11 @@ function Contact() {
   const userId = import.meta.env.VITE_APP_ID_USER;
   const templateId = import.meta.env.VITE_APP_ID_TEMPLATE;
   const serviceId = import.meta.env.VITE_APP_ID_SERVICE;
-  const formContainerRef = useAnimation();
-  const mapContainerRef = useAnimation();
-  const inputsRef = useAnimation();
+
   // Validate form input
   const validateField = (name, value) => {
     let errorMessage = "";
-    
+
     switch (name) {
       case "userName":
         if (!value.trim()) {
@@ -42,7 +38,7 @@ function Contact() {
           errorMessage = "Name must be at least 3 characters";
         }
         break;
-        
+
       case "email":
         if (!value.trim()) {
           errorMessage = "Email is required";
@@ -50,7 +46,7 @@ function Contact() {
           errorMessage = "Email address is invalid";
         }
         break;
-        
+
       case "message":
         if (!value.trim()) {
           errorMessage = "Message is required";
@@ -58,43 +54,44 @@ function Contact() {
           errorMessage = "Message must be at least 10 characters";
         }
         break;
-        
+
       default:
         break;
     }
-    
+
     return errorMessage;
   };
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormInfo({ ...formInfo, [name]: value });
-    
+
     // Live validation
     const errorMessage = validateField(name, value);
-    setErrors(prev => ({ ...prev, [name]: errorMessage }));
+    setErrors((prev) => ({ ...prev, [name]: errorMessage }));
   };
-  
+
   const handleBlur = (e) => {
     const { name, value } = e.target;
     const errorMessage = validateField(name, value);
-    setErrors(prev => ({ ...prev, [name]: errorMessage }));
-  };const validateForm = () => {
+    setErrors((prev) => ({ ...prev, [name]: errorMessage }));
+  };
+  const validateForm = () => {
     // Validate all required fields
     const newErrors = {
       userName: validateField("userName", formInfo.userName),
       email: validateField("email", formInfo.email),
-      message: validateField("message", formInfo.message)
+      message: validateField("message", formInfo.message),
     };
-    
+
     setErrors(newErrors);
-    
+
     // Check if any errors exist
-    return !Object.values(newErrors).some(error => error !== "");
+    return !Object.values(newErrors).some((error) => error !== "");
   };
 
   const sendEmail = (e) => {
     e.preventDefault();
-    
+
     // Validate form before submission
     if (!validateForm()) {
       setNotification({
@@ -104,7 +101,7 @@ function Contact() {
       });
       return;
     }
-    
+
     setIsSending(true);
 
     emailjs
@@ -138,20 +135,20 @@ function Contact() {
 
       <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Contact Form */}
-        <div
-          ref={formContainerRef}
-          className="bg-card-bg border border-border rounded-lg p-6"
-        >
+        <div className="bg-card-bg border border-border rounded-lg p-6">
           <h3 className="text-2xl font-bold text-text mb-6">Get in Touch</h3>
           <form ref={formRef} onSubmit={sendEmail} className="space-y-6">
-            <div ref={inputsRef}>              {/* Name Field */}
+            <div>
+              {" "}
+              {/* Name Field */}
               <div className="mb-4">
                 <label
                   htmlFor="userName"
                   className="block text-text-secondary text-sm mb-2"
                 >
                   Name
-                </label>                <input
+                </label>{" "}
+                <input
                   type="text"
                   id="userName"
                   name="userName"
@@ -167,7 +164,6 @@ function Contact() {
                   <p className="text-red-500 text-xs mt-1">{errors.userName}</p>
                 )}
               </div>
-
               {/* Email Field */}
               <div className="mb-4">
                 <label
@@ -175,7 +171,8 @@ function Contact() {
                   className="block text-text-secondary text-sm mb-2"
                 >
                   Email
-                </label>                <input
+                </label>{" "}
+                <input
                   type="email"
                   id="email"
                   name="email"
@@ -190,13 +187,17 @@ function Contact() {
                 {errors.email && (
                   <p className="text-red-500 text-xs mt-1">{errors.email}</p>
                 )}
-              </div>              {/* Budget Field */}
+              </div>{" "}
+              {/* Budget Field */}
               <div className="mb-4">
                 <label
                   htmlFor="budget"
                   className="block text-text-secondary text-sm mb-2"
                 >
-                  Budget <span className="text-xs text-text-secondary">(Optional)</span>
+                  Budget{" "}
+                  <span className="text-xs text-text-secondary">
+                    (Optional)
+                  </span>
                 </label>
                 <input
                   type="text"
@@ -207,14 +208,16 @@ function Contact() {
                   value={formInfo.budget}
                   className="w-full p-3 border border-border bg-transparent text-text rounded focus:outline-none focus:border-accent"
                 />
-              </div>{/* Message Field */}
+              </div>
+              {/* Message Field */}
               <div className="mb-4">
                 <label
                   htmlFor="message"
                   className="block text-text-secondary text-sm mb-2"
                 >
                   Message
-                </label>                <textarea
+                </label>{" "}
+                <textarea
                   id="message"
                   name="message"
                   placeholder="Message"
@@ -230,14 +233,17 @@ function Contact() {
                   <p className="text-red-500 text-xs mt-1">{errors.message}</p>
                 )}
               </div>
-            </div>            {/* Submit Button */}
+            </div>{" "}
+            {/* Submit Button */}
             <div className="flex justify-end">
               {!sending ? (
                 <button
                   type="submit"
                   onClick={sendEmail}
                   className={`text-white font-semibold bg-gradient-to-r from-accent to-accent-hover w-28 h-10 rounded-md border border-border hover:scale-105 duration-200 hover:border-border hover:from-accent-hover hover:to-accent ${
-                    Object.values(errors).some(error => error) ? "opacity-70 cursor-not-allowed" : "cursor-pointer"
+                    Object.values(errors).some((error) => error)
+                      ? "opacity-70 cursor-not-allowed"
+                      : "cursor-pointer"
                   }`}
                 >
                   Send
@@ -252,10 +258,7 @@ function Contact() {
         </div>
 
         {/* Map Section */}
-        <div
-          ref={mapContainerRef}
-          className="bg-card-bg border border-border rounded-lg p-6"
-        >
+        <div className="bg-card-bg border border-border rounded-lg p-6">
           <h3 className="text-2xl font-bold text-text mb-6">Location</h3>
           <div className="aspect-video w-full overflow-hidden rounded-lg">
             <iframe

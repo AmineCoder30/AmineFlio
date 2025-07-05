@@ -4,24 +4,6 @@
 @tailwind utilities;
 
 :root {
-  --color-primary: #ff7a00; /* rich orange */
-  --color-primary-hover: #e66a00; /* slightly darker orange */
-
-  --color-background: #fefefe; /* crisper white, less gray */
-  --color-sidebar-bg: #f4f4f7; /* elegant neutral, modern gray-tint */
-
-  --color-text: #1e293b; /* slate-800 - dark readable */
-  --color-text-secondary: #64748b; /* slate-500 - modern muted */
-  --color-border: #e2e8f0; /* slate-200 - subtle border */
-
-  --color-card-bg: #ffffff; /* pure white */
-  --color-card-hover: #fff7ed; /* soft orange-tinted hover */
-
-  --color-accent: #fb923c; /* vibrant orange accent */
-  --color-accent-hover: #f97316; /* deeper vibrant orange */
-}
-
-[data-theme="dark"] {
   --color-primary: #fcd34d; /* warm yellow */
   --color-primary-hover: #fbbf24; /* deeper yellow */
 
@@ -177,4 +159,42 @@
   background-position: -100% 0;
   animation: shimmer 3s infinite;
   pointer-events: none;
+}
+.glass {
+  background: rgb(30 30 30 / 75%);
+
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.bg-conic-gradient-purple {
+  background: conic-gradient(
+    from 90deg at 50% 50%,
+    #e2cbff 0%,
+    var(--color-accent) 50%,
+    var(--color-primary) 100%
+  );
+}
+
+span.circle {
+  animation: round 3s linear infinite;
+}
+
+@keyframes round {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(100px, 0);
+  }
+  50% {
+    transform: translate(100px, -100px);
+  }
+  75% {
+    transform: translate(0, -100px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
 }

@@ -1,5 +1,4 @@
-import Title from "../ui/Title";
-import ServiceCard from "../ui/ServicesCard";
+import { ServiceCard, Title } from "../ui";
 import services from "../../constants/servicesList";
 import resume from "../../assets/resume.pdf";
 

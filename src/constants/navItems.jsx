@@ -1,4 +1,4 @@
-import { User, Wrench, Briefcase, Phone } from "lucide-react";
+import { User, Wrench, Briefcase, Phone, SquarePen } from "lucide-react";
 
 const navItems = [
   {
@@ -15,12 +15,18 @@ const navItems = [
   },
   {
     id: 3,
-    name: "Portfolio",
-    url: "#portfolio",
+    name: "Projects",
+    url: "#projects",
     icon: <Briefcase size={20} />,
   },
   {
     id: 4,
+    name: "Blogs",
+    url: "#blogs",
+    icon: <SquarePen size={20} />,
+  },
+  {
+    id: 5,
     name: "Contact",
     url: "#contact",
     icon: <Phone size={20} />,

@@ -1,74 +1,58 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import navItems from "../../constants/navItems";
-import { Menu, X } from "lucide-react";
-import logo from "../../assets/logo.svg"; // Adjust the path as necessary
-import PropTypes from "prop-types";
 
-function Navbar({ children }) {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+function Navbar() {
+  const [activeItem, setActiveItem] = useState(1);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      let currentId = 1;
+      for (let i = 0; i < navItems.length; i++) {
+        const section = document.getElementById(
+          navItems[i].url.replace('#', '') || 'about'
+        );
+        if (section) {
+          const rect = section.getBoundingClientRect();
+          if (rect.top <= 100 && rect.bottom > 100) {
+            currentId = navItems[i].id;
+            break;
+          }
+        }
+      }
+      setActiveItem(currentId);
+    };
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // set on mount
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const handleItemClick = (id) => {
+    setActiveItem(id);
+  };
   return (
-    <div className="absolute top-0 left-0 w-full border-b border-border  flex-1 p-2 flex justify-between items-center">
-      {/* Logo */}
-      {/* <h1 className="text-2xl font-bold text-text">Amine</h1> */}
-      <img src={logo} className="h-10" alt="amiine logo" loading="lazy" />
-
-      {/* Mobile Menu Button */}
-      <button
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
-        className="lg:hidden p-2 rounded-md hover:bg-card-hover transition-colors"
-        aria-label="Toggle menu"
-      >
-        {isMenuOpen ? (
-          <X size={24} className="text-text" />
-        ) : (
-          <Menu size={24} className="text-text" />
-        )}
-      </button>
-      {/* Desktop Navigation */}
-      <nav className="hidden lg:flex items-center gap-8 ">
-        {navItems.map((item) => (
-          <a
-            key={item.id}
-            href={item.url}
-            className="group relative flex items-center gap-2 text-text-secondary hover:text-accent transition-colors"
+    <nav className="fixed bottom-5 left-[50%] p-2 rounded-lg z-50 border border-border -translate-x-1/2 glass flex items-center gap-8  ">
+      {navItems.map((item) => (
+        <a
+          key={item.id}
+          href={item.url}
+          onClick={() => handleItemClick(item.id)}
+          className={`group relative hover:scale-105 duration-200 flex flex-col justify-center items-center gap-2 transition-all hover:text-accent ${
+            activeItem === item.id ? "text-accent font-semibold" : "text-text"
+          }`}
+        >
+          <span
+            className={`text-md group-hover:text-accent  
+            `}
           >
-            <span className="text-lg">{item.icon}</span>
-            <span className="text-sm font-medium">{item.name}</span>
-            <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></div>
-          </a>
-        ))}
-        {children}
-      </nav>
-
-      {/* Mobile Navigation */}
-      <div
-        className={`lg:hidden absolute z-50  top-12 right-0 mt-2 w-full bg-card-bg border border-border rounded-lg shadow-lg transition-all duration-300 ${
-          isMenuOpen
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 -translate-y-2 pointer-events-none"
-        }`}
-      >
-        <nav className="flex flex-col gap-2 p-2">
-          {navItems.map((item) => (
-            <a
-              key={item.id}
-              href={item.url}
-              onClick={() => setIsMenuOpen(false)}
-              className="flex items-center gap-2 px-4 py-2 text-text-secondary hover:text-accent hover:bg-card-hover rounded-md transition-colors"
-            >
-              <span className="text-lg">{item.icon}</span>
-              <span className="text-sm font-medium">{item.name}</span>
-            </a>
-          ))}
-          {children}
-        </nav>
-      </div>
-    </div>
+            {item.icon}
+          </span>
+          <span className={`text-xs  group-hover:text-accent  `}>
+            {item.name}
+          </span>
+        </a>
+      ))}
+    </nav>
   );
 }
-Navbar.propTypes = {
-  children: PropTypes.node,
-};
 
 export default Navbar;

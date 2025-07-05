@@ -21,7 +21,7 @@ function NotificationCard({
   const handleClose = () => {
     setIsVisible(false);
     if (onClose) {
-      setTimeout(onClose, 300); // Allow animation to complete
+      setTimeout(onClose, 300);
     }
   };
 

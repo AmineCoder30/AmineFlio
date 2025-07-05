@@ -1,7 +1,7 @@
 import React from "react";
 import socialMediaLinks from "../../constants/socialMedia";
 import avatar from "../../assets/avatar.png";
-import ContactInfo from "../ui/ContactInfo";
+import { ContactInfo } from "../ui";
 import { ArrowDown } from "lucide-react";
 
 function SideBar() {
