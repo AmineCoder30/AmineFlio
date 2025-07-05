@@ -57,7 +57,7 @@ const technologies = [
   },
   {
     name: "ExpressJS",
-    icon: <SiExpress style={{ color: "#000000", fontSize: "2rem" }} />,
+    icon: <SiExpress style={{ color: "white", fontSize: "2rem" }} />,
     description: "web framework",
     rating: 4.5,
   },

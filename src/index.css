@@ -61,5 +61,5 @@ span.circle {
 }
 
 .bx-shadow {
-  box-shadow: 0 0 20px 20px var(--color-accent);
+  box-shadow: 0 0 20px 20px var(--color-accent), 0 0 20px 20px #3662f4;
 }

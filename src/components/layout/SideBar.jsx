@@ -3,11 +3,9 @@ import socialMediaLinks from "../../constants/socialMedia";
 import avatar from "../../assets/avatar.png";
 import { ContactInfo } from "../ui";
 import { ArrowDown } from "lucide-react";
-import useAnimation from "../../hook/useAnimation";
 
 function SideBar() {
   const [showSocialMedia, setShowSocialMedia] = React.useState(false);
-  const boxRef = useAnimation();
 
   return (
     <div className="w-full  xl:w-[320px] relative">
@@ -18,7 +16,7 @@ function SideBar() {
         <ArrowDown size={20} className="text-white" />
       </button>
       <div className="w-full sticky top-10 rounded-md flex flex-col justify-between border border-border p-5 bg-card-bg">
-        <div ref={boxRef} className="w-full">
+        <div className="w-full">
           <div className="flex flex-row gap-2 lg:flex-col items-center lg:text-center">
             <div className="rounded-lg w-28 lg:w-40 bg-card-hover">
               <img className="" src={avatar} alt="my photo" />

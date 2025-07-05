@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { Title, NotificationCard } from "../ui";
-import useAnimation from "../../hook/useAnimation";
+
 function Contact() {
   const initialState = {
     email: "",
@@ -10,8 +10,7 @@ function Contact() {
     message: "",
   };
   const formRef = useRef();
-  const boxRef = useAnimation();
-  const boxRef2 = useAnimation();
+
   const [sending, setIsSending] = useState(false);
   const [formInfo, setFormInfo] = useState(initialState);
   const [notification, setNotification] = useState({
@@ -140,7 +139,7 @@ function Contact() {
         <div className="bg-card-bg border border-border rounded-lg p-6">
           <h3 className="text-2xl font-bold text-text mb-6">Get in Touch</h3>
           <form ref={formRef} onSubmit={sendEmail} className="space-y-6">
-            <div ref={boxRef}>
+            <div>
               {" "}
               {/* Name Field */}
               <div className="mb-4">
@@ -275,7 +274,7 @@ function Contact() {
               title="Google Map of Meknes, Morocco"
             ></iframe>
           </div>
-          <div ref={boxRef2} className="mt-6 space-y-4">
+          <div className="mt-6 space-y-4">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full bg-card-hover flex items-center justify-center">
                 <svg

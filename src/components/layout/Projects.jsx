@@ -1,6 +1,6 @@
 // src/components/Projects.jsx
 import { useState } from "react";
-import useAnimation from "../../hook/useAnimation";
+
 import { ProjectDetails, Title, ProjectCard, CategoryNavigation } from "../ui";
 import projectsData from "../../constants/projectsData";
 
@@ -18,7 +18,6 @@ function Projects() {
   const [activeCategory, setActiveCategory] = useState("All");
   const [projectID, setProjectID] = useState(1);
   const [showProjectDetails, SetShowProjectDetails] = useState(false);
-  const boxRef = useAnimation();
 
   // Filter projects based on the active category
   const filteredProjects =
@@ -42,10 +41,7 @@ function Projects() {
         setActiveCategory={setActiveCategory}
       />
       {/* Project Cards */}
-      <div
-        ref={boxRef}
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-      >
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {filteredProjects.map((project) => (
           <ProjectCard
             key={project.id}

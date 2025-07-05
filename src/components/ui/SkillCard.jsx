@@ -4,10 +4,10 @@ function SkillCard({ tech, index }) {
   return (
     <div
       key={index}
-      className="flex group glass  duration-200 transition-tansform relative cursor-pointer flex-col overflow-hidden items-center p-4  border border-border rounded-lg hover:shadow-lg transition-shadow "
+      className="flex group   duration-200 transition-tansform relative cursor-pointer flex-col overflow-hidden items-center p-4  border border-border rounded-lg hover:shadow-lg transition-shadow "
     >
       <span
-        className="absolute bx-shadow circle bottom-0 left-0 bg-accent w-4 h-4 bg-gradient-to-br from-accent/60 via-accent-hover/40 to-transparent rounded-full blur-2xl pointer-events-none z-20"
+        className="absolute bx-shadow  top-0 left-1/2 -translate-x-1/2 bg-accent w-4 h-4 bg-gradient-to-br from-accent/60 via-accent-hover/40 to-transparent rounded-full blur-2xl pointer-events-none z-20"
         style={{ transform: "translate(30%,-30%)" }}
       ></span>
       <div className="absolute flex justify-center items-center top-0 right-0 w-12 h-10 rounded-bl-md duration-200 scale-0 origin-top-right group-hover:scale-100 bg-gradient-to-tr from-accent to-accent-hover pointer-events-none z-0">
@@ -23,7 +23,7 @@ function SkillCard({ tech, index }) {
         </span>
       </div>
       <div className="text-accent mb-2">{tech.icon}</div>
-      <h4 className="text-text text-xl font-semibold text-center">
+      <h4 className="text-text text-lg sm:text-xl font-semibold text-center">
         {tech.name}
       </h4>
       <p className="text-text-secondary text-sm text-center mt-1">

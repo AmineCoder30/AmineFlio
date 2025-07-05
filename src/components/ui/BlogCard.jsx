@@ -20,6 +20,7 @@ function BlogCard({ blog }) {
           <img
             src={blog.image}
             alt={blog.title}
+            loading="lazy"
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           />
           <span className="absolute top-3 left-3 bg-accent group-hover:translate-y-0 group-hover:opacity-100 opacity-0 -translate-y-24 duration-200  text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md">

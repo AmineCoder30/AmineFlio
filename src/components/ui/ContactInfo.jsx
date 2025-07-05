@@ -1,7 +1,6 @@
 import { Mail, Phone, Calendar, MapPin } from "lucide-react";
-import useAnimation from "../../hook/useAnimation";
+
 const ContactInfo = () => {
-  const boxRef = useAnimation();
   const infoItems = [
     {
       icon: Mail,
@@ -26,7 +25,7 @@ const ContactInfo = () => {
   ];
 
   return (
-    <div ref={boxRef} className="mt-5 space-y-4">
+    <div className="mt-5 space-y-4">
       {infoItems.map((item, index) => (
         <div key={index} className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-full bg-card-hover flex items-center justify-center">
