@@ -10,7 +10,7 @@ function BlogCard({ blog }) {
       className="relative  inline-flex w-full h-full overflow-hidden rounded-2xl p-[2px] focus:outline-none group shadow-lg hover:scale-[1.025] transition-transform duration-300"
     >
       {/* <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-conic-gradient-purple"></span> */}
-      <span className="flex flex-row bg-card-bg border border-border rounded-2xl w-full h-full relative z-10 overflow-hidden">
+      <div className="flex flex-row bg-card-bg border border-border rounded-2xl w-full h-full relative z-10 overflow-hidden">
         {/* Gradient shape in top right */}
         <span
           className="absolute top-0 right-0 bg-accent w-24 h-24 bg-gradient-to-br from-accent/60 via-accent-hover/40 to-transparent rounded-full blur-2xl pointer-events-none z-20"
@@ -51,7 +51,7 @@ function BlogCard({ blog }) {
             </svg>
           </span>
         </div>
-      </span>
+      </div>
     </a>
   );
 }

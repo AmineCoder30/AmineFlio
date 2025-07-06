@@ -60,7 +60,7 @@ function About() {
         type="submit"
         className="cursor-pointer mt-4 text-white bg-gradient-to-r from-accent to-accent-hover w-28 h-10 rounded-md border border-border hover:scale-105 duration-200  hover:border-border hover:from-accent-hover hover:to-accent"
       >
-        <a href="" className="w-full h-full" download={resume}>
+        <a href={resume} download className="w-full h-full">
           My Resume
         </a>
       </button>
