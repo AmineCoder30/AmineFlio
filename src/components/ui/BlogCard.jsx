@@ -16,7 +16,7 @@ function BlogCard({ blog }) {
           className="absolute top-0 right-0 bg-accent w-24 h-24 bg-gradient-to-br from-accent/60 via-accent-hover/40 to-transparent rounded-full blur-2xl pointer-events-none z-20"
           style={{ transform: "translate(30%,-30%)" }}
         ></span>
-        <div className="relative w-2/5 min-w-[140px] max-w-[180px] h-full flex-shrink-0">
+{/*         <div className="relative w-2/5 min-w-[140px] max-w-[180px] h-full flex-shrink-0">
           <img
             src={blog.image}
             alt={blog.title}
@@ -26,7 +26,7 @@ function BlogCard({ blog }) {
           <span className="absolute top-3 left-3 bg-accent group-hover:translate-y-0 group-hover:opacity-100 opacity-0 -translate-y-24 duration-200  text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md">
             {blog.date}
           </span>
-        </div>
+        </div> */}
         <div className="p-5 flex flex-col flex-1 justify-between">
           <div>
             <h3 className="text-2xl font-bold text-text mb-2 ">{blog.title}</h3>
