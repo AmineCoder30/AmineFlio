@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { useRef } from "react";
 const ServiceCard = ({
   Icon,
   title,
@@ -7,8 +8,23 @@ const ServiceCard = ({
   indx,
   features = [],
 }) => {
+  const divRef = useRef(null);
+
+  const handleMouseMove = (e) => {
+    const rect = divRef.current.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    divRef.current.style.setProperty("--mouse-x", `${x}px`);
+    divRef.current.style.setProperty("--mouse-y", `${y}px`);
+    divRef.current.style.setProperty("--spotlight-color", "#ffffff38");
+  };
   return (
-    <div className="group w-full cursor-pointer  bg-gradient-to-br from-card-bg to-card-hover border border-border rounded-xl  p-9 space-y-4 relative overflow-hidden transition-all duration-500 hover:shadow-lg hover:-translate-y-2">
+    <div
+      ref={divRef}
+      onMouseMove={handleMouseMove}
+      className="group w-full card-spotlight cursor-pointer  bg-gradient-to-br from-card-bg to-card-hover border border-border rounded-xl  p-9 space-y-4 relative overflow-hidden transition-all duration-500 hover:shadow-lg hover:-translate-y-2"
+    >
       {/* Background circle with index */}
       <div
         className={`w-24 h-24 ${classes} rounded-full absolute -right-5 -top-7 group-hover:scale-110 transition-transform duration-500`}
@@ -51,7 +67,7 @@ const ServiceCard = ({
     shadow-sm 
 
    
-    opacity-0 translate-y-2 scale-95 
+    
 
    
     group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100 
@@ -61,7 +77,7 @@ const ServiceCard = ({
     hover:shadow-[0_0_10px_rgba(0,0,0,0.15)]
     hover:bg-gradient-to-r hover:from-accent/30 hover:to-accent/10
   `}
-            style={{ "--i": i }}
+            // style={{ "--i": i }}
           >
             {feature}
           </span>
