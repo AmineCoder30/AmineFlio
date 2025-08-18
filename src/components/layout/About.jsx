@@ -45,13 +45,16 @@ function About() {
       </div>
       <div className="mt-10">
         <Title partOne="what i'm" PartTwo="doing" />
-        <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto ">
           {services.map((service, index) => (
             <ServiceCard
               key={index}
+              indx={index + 1}
               Icon={service.Icon}
               title={service.title}
               description={service.description}
+              classes={service.classes}
+              features={service.features}
             />
           ))}
         </div>

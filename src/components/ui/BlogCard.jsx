@@ -16,7 +16,7 @@ function BlogCard({ blog }) {
           className="absolute top-0 right-0 bg-accent w-24 h-24 bg-gradient-to-br from-accent/60 via-accent-hover/40 to-transparent rounded-full blur-2xl pointer-events-none z-20"
           style={{ transform: "translate(30%,-30%)" }}
         ></span>
-{/*         <div className="relative w-2/5 min-w-[140px] max-w-[180px] h-full flex-shrink-0">
+        {/* <div className="relative w-2/5 min-w-[140px] hidden md:block max-w-[180px] h-full flex-shrink-0">
           <img
             src={blog.image}
             alt={blog.title}

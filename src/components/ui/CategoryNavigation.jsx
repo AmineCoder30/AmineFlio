@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import PropTypes from "prop-types";
 
 function CategoryNavigation({ categories, activeCategory, setActiveCategory }) {
   const navRef = useRef(null);
@@ -70,7 +71,7 @@ function CategoryNavigation({ categories, activeCategory, setActiveCategory }) {
     WebkitOverflowScrolling: "touch",
   };
   return (
-    <div className="flex items-center mb-10 mt-10 relative">
+    <div className="flex items-center mb-10 mt-10 pb-2 relative border-b border-border">
       {showLeftArrow && (
         <button
           onClick={() => scrollCategories("left")}
@@ -93,9 +94,9 @@ function CategoryNavigation({ categories, activeCategory, setActiveCategory }) {
             onClick={() => setActiveCategory(category)}
             className={`${
               activeCategory === category
-                ? "text-accent font-medium"
+                ? "text-white font-medium bg-accent-hover border border-border"
                 : "text-text-secondary hover:text-accent"
-            } transition-colors duration-300 whitespace-nowrap py-2 px-1`}
+            } transition-colors duration-300 whitespace-nowrap text-sm rounded-md  p-1`}
           >
             {category}
           </button>
@@ -114,5 +115,11 @@ function CategoryNavigation({ categories, activeCategory, setActiveCategory }) {
     </div>
   );
 }
+
+CategoryNavigation.propTypes = {
+  categories: PropTypes.arrayOf(PropTypes.string).isRequired,
+  activeCategory: PropTypes.string.isRequired,
+  setActiveCategory: PropTypes.func.isRequired,
+};
 
 export default CategoryNavigation;

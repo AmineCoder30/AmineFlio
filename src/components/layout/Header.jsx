@@ -1,6 +1,7 @@
 import logo from "../../assets/logo.svg";
 import resume from "../../assets/resume.pdf";
 import PropTypes from "prop-types";
+import ToggleThemeBtn from "../ui/ToggleThemeBtn";
 
 function Header() {
   return (
@@ -16,17 +17,10 @@ function Header() {
 
       {/* Desktop Navigation */}
       <div className="flex items-center gap-2">
+        <ToggleThemeBtn />
         <button
           type="submit"
-          className="cursor-pointer border border-border hidden md:block  text-white bg-card-bg w-28 h-10  hover:scale-105 duration-200  hover:border-border hover:from-accent-hover hover:to-accent"
-        >
-          <a href="#contact" className="w-full h-full">
-            Contact Me
-          </a>
-        </button>
-        <button
-          type="submit"
-          className="cursor-pointer  text-white bg-gradient-to-r from-accent to-accent-hover w-28 h-10 rounded-md border border-border hover:scale-105 duration-200  hover:border-border hover:from-accent-hover hover:to-accent"
+          className="cursor-pointer hidden md:block  text-white bg-gradient-to-r from-accent to-accent-hover w-28 h-10 rounded-md border border-border hover:scale-105 duration-200  hover:border-border hover:from-accent-hover hover:to-accent"
         >
           <a href={resume} download className="w-full h-full">
             My Resume
