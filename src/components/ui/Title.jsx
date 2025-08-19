@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 function Title({ partOne, PartTwo }) {
   return (
     <h1 className="text-text text-5xl sm:text-7xl md:text-8xl xl:text-9xl uppercase font-extrabold">
@@ -9,5 +10,10 @@ function Title({ partOne, PartTwo }) {
     </h1>
   );
 }
+
+Title.propTypes = {
+  partOne: PropTypes.string.isRequired,
+  PartTwo: PropTypes.string.isRequired,
+};
 
 export default Title;

@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { ExternalLink, Github } from "lucide-react";
+import PropTypes from "prop-types";
+
 import projectsData from "../../constants/projectsData";
 import { Minimize2, ChevronRight, ChevronLeft } from "lucide-react";
 function ProjectDetails({ projectID, SetShowProjectDetails, setProjectID }) {
@@ -41,9 +43,9 @@ function ProjectDetails({ projectID, SetShowProjectDetails, setProjectID }) {
               {project?.technologies?.map((tech) => (
                 <span
                   key={tech}
-                  className={`px-3 py-1 rounded-full text-xs font-semibold text-white shadow-md transition-colors duration-300 
+                  className={`px-3 py-1 rounded-full text-xs font-semibold text-text shadow-md transition-colors duration-300 
                   
-                      bg-accent/20 glass border border-border 
+                       border border-border 
                   }`}
                 >
                   {tech}
@@ -110,5 +112,11 @@ function ProjectDetails({ projectID, SetShowProjectDetails, setProjectID }) {
     </div>
   );
 }
+
+ProjectDetails.propTypes = {
+  projectID: PropTypes.number.isRequired,
+  SetShowProjectDetails: PropTypes.func.isRequired,
+  setProjectID: PropTypes.func.isRequired,
+};
 
 export default ProjectDetails;

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { CheckCircle, XCircle, X } from "lucide-react";
+import PropTypes from "prop-types";
 
 function NotificationCard({
   message,
@@ -76,5 +77,12 @@ function NotificationCard({
     </div>
   );
 }
+
+NotificationCard.propTypes = {
+  message: PropTypes.string.isRequired,
+  type: PropTypes.oneOf(["success", "error"]),
+  duration: PropTypes.number,
+  onClose: PropTypes.func,
+};
 
 export default NotificationCard;

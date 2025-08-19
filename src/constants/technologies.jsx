@@ -70,7 +70,7 @@ const technologies = [
   },
   {
     name: "ExpressJS",
-    icon: <SiExpress style={{ color: "#000000", fontSize: "2rem" }} />,
+    icon: <SiExpress style={{ color: "white", fontSize: "2rem" }} />,
     description:
       "ExpressJS is a minimal and flexible Node.js web application framework that provides robust features for building APIs and web servers quickly and efficiently.",
     level: "Expert",
@@ -135,4 +135,3 @@ const technologies = [
 ];
 
 export default technologies;
-
