@@ -54,6 +54,7 @@ function About() {
               title={service.title}
               description={service.description}
               classes={service.classes}
+              background={service.background}
               features={service.features}
             />
           ))}

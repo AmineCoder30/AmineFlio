@@ -164,9 +164,7 @@ html {
 
 .card-spotlight {
   position: relative;
-  border-radius: 1.5rem;
-  border: 1px solid #222;
-  background-color: #111;
+
   padding: 2rem;
   overflow: hidden;
   --mouse-x: 50%;
@@ -186,12 +184,12 @@ html {
     var(--spotlight-color),
     transparent 80%
   );
-  opacity: 0;
+  opacity: 0.8;
   transition: opacity 0.5s ease;
   pointer-events: none;
 }
 
 .card-spotlight:hover::before,
 .card-spotlight:focus-within::before {
-  opacity: 0.6;
+  opacity: 1;
 }

@@ -6,7 +6,7 @@ function ToggleThemeBtn() {
 
   return (
     <button
-      className="relative w-32 h-10 font-semibold text-text overflow-hidden border border-border rounded-md flex items-center justify-center cursor-pointer"
+      className="relative w-10 h-10 font-semibold text-text overflow-hidden border border-border rounded-md flex items-center justify-center cursor-pointer"
       onClick={toggleTheme}
     >
       {/* Light side */}
@@ -14,8 +14,7 @@ function ToggleThemeBtn() {
         className={`absolute text-center left-0 top-0 w-full h-full flex items-center justify-center transition-transform duration-300 z-10
           ${theme === "dark" ? "-translate-x-full" : "translate-x-0"}`}
       >
-        Light
-        <Sun color="white" className="ml-2 fill-white w-6 h-6" />
+        <Sun color="white" className=" fill-yellow-500 w-6 h-6" />
       </div>
 
       {/* Dark side */}
@@ -23,8 +22,7 @@ function ToggleThemeBtn() {
         className={`absolute text-center  right-0 top-0 w-full h-full flex items-center justify-center transition-transform duration-300 z-0
           ${theme === "dark" ? "translate-x-0" : "translate-x-full"}`}
       >
-        Dark
-        <Moon color="#60a5fa" className="ml-2 fill-blue-400 w-6 h-6" />
+        <Moon color="#60a5fa" className="fill-blue-500 w-6 h-6" />
       </div>
     </button>
   );
