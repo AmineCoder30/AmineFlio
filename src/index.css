@@ -24,14 +24,14 @@
   --color-primary: #f97316; /* vibrant orange */
   --color-primary-hover: #ea580c; /* deeper orange */
 
-  --color-background: #ffffff; /* clean white */
+  --color-background: #ff99000a; /* clean white */
   --color-sidebar-bg: #f9fafb; /* light gray background */
 
   --color-text: #0f0f0f; /* near black for main text */
   --color-text-secondary: #4b5563; /* gray-600 for secondary text */
-  --color-border: #e5e7eb; /* light zinc-200 border */
+  --color-border: #dcdee2; /* light zinc-200 border */
 
-  --color-card-bg: #fefefe; /* subtle off-white for cards */
+  --color-card-bg: #ff990017; /* subtle off-white for cards */
   --color-card-hover: #f3f4f6; /* soft gray hover */
 
   --color-accent: #f97316; /* vibrant orange (same as primary) */
