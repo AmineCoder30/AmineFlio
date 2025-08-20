@@ -8,10 +8,10 @@ const ServiceCard = ({
 }) => {
   return (
     <div className="w-full  duration-500 group cursor-pointer overflow-hidden relative rounded border border-border bg-card-bg p-4 flex flex-col justify-evenly">
-      <div className="absolute blur duration-500 group-hover:blur-none w-72 h-72 rounded-full group-hover:translate-x-12 group-hover:translate-y-12 bg-sky-900/15 backdrop-blur-sm right-1 -bottom-24"></div>
-      <div className="absolute blur duration-500 group-hover:blur-none w-12 h-12 rounded-full group-hover:translate-x-12 group-hover:translate-y-2 bg-indigo-700/15 backdrop-blur-sm right-12 bottom-12"></div>
-      <div className="absolute blur duration-500 group-hover:blur-none w-36 h-36 rounded-full group-hover:translate-x-12 group-hover:-translate-y-12  bg-sky-900/15 backdrop-blur-sm right-1 -top-12"></div>
-      <div className="absolute blur duration-500 group-hover:blur-none w-24 h-24 bg-sky-700/15 rounded-full group-hover:-translate-x-12"></div>
+      <div className="absolute blur duration-500 group-hover:blur-none w-72 h-72 rounded-full group-hover:translate-x-12 group-hover:translate-y-12 bg-orange-500/15 backdrop-blur-sm right-1 -bottom-24"></div>
+      <div className="absolute blur duration-500 group-hover:blur-none w-12 h-12 rounded-full group-hover:translate-x-12 group-hover:translate-y-2 bg-orange-600/15 backdrop-blur-sm right-12 bottom-12"></div>
+      <div className="absolute blur duration-500 group-hover:blur-none w-36 h-36 rounded-full group-hover:translate-x-12 group-hover:-translate-y-12  bg-amber-500/15 backdrop-blur-sm right-1 -top-12"></div>
+      <div className="absolute blur duration-500 group-hover:blur-none w-24 h-24 bg-amber-600/15 rounded-full group-hover:-translate-x-12"></div>
       <div className="z-10 flex flex-col justify-evenly w-full h-full">
         {/* Icon */}
         <div
@@ -37,7 +37,7 @@ const ServiceCard = ({
     rounded-full
     text-white
     bg-gradient-to-tr
-  from-indigo-600 to-accent-hover backdrop-blur-sm shadow-sm transition-all duration-500 delay-[calc(100ms*var(--i))]`}
+  from-indigo-600/60 to-accent-hover backdrop-blur-sm shadow-sm transition-all duration-500 delay-[calc(100ms*var(--i))]`}
               style={{ "--i": i }}
             >
               {feature}
