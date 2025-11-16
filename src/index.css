@@ -3,7 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
   --color-primary: #f97316; /* vibrant orange */
   --color-primary-hover: #ea580c; /* deeper orange */

@@ -20,7 +20,7 @@ function Header() {
         <ToggleThemeBtn />
         <button
           type="submit"
-          className="cursor-pointer hidden md:block  text-white bg-gradient-to-r from-accent to-accent-hover w-28 h-10 rounded-md border border-border hover:scale-105 duration-200  hover:border-border hover:from-accent-hover hover:to-accent"
+          className="cursor-pointer hidden md:block  text-text  w-28 h-10 rounded-md border bg-card-hover border-border hover:scale-105 duration-200  hover:border-border hover:from-accent-hover hover:to-accent"
         >
           <a href={resume} download className="w-full h-full">
             My Resume
