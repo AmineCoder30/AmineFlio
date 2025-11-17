@@ -31,15 +31,15 @@ function NotificationCard({
   return (
     <div
       className={`
-        fixed top-6 right-6 z-50 flex items-center gap-3 p-4 rounded-lg shadow-lg
+        fixed top-6 right-6 z-50 bg-card-bg flex items-center gap-3 p-4 rounded-lg shadow-lg
         transform transition-all duration-300 ease-in-out
         ${
           isVisible ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
         }
         ${
           type === "success"
-            ? "bg-green-50 border-l-4 border-green-500"
-            : "bg-red-50 border-l-4 border-red-500"
+            ? " border-l-4 border-green-500"
+            : " border-l-4 border-red-500"
         }
         max-w-md
       `}
@@ -55,7 +55,7 @@ function NotificationCard({
       <div className="flex-grow">
         <p
           className={`text-sm font-medium ${
-            type === "success" ? "text-green-800" : "text-red-800"
+            type === "success" ? "text-green-500" : "text-red-500"
           }`}
         >
           {message}
