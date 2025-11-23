@@ -6,7 +6,7 @@ export default function BotChat({ handleClick }) {
 
   return (
     <button
-      className="fixed bottom-8 right-8 group z-50"
+      className="fixed md:bottom-8 bottom-20 right-2 md:right-8 group z-50"
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       onClick={handleClick}

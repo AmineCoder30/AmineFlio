@@ -69,9 +69,9 @@ export default function AiAssistant() {
   };
 
   return (
-    <div className="fixed bottom-10 right-10 z-50 flex flex-col items-end">
+    <div className="fixed md:bottom-10 p-2 md:p-0 bottom-0 md:right-10 right-0 z-50  flex flex-col items-end">
       {isOpen && (
-        <div className="mb-4 w-[350px] md:w-[400px] h-[500px] bg-card-bg border border-border rounded-xl shadow-2xl flex flex-col overflow-hidden animate-in slide-in-from-bottom-5 duration-300">
+        <div className="w-full md:w-[400px] h-screen mt-2 md:h-[500px] bg-card-bg border border-border rounded-xl shadow-2xl flex flex-col overflow-hidden animate-in slide-in-from-bottom-5 duration-300">
           {/* Header */}
           <div className="p-4 border-b border-border flex justify-between items-center bg-sidebar-bg">
             <div className="flex items-center gap-2">
