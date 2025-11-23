@@ -8,6 +8,7 @@ import {
   Navbar,
   SideBar,
   Header,
+  AiAssistant,
 } from "./components/layout";
 import { ThemeProvider } from "./context/ToggleTheme";
 
@@ -31,6 +32,7 @@ function AppContent() {
               <Blogs />
               <Contact />
               <Footer />
+              <AiAssistant />
             </div>
           </div>
         </div>

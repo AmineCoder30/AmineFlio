@@ -7,6 +7,7 @@ import Projects from "./Projects";
 import Skills from "./Skills";
 import SideBar from "./SideBar";
 import Navbar from "./Navbar";
+import AiAssistant from "./AiAssistant";
 
 export {
   About,
@@ -18,4 +19,5 @@ export {
   Skills,
   SideBar,
   Navbar,
+  AiAssistant,
 };
