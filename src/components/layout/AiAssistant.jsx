@@ -1,15 +1,16 @@
 import { useState, useRef, useEffect } from "react";
-import BotChat from "../ui/Bot";
+
 import BotMessage from "../ui/BotMessage";
 import { getProjectEstimation } from "../../services/gemini";
 import { Send, X, Loader2, Bot } from "lucide-react";
 
 export default function AiAssistant() {
   const [isOpen, setIsOpen] = useState(false);
+  const inputRef = useRef(null);
   const [messages, setMessages] = useState([
     {
       id: 1,
-      text: "Hello! Describe your project idea, and I'll help you estimate the price and time required.",
+      text: "Hello! I'm your AI assistant. Describe your project or ask anything about Amine, and I'll help you with the right answer or an accurate estimation.",
       sender: "bot",
     },
   ]);
@@ -33,6 +34,20 @@ export default function AiAssistant() {
   const toggleChat = () => {
     setIsOpen(!isOpen);
   };
+
+  // Listen for a global event so other components (like Navbar) can open the chat
+  useEffect(() => {
+    const openHandler = () => {
+      setIsOpen(true);
+      // focus the input shortly after opening
+      setTimeout(() => {
+        if (inputRef.current) inputRef.current.focus();
+      }, 150);
+    };
+
+    window.addEventListener("open-ai-chat", openHandler);
+    return () => window.removeEventListener("open-ai-chat", openHandler);
+  }, []);
 
   const handleSend = async (e) => {
     e.preventDefault();
@@ -61,6 +76,7 @@ export default function AiAssistant() {
         id: Date.now() + 1,
         text: "Sorry, something went wrong. Please try again.",
         sender: "bot",
+        error: error,
       };
       setMessages((prev) => [...prev, errorMessage]);
     } finally {
@@ -71,7 +87,7 @@ export default function AiAssistant() {
   return (
     <div className="fixed md:bottom-10 p-2 md:p-0 bottom-0 md:right-10 right-0 z-50  flex flex-col items-end">
       {isOpen && (
-        <div className="w-full md:w-[400px] h-screen mt-2 md:h-[500px] bg-card-bg border border-border rounded-xl shadow-2xl flex flex-col overflow-hidden animate-in slide-in-from-bottom-5 duration-300">
+        <div className="fixed inset-0 m-4 md:relative md:inset-auto md:bottom-0 md:right-10 md:w-[400px] md:h-[500px] bg-card-bg border border-border rounded-xl shadow-2xl flex flex-col overflow-hidden animate-in slide-in-from-bottom-5 duration-300">
           {/* Header */}
           <div className="p-4 border-b border-border flex justify-between items-center bg-sidebar-bg">
             <div className="flex items-center gap-2">
@@ -92,10 +108,7 @@ export default function AiAssistant() {
           </div>
 
           {/* Messages */}
-          <div 
-            ref={scrollRef}
-            className="flex-1 overflow-y-auto p-4 space-y-4"
-          >
+          <div ref={scrollRef} className="flex-1 overflow-y-auto p-4 space-y-4">
             {messages.map((msg) => (
               <div
                 key={msg.id}
@@ -122,11 +135,12 @@ export default function AiAssistant() {
               <div className="flex justify-start">
                 <div className="bg-sidebar-bg p-3 rounded-2xl rounded-bl-none border border-border flex items-center gap-2">
                   <Loader2 className="w-4 h-4 animate-spin text-primary" />
-                  <span className="text-xs text-text-secondary">Thinking...</span>
+                  <span className="text-xs text-text-secondary">
+                    Thinking...
+                  </span>
                 </div>
               </div>
             )}
-
           </div>
 
           {/* Input */}
@@ -139,6 +153,7 @@ export default function AiAssistant() {
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
+                ref={inputRef}
                 placeholder="Describe your project..."
                 className="flex-1 bg-sidebar-bg border border-border rounded-lg px-4 py-2 text-sm text-text focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary placeholder:text-text-secondary/50"
                 disabled={isLoading}
@@ -154,10 +169,12 @@ export default function AiAssistant() {
           </form>
         </div>
       )}
-{!isOpen &&
-      // <div onClick={toggleChat}>
-        <BotChat handleClick={toggleChat} />
-      // </div>
+      {
+        // !isOpen && (
+        //   // <div onClick={toggleChat}>
+        //   <BotChat handleClick={toggleChat} />
+        // )
+        // </div>
       }
     </div>
   );

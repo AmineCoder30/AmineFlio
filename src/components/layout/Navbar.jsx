@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+// import { Bot } from "lucide-react";
 import navItems from "../../constants/navItems";
 
 function Navbar() {
@@ -29,6 +30,7 @@ function Navbar() {
   const handleItemClick = (id) => {
     setActiveItem(id);
   };
+
   return (
     <nav className="fixed bottom-5 left-[50%] p-2 rounded-lg z-50 border border-border -translate-x-1/2 glass flex items-center gap-5  ">
       {navItems.map((item) => (

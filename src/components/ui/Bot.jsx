@@ -6,7 +6,7 @@ export default function BotChat({ handleClick }) {
 
   return (
     <button
-      className="fixed md:bottom-8 bottom-20 right-2 md:right-8 group z-50"
+      className=" group z-50 relative "
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       onClick={handleClick}
@@ -18,31 +18,26 @@ export default function BotChat({ handleClick }) {
       </div>
 
       {/* Bot Icon Container */}
-      <div className="relative">
+      <div className="">
         {/* Magic Glow Effect */}
         {/* <div className="absolute -inset-2 bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600 rounded-full blur-md opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div> */}
-        
+
         {/* Main button */}
-        <div className="relative bg-gradient-to-br from-card-bg to-card-bg h-14 w-14 flex items-center justify-center rounded-full shadow-xl border border-white/10 cursor-pointer animate-floating overflow-hidden">
-          
+        <div className="relative bg-card-hover dark:bg h-10 w-10 flex items-center justify-center rounded-md  border border-border cursor-pointer animate-floating overflow-hidden">
           {/* Shimmer effect */}
           <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:animate-shimmer"></div>
 
-          <Bot className="w-7 h-7 text-white transition-transform duration-500 group-hover:rotate-12 relative z-10" />
-          
+          <Bot className="w-5 h-5 text-primary transition-transform duration-500 group-hover:rotate-12 relative z-10" />
+
           {/* Sparkles inside */}
-          <Sparkles className="absolute top-2 right-2 w-3 h-3 text-yellow-300 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100 animate-pulse" />
-          <Sparkles className="absolute bottom-2 left-2 w-2 h-2 text-blue-300 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-200 animate-pulse" />
+          <Sparkles className="absolute top-0.5 right-0.5 w-3 h-3 text-yellow-300 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100 animate-pulse" />
+          <Sparkles className="absolute bottom-0.5 left-0.5 w-2 h-2 text-blue-300 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-200 animate-pulse" />
         </div>
       </div>
 
       {/* Keyframes */}
       <style>{`
-        @keyframes floating {
-          0% { transform: translateY(0px); }
-          50% { transform: translateY(-5px); }
-          100% { transform: translateY(0px); }
-        }
+
         @keyframes shimmer {
           100% { transform: translateX(100%); }
         }
