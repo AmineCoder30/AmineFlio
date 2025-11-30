@@ -14,7 +14,7 @@ function ToggleThemeBtn() {
         className={`absolute text-center left-0 top-0 w-full h-full flex items-center justify-center transition-transform duration-300 z-10
           ${theme === "dark" ? "-translate-x-full" : "translate-x-0"}`}
       >
-        <Sun className=" fill-amber-500 text-amber-500 w-6 h-6" />
+        <Sun className=" fill-primary text-primary w-6 h-6" />
       </div>
 
       {/* Dark side */}
@@ -22,7 +22,7 @@ function ToggleThemeBtn() {
         className={`absolute text-center  right-0 top-0 w-full h-full flex items-center justify-center transition-transform duration-300 z-0
           ${theme === "dark" ? "translate-x-0" : "translate-x-full"}`}
       >
-        <Moon className="fill-amber-500 text-amber-500 w-6 h-6" />
+        <Moon className="fill-primary text-primary w-6 h-6" />
       </div>
     </button>
   );

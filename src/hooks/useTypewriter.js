@@ -1,10 +1,18 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
-export const useTypewriter = (text, speed = 1000, scrollRef = null) => {
+export const useTypewriter = (text, speed = 1000, scrollRef = null, shouldAnimate = true) => {
   const [displayedText, setDisplayedText] = useState("");
   const [isComplete, setIsComplete] = useState(false);
+  const hasAnimated = useRef(false);
 
   useEffect(() => {
+    // If we shouldn't animate or have already animated this text, show it immediately
+    if (!shouldAnimate || hasAnimated.current) {
+      setDisplayedText(text);
+      setIsComplete(true);
+      return;
+    }
+
     setDisplayedText("");
     setIsComplete(false);
     if (!text) return;
@@ -19,6 +27,7 @@ export const useTypewriter = (text, speed = 1000, scrollRef = null) => {
     const intervalId = setInterval(() => {
       if (partIndex >= parts.length) {
         setIsComplete(true);
+        hasAnimated.current = true;
         clearInterval(intervalId);
         return;
       }
@@ -53,7 +62,8 @@ export const useTypewriter = (text, speed = 1000, scrollRef = null) => {
     }, speed);
 
     return () => clearInterval(intervalId);
-  }, [text, speed]);
+  }, [text, speed, shouldAnimate]);
 
   return { displayedText, isComplete };
 };
+

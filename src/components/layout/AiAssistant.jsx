@@ -17,6 +17,9 @@ export default function AiAssistant() {
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const scrollRef = useRef(null);
+  
+  // Track which messages have already been animated
+  const animatedMessageIds = useRef(new Set([1])); // Initial message is pre-animated
 
   const scrollToBottom = () => {
     if (scrollRef.current) {
@@ -65,20 +68,24 @@ export default function AiAssistant() {
 
     try {
       const response = await getProjectEstimation(input);
+      const botMessageId = Date.now() + 1;
       const botMessage = {
-        id: Date.now() + 1,
+        id: botMessageId,
         text: response,
         sender: "bot",
       };
       setMessages((prev) => [...prev, botMessage]);
+      // Don't add to animatedMessageIds yet - let the component do it after animation completes
     } catch (error) {
+      const errorMessageId = Date.now() + 1;
       const errorMessage = {
-        id: Date.now() + 1,
+        id: errorMessageId,
         text: "Sorry, something went wrong. Please try again.",
         sender: "bot",
         error: error,
       };
       setMessages((prev) => [...prev, errorMessage]);
+      // Don't add to animatedMessageIds yet
     } finally {
       setIsLoading(false);
     }
@@ -109,28 +116,42 @@ export default function AiAssistant() {
 
           {/* Messages */}
           <div ref={scrollRef} className="flex-1 overflow-y-auto p-4 space-y-4">
-            {messages.map((msg) => (
-              <div
-                key={msg.id}
-                className={`flex ${
-                  msg.sender === "user" ? "justify-end" : "justify-start"
-                }`}
-              >
+            {messages.map((msg) => {
+              // Check if this message has already been animated
+              const hasBeenAnimated = animatedMessageIds.current.has(msg.id);
+              const shouldAnimate = msg.sender === "bot" && !hasBeenAnimated;
+              
+              return (
                 <div
-                  className={`max-w-[80%] p-3 rounded-2xl text-sm whitespace-pre-wrap ${
-                    msg.sender === "user"
-                      ? "bg-primary text-white rounded-br-none"
-                      : "bg-sidebar-bg text-text rounded-bl-none border border-border"
+                  key={msg.id}
+                  className={`flex ${
+                    msg.sender === "user" ? "justify-end" : "justify-start"
                   }`}
                 >
-                  {msg.sender === "bot" ? (
-                    <BotMessage text={msg.text} scrollRef={scrollRef} />
-                  ) : (
-                    msg.text
-                  )}
+                  <div
+                    className={`max-w-[80%] p-3 rounded-2xl text-sm whitespace-pre-wrap ${
+                      msg.sender === "user"
+                        ? "bg-primary text-white rounded-br-none"
+                        : "bg-sidebar-bg text-text rounded-bl-none border border-border"
+                    }`}
+                  >
+                    {msg.sender === "bot" ? (
+                      <BotMessage 
+                        text={msg.text} 
+                        scrollRef={scrollRef} 
+                        isNew={shouldAnimate}
+                        onAnimationComplete={() => {
+                          // Mark this message as animated
+                          animatedMessageIds.current.add(msg.id);
+                        }}
+                      />
+                    ) : (
+                      msg.text
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
             {isLoading && (
               <div className="flex justify-start">
                 <div className="bg-sidebar-bg p-3 rounded-2xl rounded-bl-none border border-border flex items-center gap-2">

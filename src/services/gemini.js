@@ -1,9 +1,7 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import profileData from "../constants/profileData";
 
-const API_KEY =
-  import.meta.env.VITE_GEMINI_API_KEY ||
-  "AIzaSyB2y7vbrApcikru5PVIgcxAiZWM3BwEQxw";
+const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
 
 export const getProjectEstimation = async (projectDescription) => {
   console.log("getProjectEstimation called with:", projectDescription);

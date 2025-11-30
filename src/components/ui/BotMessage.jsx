@@ -1,11 +1,18 @@
 import React from 'react';
 import { useTypewriter } from '../../hooks/useTypewriter';
 
-const BotMessage = ({ text, scrollRef }) => {
+const BotMessage = ({ text, scrollRef, isNew = false, onAnimationComplete }) => {
   // Only use typewriter if the text looks like HTML (starts with <)
   // Otherwise just show it (or we could use it for everything, but let's stick to the HTML response)
   const isHtml = text.trim().startsWith('<');
-  const { displayedText } = useTypewriter(isHtml ? text : '', 5, scrollRef);
+  const { displayedText, isComplete } = useTypewriter(isHtml ? text : '', 5, scrollRef, isNew);
+
+  // Notify parent when animation completes
+  React.useEffect(() => {
+    if (isComplete && onAnimationComplete) {
+      onAnimationComplete();
+    }
+  }, [isComplete, onAnimationComplete]);
 
   if (!isHtml) {
     return <div>{text}</div>;
