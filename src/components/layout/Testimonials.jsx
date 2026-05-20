@@ -1,6 +1,6 @@
 import { Title } from "../ui";
 import { Star, ChevronLeft, ChevronRight, Quote } from "lucide-react";
-import { Swiper, SwiperSlide } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 // Import Swiper styles
