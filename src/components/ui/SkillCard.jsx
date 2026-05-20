@@ -70,7 +70,7 @@ function SkillCard({ tech, index }) {
         }}
       >
         <span
-          className={`absolute top-0 right-0 ${handleLevelBg()} w-24 h-24 bg-gradient-to-br from-accent/60 via-accent-hover/40 to-transparent rounded-full blur-2xl pointer-events-none z-20`}
+          className={`absolute top-0 right-0 ${handleLevelBg()} w-24 h-24 bg-gradient-to-br from-accent/60 opacity-0 group-hover:opacity-55 via-accent-hover/40 to-transparent rounded-full blur-2xl pointer-events-none z-20`}
           style={{ transform: "translate(30%,-30%)" }}
         ></span>
 
