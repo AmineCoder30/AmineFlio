@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import {  ArrowUp } from "lucide-react";
+import { ArrowUp } from "lucide-react";
 
 export default function FixedCta() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -17,7 +17,7 @@ export default function FixedCta() {
   };
 
   return (
-    <div className="fixed right-5 bottom-20 z-40 flex flex-col items-center gap-3">
+    <div className="fixed right-10 bottom-40 z-40 flex flex-col items-center gap-3">
       {/* Scroll to Top */}
       <button
         onClick={scrollToTop}
