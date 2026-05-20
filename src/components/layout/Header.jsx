@@ -1,5 +1,5 @@
 import logo from "../../assets/logo.svg";
-import resume from "../../assets/resume.pdf";
+
 import PropTypes from "prop-types";
 import ToggleThemeBtn from "../ui/ToggleThemeBtn";
 import BotChat from "../ui/Bot";
@@ -28,8 +28,8 @@ function Header() {
           type="submit"
           className="cursor-pointer hidden md:block  text-text  w-28 h-10 rounded-md border bg-card-hover border-border hover:scale-105 duration-200  hover:border-border hover:from-accent-hover hover:to-accent"
         >
-          <a href={resume} download className="w-full h-full">
-            My Resume
+          <a href="#contact" className="w-full h-full">
+            Let&apos;s Talk
           </a>
         </button>
       </div>

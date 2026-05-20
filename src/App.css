@@ -1,6 +1,3 @@
-body {
-  font-family: "Poppins", sans-serif;
-}
 html {
   scroll-behavior: smooth;
 }
@@ -13,18 +10,19 @@ html {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: var(--color-card-bg);
+  background: var(--color-background);
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: var(--color-accent);
+  background: var(--color-border);
   border-radius: 10px;
+  transition: background 0.2s;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-accent-hover);
+  background: var(--color-accent);
 }
 
 /* loader animation */
@@ -169,6 +167,10 @@ html {
   overflow: hidden;
   --mouse-x: 50%;
   --mouse-y: 50%;
+  --spotlight-color: rgba(249, 115, 22, 0.06);
+}
+
+.dark .card-spotlight {
   --spotlight-color: rgba(255, 255, 255, 0.05);
 }
 

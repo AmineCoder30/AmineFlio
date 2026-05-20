@@ -7,40 +7,45 @@ function BlogCard({ blog }) {
       href={blog.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="relative  inline-flex w-full h-full overflow-hidden rounded-2xl p-[2px] focus:outline-none group shadow-lg hover:scale-[1.025] transition-transform duration-300"
+      className="group relative flex flex-col w-full h-full bg-card-bg/60 backdrop-blur-xl border border-border/40 rounded-3xl overflow-hidden hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.3)] transition-all duration-500 ease-out hover:-translate-y-1"
     >
-      {/* <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-conic-gradient-purple"></span> */}
-      <div className="flex flex-row bg-card-bg border border-border rounded-2xl w-full h-full relative z-10 overflow-hidden">
-        {/* Gradient shape in top right */}
-        <span
-          className="absolute top-0 right-0 bg-accent w-24 h-24 bg-gradient-to-br from-accent/60 via-accent-hover/40 to-transparent rounded-full blur-2xl pointer-events-none z-20"
-          style={{ transform: "translate(30%,-30%)" }}
-        ></span>
-        {/* <div className="relative w-2/5 min-w-[140px] hidden md:block max-w-[180px] h-full flex-shrink-0">
-          <img
-            src={blog.image}
-            alt={blog.title}
-            loading="lazy"
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-          />
-          <span className="absolute top-3 left-3 bg-accent group-hover:translate-y-0 group-hover:opacity-100 opacity-0 -translate-y-24 duration-200  text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md">
-            {blog.date}
-          </span>
-        </div> */}
-        <div className="p-5 flex flex-col flex-1 justify-between">
-          <div>
-            <h3 className="text-2xl font-bold text-text mb-2 ">{blog.title}</h3>
-            <p className="text-text-secondary text-base overflow-hidden mb-4 flex-1 line-clamp-3">
-              {blog.description}
-            </p>
+      {/* Decorative Glow Elements */}
+      <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-highlight/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+      <div className="absolute -bottom-24 -right-24 w-48 h-48 bg-accent/20 rounded-full blur-[50px] group-hover:bg-accent/30 group-hover:scale-150 transition-all duration-1000 pointer-events-none"></div>
+
+      {/* Content Container */}
+      <div className="relative p-6 sm:p-8 flex flex-col flex-1 justify-between z-10">
+        <div>
+          <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center gap-3">
+              <span className="text-xs font-bold tracking-widest text-accent uppercase">
+                Article
+              </span>
+              <span className="h-px w-8 bg-border"></span>
+            </div>
+            <span className="text-text-secondary text-xs font-semibold px-3 py-1 bg-surface rounded-full border border-border/50">
+              {blog.date}
+            </span>
           </div>
-          <span className="inline-flex items-center gap-2 text-accent font-semibold mt-auto group-hover:underline transition-all cursor-pointer">
-            Read More
+
+          <h3 className="text-xl md:text-2xl font-extrabold text-text mb-3 leading-tight group-hover:text-accent transition-colors duration-300">
+            {blog.title}
+          </h3>
+
+          <p className="text-text-secondary text-base leading-relaxed mb-6 line-clamp-3">
+            {blog.description}
+          </p>
+        </div>
+
+        {/* Action Button & Metadata */}
+        <div className="mt-auto flex items-center justify-between">
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface text-text text-sm font-semibold border border-border group-hover:bg-accent group-hover:text-white group-hover:border-accent transition-all duration-300 shadow-sm group-hover:shadow-accent/20">
+            <span>Read Article</span>
             <svg
-              className="w-4 h-4"
+              className="w-4 h-4 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
               fill="none"
               stroke="currentColor"
-              strokeWidth="2"
+              strokeWidth="2.5"
               viewBox="0 0 24 24"
             >
               <path

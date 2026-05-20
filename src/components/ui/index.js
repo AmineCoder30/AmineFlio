@@ -6,6 +6,7 @@ import NotificationCard from "./NotificationCard";
 import ProjectCard from "./ProjectCard";
 import SkillCard from "./SkillCard";
 import BlogCard from "./BlogCard";
+import AnimatedMockup from "./AnimatedMockup";
 import ProjectDetails from "./ProjectDetails";
 
 export {
@@ -18,4 +19,5 @@ export {
   ProjectCard,
   SkillCard,
   ProjectDetails,
+  AnimatedMockup,
 };

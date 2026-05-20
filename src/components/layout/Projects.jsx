@@ -4,14 +4,7 @@ import { useState } from "react";
 import { ProjectDetails, Title, ProjectCard, CategoryNavigation } from "../ui";
 import projectsData from "../../constants/projectsData";
 
-const categories = [
-  "All",
-  "E-commerce",
-  "Landing Pages",
-  "Dashboards",
-  "Blogs",
-  "Delivery",
-];
+const categories = ["All", "Web Apps", "Mobile Apps"];
 
 function Projects() {
   // State to manage active category, project ID, and project details visibility
@@ -25,7 +18,7 @@ function Projects() {
       ? projectsData
       : projectsData.filter((project) => project.category === activeCategory);
   return (
-    <div className="py-10 text-text" id="projects">
+    <div className="py-20 text-text" id="projects">
       <Title partOne="Recent" PartTwo="Projects" />
       {showProjectDetails && (
         <ProjectDetails

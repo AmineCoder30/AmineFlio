@@ -25,15 +25,19 @@ const ContactInfo = () => {
   ];
 
   return (
-    <div className="mt-5 space-y-4">
+    <div className="space-y-4 cursor-default">
       {infoItems.map((item, index) => (
-        <div key={index} className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-card-hover flex items-center justify-center">
-            <item.icon className="text-accent text-xl" />
+        <div key={index} className="flex items-start gap-4 ">
+          <div className="w-9 h-9 mt-0.5 rounded-lg bg-surface border border-border flex items-center justify-center flex-shrink-0  transition-all duration-300 shadow-sm">
+            <item.icon className="text-text-secondary  w-4 h-4 transition-colors duration-300" />
           </div>
-          <div>
-            <h3 className="text-text font-semibold">{item.label}</h3>
-            <p className="text-text-secondary text-sm">{item.value}</p>
+          <div className="flex flex-col">
+            <h3 className="text-[10px] text-text-secondary font-bold tracking-[0.15em] uppercase mb-0.5">
+              {item.label}
+            </h3>
+            <p className="text-text text-sm font-medium  transition-colors duration-300">
+              {item.value}
+            </p>
           </div>
         </div>
       ))}

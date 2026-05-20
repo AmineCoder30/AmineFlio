@@ -5,74 +5,110 @@ function ProjectCard({ project, setProjectID, SetShowProjectDetails }) {
   return (
     <div
       key={project.id}
-      className="group relative bg-card-bg border border-border rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-accent"
+      className="group relative flex flex-col h-full bg-card-bg border border-border rounded-2xl overflow-hidden transition-all duration-500 hover:border-accent hover:shadow-2xl hover:-translate-y-1"
     >
-      {/* Project Image */}
-      <div className="relative aspect-video overflow-hidden">
+      {/* Image Container */}
+      <div className="relative aspect-[4/3] overflow-hidden bg-surface">
         <img
           src={project.imgSrc}
           alt={project.altText}
-          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+          className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
           loading="lazy"
         />
-        <div className="absolute top-0 p-2 left-O w-full -translate-y-8 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 flex items-center justify-between">
-          <span className=" px-3 py-1 text-xs rounded-full bg-amber-600 text-white z-10">
-            {project.category}
-          </span>
-          {/* show project details */}{" "}
-          <button
-            onClick={(e) => {
-              e.preventDefault();
-              setProjectID(project.id);
-              SetShowProjectDetails(true);
-            }}
-            className="p-2 bg-accent rounded-md hover:bg-accent-hover transition-colors duration-300 z-10"
-          >
-            <Maximize2 size={16} className="text-white " title="View Details" />
-          </button>
+
+        {/* Frost Overlay */}
+        <div className="absolute inset-0 z-10 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 backdrop-blur-[2px]"></div>
+
+        {/* Hover Actions / Badges */}
+        <div className="absolute inset-0 z-20 flex flex-col justify-between p-5 opacity-0 group-hover:opacity-100 transition-all duration-500">
+          <div className="flex justify-between items-start -translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+            <span className="px-3 py-1.5 text-[10px] font-bold tracking-widest uppercase rounded-md border border-border bg-surface text-text shadow-sm">
+              {project.category}
+            </span>
+
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                setProjectID(project.id);
+                SetShowProjectDetails(true);
+              }}
+              className="p-3 rounded-full bg-accent text-white shadow-xl hover:scale-110 hover:bg-accent-hover transition-all duration-300"
+              title="View Details"
+            >
+              <Maximize2 size={16} strokeWidth={2.5} />
+            </button>
+          </div>
         </div>
       </div>
-      {/* Project Info */}
-      <div className="p-4">
-        <div className="mb-2">
-          <h3 className="text-2xl font-bold text-text">{project.title}</h3>
-        </div>
-        <p className="text-text-secondary text-sm line-clamp-3">
+
+      {/* Content */}
+      <div className="flex flex-col flex-grow p-6 sm:p-8">
+        <h3 className="text-xl sm:text-2xl font-bold text-text mb-3 tracking-tight group-hover:text-accent transition-colors duration-300">
+          {project.title}
+        </h3>
+
+        <p className="text-text-secondary text-sm leading-relaxed line-clamp-3 mb-6 flex-grow">
           {project.description}
         </p>
-      </div>{" "}
-      {/* Overlay with links and like button */}
-      <div className="flex items-center justify-between p-4">
-        <div className="flex items-center gap-2">
-          {project.code && (
-            <a
-              href={project.code}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-3 py-1 rounded-full text-white flex items-center gap-2 bg-accent hover:bg-accent hover:text-white transition-colors duration-300"
-              title="View Code"
-            >
-              <p>Code</p>
-              <Github size={18} />
-            </a>
-          )}
-          {project.demo && (
-            <a
-              href={project.demo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-3 py-1 border border-border rounded-full flex items-center gap-2 bg-card-bg hover:bg-accent hover:text-white transition-colors duration-300"
-              title="View Demo"
-            >
-              <p>Demo</p>
-              <ExternalLink size={18} />
-            </a>
-          )}
+
+        {/* Links */}
+        <div className="flex items-center gap-5 pt-5 mt-auto border-t border-border">
+          <a
+            href={project.code || "#"}
+            target={project.code ? "_blank" : undefined}
+            rel={project.code ? "noopener noreferrer" : undefined}
+            onClick={(e) => !project.code && e.preventDefault()}
+            className={`group/link flex items-center gap-2 text-xs font-bold uppercase tracking-widest transition-all duration-300 ${
+              project.code
+                ? "text-text hover:text-accent"
+                : "text-text-secondary cursor-not-allowed opacity-50"
+            }`}
+            title={project.code ? "View Code" : "Code Not Available"}
+          >
+            Code
+            <Github
+              size={15}
+              className={
+                project.code
+                  ? "group-hover/link:scale-110 transition-transform"
+                  : ""
+              }
+            />
+          </a>
+
+          <div className="w-px h-3.5 bg-border"></div>
+
+          <a
+            href={project.demo || "#"}
+            target={project.demo ? "_blank" : undefined}
+            rel={project.demo ? "noopener noreferrer" : undefined}
+            onClick={(e) => !project.demo && e.preventDefault()}
+            className={`group/link flex items-center gap-2 text-xs font-bold uppercase tracking-widest transition-all duration-300 ${
+              project.demo
+                ? "text-text hover:text-accent"
+                : "text-text-secondary cursor-not-allowed opacity-50"
+            }`}
+            title={project.demo ? "View Demo" : "Demo Not Available"}
+          >
+            Demo
+            <ExternalLink
+              size={15}
+              className={
+                project.demo
+                  ? "group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5 transition-transform"
+                  : ""
+              }
+            />
+          </a>
         </div>
       </div>
+
+      {/* Decorative Bottom Bar */}
+      <div className="absolute bottom-0 left-0 h-1 w-0 bg-accent transition-all duration-700 ease-out group-hover:w-full"></div>
     </div>
   );
 }
+
 ProjectCard.propTypes = {
   project: PropTypes.shape({
     id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,

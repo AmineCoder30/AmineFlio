@@ -71,7 +71,7 @@ function CategoryNavigation({ categories, activeCategory, setActiveCategory }) {
     WebkitOverflowScrolling: "touch",
   };
   return (
-    <div className="flex items-center mb-10 mt-10 pb-2 relative border-b border-border">
+    <div className="flex items-center mb-10 pb-10 mt-10  relative border-b border-border">
       {showLeftArrow && (
         <button
           onClick={() => scrollCategories("left")}
@@ -84,7 +84,7 @@ function CategoryNavigation({ categories, activeCategory, setActiveCategory }) {
 
       <nav
         ref={navRef}
-        className="flex space-x-4 text-lg overflow-x-auto mx-10 scroll-smooth w-full"
+        className="flex space-x-4 text-lg overflow-x-auto mx-10 justify-center scroll-smooth w-full"
         style={scrollbarHideStyle}
         onScroll={updateArrowVisibility}
       >
@@ -94,9 +94,9 @@ function CategoryNavigation({ categories, activeCategory, setActiveCategory }) {
             onClick={() => setActiveCategory(category)}
             className={`${
               activeCategory === category
-                ? "text-white font-medium bg-accent-hover border border-border"
+                ? "text-white font-medium bg-accent-hover"
                 : "text-text-secondary hover:text-accent"
-            } transition-colors duration-300 whitespace-nowrap text-sm rounded-md  p-1`}
+            } border border-border w-28 transition-colors duration-300 whitespace-nowrap text-sm rounded-md p-1`}
           >
             {category}
           </button>

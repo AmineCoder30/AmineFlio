@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-const ServiceCard = ({ Icon, title, description, features = [] }) => {
+const ServiceCard = ({ title, description, features = [] }) => {
   return (
     <div className="group relative w-full cursor-pointer overflow-hidden rounded-3xl border border-border bg-card-bg shadow-lg transition-all duration-500 hover:shadow-2xl">
       {/* Animated gradient backgrounds */}
@@ -29,18 +29,6 @@ const ServiceCard = ({ Icon, title, description, features = [] }) => {
       {/* Content */}
       <div className="relative z-10 flex h-full flex-col p-7">
         {/* Icon container */}
-        <div className="relative mb-7 w-fit">
-          <div className="rounded-2xl border border-border bg-gradient-to-br from-background to-background/50 p-4 shadow-lg backdrop-blur-sm transition-all duration-700 group-hover:scale-110 group-hover:rotate-3 group-hover:shadow-2xl group-hover:shadow-primary/20">
-            {/* Inner glow */}
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/0 via-primary/10 to-accent-hover/20 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-
-            <Icon className="relative h-9 w-9 text-accent-hover transition-all duration-700 group-hover:scale-110 group-hover:-rotate-6" />
-
-            {/* Orbiting particles */}
-            <div className="absolute -top-1 -right-1 h-2 w-2 rounded-full bg-primary opacity-0 shadow-lg shadow-primary/50 transition-all duration-500 group-hover:opacity-100 group-hover:animate-spin" />
-            <div className="absolute -bottom-1 -left-1 h-1.5 w-1.5 rounded-full bg-accent-hover opacity-0 shadow-lg shadow-accent-hover/50 transition-all duration-700 group-hover:opacity-100 group-hover:animate-spin" />
-          </div>
-        </div>
 
         {/* Title */}
         <h1 className="mb-4 text-3xl font-bold text-text ">{title}</h1>

@@ -108,7 +108,7 @@ export default function AiAssistant() {
             </div>
             <button
               onClick={toggleChat}
-              className="p-1 hover:bg-white/10 rounded-full transition-colors text-text-secondary hover:text-text"
+              className="p-1 hover:bg-card-hover rounded-full transition-colors text-text-secondary hover:text-text"
             >
               <X className="w-5 h-5" />
             </button>

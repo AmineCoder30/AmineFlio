@@ -53,13 +53,7 @@ function NotificationCard({
 
       {/* Message */}
       <div className="flex-grow">
-        <p
-          className={`text-sm font-medium ${
-            type === "success" ? "text-green-500" : "text-red-500"
-          }`}
-        >
-          {message}
-        </p>
+        <p className={`text-sm font-medium text-text-secondary `}>{message}</p>
       </div>
 
       {/* Close button */}
@@ -69,9 +63,7 @@ function NotificationCard({
         aria-label="Close notification"
       >
         <X
-          className={`h-5 w-5 ${
-            type === "success" ? "text-green-500" : "text-red-500"
-          } hover:opacity-75 transition-opacity`}
+          className={`h-5 w-5 text-text-secondary hover:opacity-75 transition-opacity`}
         />
       </button>
     </div>

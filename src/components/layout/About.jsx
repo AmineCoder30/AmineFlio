@@ -1,49 +1,60 @@
 import { ServiceCard, Title } from "../ui";
 import services from "../../constants/servicesList";
-import resume from "../../assets/resume.pdf";
 
 function About() {
   return (
-    <div className="py-10" id="about">
-      <div>
-        <Title partOne="Mern Stack" PartTwo="Developer" />
-        <p className="text-text-secondary w-full md:w-[500px] text-wrap text-base sm:text-lg">
-          I am a skilled MERN stack developer with 5 years of experience and a
-          certificate from the ALX Software Engineering program. I specialize in
-          creating intuitive and engaging user experiences, transforming
-          innovative ideas into beautifully crafted and functional products. My
-          passion lies in delivering cutting-edge solutions that align with user
-          needs and industry standards.
-        </p>
+    <div className="pb-20 pt-10" id="about">
+      {/* <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8 pb-10 sm:pb-20"> */}
+      {/* Left Side: Info & Stats */}
+      <div className="flex-1 w-full flex flex-col">
+        <div className="mb-8">
+          <Title partOne="Build Web" PartTwo="& Mobile Apps" />
+          <p className="text-text-secondary w-full md:w-[500px] text-wrap text-base sm:text-lg mt-6">
+            I design and develop fast, modern, and user-focused digital
+            experiences for businesses and brands.
+          </p>
+        </div>
+
+        <hr className="border-border h-px w-3/4 max-w-[400px]" />
+
+        <div className="flex flex-wrap gap-6 md:gap-10 mt-10">
+          <div className="text-text">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter">
+              +5
+            </h2>
+            <p className="text-text-secondary uppercase text-xs sm:text-sm md:text-base font-bold tracking-widest mt-2">
+              Years of <br /> Experience
+            </p>
+          </div>
+          <div className="text-text">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter">
+              +50
+            </h2>
+            <p className="text-text-secondary uppercase text-xs sm:text-sm md:text-base font-bold tracking-widest mt-2">
+              Projects <br /> Completed
+            </p>
+          </div>
+          <div className="text-text">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter">
+              +20
+            </h2>
+            <p className="text-text-secondary uppercase text-xs sm:text-sm md:text-base font-bold tracking-widest mt-2">
+              WORLDWIDE <br /> CLIENTS
+            </p>
+          </div>
+        </div>
       </div>
 
-      <div className="flex gap-5 md:gap-10 mt-16">
-        <div className="text-text">
-          <h2 className="text-4xl md:text-5xl lg:text-7xl font-extrabold">
-            +5
-          </h2>
-          <p className="text-text-secondary uppercase text-sm sm:text-lg break-words">
-            Years of <br /> Experience
-          </p>
-        </div>
-        <div className="text-text">
-          <h2 className="text-4xl md:text-5xl lg:text-7xl font-extrabold">
-            +50
-          </h2>
-          <p className="text-text-secondary uppercase text-sm sm:text-lg break-words">
-            Projects <br /> Completed
-          </p>
-        </div>
-        <div className="text-text">
-          <h2 className="text-4xl md:text-5xl lg:text-7xl font-extrabold">
-            +20
-          </h2>
-          <p className="text-text-secondary uppercase text-sm sm:text-lg break-words">
-            WORLDWIDE <br /> CLIENTS
-          </p>
-        </div>
-      </div>
-      <div className="mt-10">
+      {/*    
+        <div className="flex-1 w-full max-w-[500px] relative min-h-[350px] sm:min-h-[450px] flex items-center justify-center">
+        
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] h-[250px] md:w-[350px] md:h-[350px] bg-accent/20 rounded-full blur-[90px] animate-pulse pointer-events-none"></div>
+
+      
+        </div> */}
+      {/* </div> */}
+
+      <div className="mt-20">
         <Title partOne="what i'm" PartTwo="doing" />
         <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto ">
           {services.map((service, index) => (
@@ -59,15 +70,15 @@ function About() {
             />
           ))}
         </div>
+        <button
+          type="submit"
+          className="cursor-pointer mt-4 text-white bg-gradient-to-r from-accent to-accent-hover w-28 h-10 rounded-md border border-border hover:scale-105 duration-200  hover:border-border hover:from-accent-hover hover:to-accent"
+        >
+          <a href="#contact" className="w-full h-full">
+            Let&apos;s Talk
+          </a>
+        </button>
       </div>
-      <button
-        type="submit"
-        className="cursor-pointer mt-4 text-white bg-gradient-to-r from-accent to-accent-hover w-28 h-10 rounded-md border border-border hover:scale-105 duration-200  hover:border-border hover:from-accent-hover hover:to-accent"
-      >
-        <a href={resume} download className="w-full h-full">
-          My Resume
-        </a>
-      </button>
     </div>
   );
 }

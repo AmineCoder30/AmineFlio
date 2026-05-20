@@ -3,7 +3,7 @@ import { SkillCard, Title } from "../ui";
 
 function Skills() {
   return (
-    <div className="py-10" id="skills">
+    <div className="py-20" id="skills">
       <Title partOne="Things I’m" PartTwo="Great At" />
       <div className="mt-10 opacity-100">
         <div

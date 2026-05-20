@@ -1,10 +1,14 @@
 import PropTypes from "prop-types";
 function Title({ partOne, PartTwo }) {
   return (
-    <h1 className="text-text text-5xl sm:text-7xl md:text-8xl xl:text-9xl uppercase font-extrabold">
+    <h1
+      className={
+        "text-text  text-3xl sm:text-5xl md:text-6xl xl:text-7xl uppercase font-extrabold leading-tight"
+      }
+    >
       <span>{partOne}</span>
       <br />
-      <span className="bg-clip-text text-transparent bg-gradient-to-r from-text to-accent ">
+      <span className="bg-clip-text text-transparent bg-gradient-to-r from-text to-accent">
         {PartTwo}
       </span>
     </h1>
