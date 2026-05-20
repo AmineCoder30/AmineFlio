@@ -1,42 +1,45 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  /* ─── Light Theme — Brutalist Ivory & Electric Vermilion ─── */
-  --color-primary: #FF5A1F;            /* Electric vibrant orange/vermilion */
-  --color-primary-hover: #E04812;      /* Deep bold burnt orange */
-  --color-background: #F2EFE9;         /* High-end textured ivory/paper */
-  --color-sidebar-bg: #EAE6DB;         /* Solid weighted architectural stone */
-  --color-text: #050505;               /* Absolute jet black for stark contrast */
-  --color-text-secondary: #646059;     /* Refined warm gray */
-  --color-border: #D5D1C6;             /* Crisp defined structural borders */
-  --color-card-bg: #F9F8F5;            /* Luminous gallery white */
-  --color-card-hover: #FFFFFF;         /* Pure optic white on hover */
-  --color-accent: #FF5A1F;             /* Matched electric accent */
-  --color-accent-hover: #E04812;       /* Matched hover state */
-  --color-surface: #E4E0D4;            /* Deeper grounding surface */
-  --color-highlight: #FFE5DB;          /* Striking but soft vermilion tint */
-  --color-input-bg: #FFFFFF;           /* Crisp input backdrop */
+  --color-primary: #f97316;
+  --color-primary-hover: #ea6508;
+  --color-background: #fef8f3;
+  --color-sidebar-bg: #fcf0e6;
+  --color-surface: #f7e4d0;
+
+  --color-card-bg: #fffcfa;
+  --color-card-hover: #ffffff;
+
+  --color-text: #1c1309;
+  --color-text-secondary: #7a5c42;
+
+  --color-border: #eac99e;
+  --color-accent: #f97316;
+  --color-accent-hover: #ea6508;
+
+  --color-highlight: #fde3c8;
+
+  --color-input-bg: #ffffff;
 }
 
 .dark {
-  /* ─── Dark Theme — Midnight Citrus ─── */
-  --color-primary: #fb923c;            /* orange-400 — brighter in dark, better contrast */
-  --color-primary-hover: #f97316;      /* steps to orange-500 on hover */
-  --color-background: #0c0c0c;         /* fractionally warmer than pure #000 */
-  --color-sidebar-bg: #141414;         /* clear step above background */
-  --color-text: #f0ece6;              /* warm white — fits the orange brand */
-  --color-text-secondary: #9ca3af;     /* gray-400 — slightly brighter */
-  --color-border: #2d2d2d;             /* explicit neutral, avoids blue undertone */
-  --color-card-bg: #1a1a1a;            /* clear step above background surface */
-  --color-card-hover: #222222;         /* generous gap for hover feedback */
-  --color-accent: #fb923c;             /* matched to primary */
+  --color-primary: #fb923c;
+  --color-primary-hover: #f97316;
+  --color-background: #0c0c0c;
+  --color-sidebar-bg: #141414;
+  --color-text: #f0ece6;
+  --color-text-secondary: #9ca3af;
+  --color-border: #2d2d2d;
+  --color-card-bg: #1a1a1a;
+  --color-card-hover: #222222;
+  --color-accent: #fb923c;
   --color-accent-hover: #f97316;
-  --color-surface: #111111;            /* mid-layer surface for content areas */
-  --color-highlight: #1f1710;          /* warm dark tint for badges/chips */
-  --color-input-bg: #1a1a1a;           /* dark input fields */
+  --color-surface: #111111;
+  --color-highlight: #1f1710;
+  --color-input-bg: #1a1a1a;
 }
 
 body {

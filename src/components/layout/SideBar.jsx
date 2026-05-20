@@ -20,7 +20,7 @@ function SideBar() {
         />
       </button>
 
-      <div className="w-full sticky top-10 flex flex-col bg-card-bg border border-border rounded-2xl overflow-hidden shadow-2xl shadow-border/5 group transition-colors duration-500 hover:border-accent">
+      <div className="w-full sticky top-10 flex flex-col bg-card-bg border border-border rounded-2xl overflow-hidden 5 group transition-colors duration-500 hover:border-accent">
         {/* Editorial Top Section - Avatar */}
         <div className="relative w-full aspect-square bg-card-hover border-b flex justify-center items-end border-border overflow-hidden p-6 mx-auto pt-8">
           <div className="absolute top-4 left-4 flex items-center gap-2 z-10 bg-surface border border-border px-3 py-1 rounded-full">
