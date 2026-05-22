@@ -75,7 +75,7 @@ function CategoryNavigation({ categories, activeCategory, setActiveCategory }) {
       {showLeftArrow && (
         <button
           onClick={() => scrollCategories("left")}
-          className="absolute left-0 z-10 text-text-secondary hover:text-accent bg-card-bg/80 p-1.5 rounded-full shadow-md transition-all duration-300 hover:scale-110"
+          className="absolute left-0 z-10 text-text-secondary hover:text-accent bg-card-bg p-1.5 rounded-full shadow-md transition-all duration-300 hover:scale-110"
           aria-label="Scroll categories left"
         >
           <ChevronLeft size={22} />
@@ -106,7 +106,7 @@ function CategoryNavigation({ categories, activeCategory, setActiveCategory }) {
       {showRightArrow && (
         <button
           onClick={() => scrollCategories("right")}
-          className="absolute right-0 z-10 text-text-secondary hover:text-accent bg-card-bg/80 p-1.5 rounded-full shadow-md transition-all duration-300 hover:scale-110"
+          className="absolute right-0 z-10 text-text-secondary hover:text-accent bg-card-bg p-1.5 rounded-full shadow-md transition-all duration-300 hover:scale-110"
           aria-label="Scroll categories right"
         >
           <ChevronRight size={22} />

@@ -139,7 +139,8 @@ function Contact() {
           type: "success",
         });
       })
-      .catch(() => {
+      .catch((e) => {
+        console.error("Email sending error:", e);
         setNotification({
           show: true,
           message: "Failed to send. Please try again later.",

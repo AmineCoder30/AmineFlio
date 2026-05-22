@@ -7,11 +7,11 @@ function BlogCard({ blog }) {
       href={blog.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="group relative flex flex-col w-full h-full bg-card-bg/60 backdrop-blur-xl border border-border/40 rounded-3xl overflow-hidden hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.3)] transition-all duration-500 ease-out hover:-translate-y-1"
+      className="group relative flex flex-col w-full h-full bg-card-bg  backdrop-blur-xl border border-border rounded-3xl overflow-hidden hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.3)] transition-all duration-500 ease-out hover:-translate-y-1"
     >
       {/* Decorative Glow Elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-highlight/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
-      <div className="absolute -bottom-24 -right-24 w-48 h-48 bg-accent/20 rounded-full blur-[50px] group-hover:bg-accent/30 group-hover:scale-150 transition-all duration-1000 pointer-events-none"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-accent via-transparent to-highlight opacity-0 group-hover:opacity-10 transition-opacity duration-700 pointer-events-none"></div>
+      <div className="absolute -bottom-24 -right-24 w-48 h-48 bg-accent rounded-full blur-[50px] group-hover:bg-accent group-hover:scale-150 group-hover:opacity-20 transition-all duration-1000 pointer-events-none"></div>
 
       {/* Content Container */}
       <div className="relative p-6 sm:p-8 flex flex-col flex-1 justify-between z-10">

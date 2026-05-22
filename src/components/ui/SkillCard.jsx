@@ -10,17 +10,6 @@ function SkillCard({ tech, index }) {
   });
   const [isHover, setIsHover] = useState(false);
 
-  const handleLevelBg = () => {
-    switch (tech.level) {
-      case "Expert":
-        return "bg-gradient-to-br from-purple-500 to-indigo-700";
-      case "Intermediate":
-        return "bg-gradient-to-br from-cyan-400 to-teal-700";
-      default:
-        return "bg-gradient-to-br  from-amber-400 to-orange-700";
-    }
-  };
-
   const rotateAmplitude = 12;
 
   function handleMouseMove(e) {
@@ -59,7 +48,7 @@ function SkillCard({ tech, index }) {
       onMouseLeave={handleMouseLeave}
     >
       <div
-        className={`relative w-full h-full border border-border bg-card-bg rounded-xl flex flex-col items-start justify-start gap-4 p-6 overflow-hidden transition-colors duration-300 ${isHover ? "bg-card-hover" : ""}`}
+        className={`relative w-full h-full border border-border bg-card-bg rounded-xl flex flex-col items-start justify-start gap-4 p-6 overflow-hidden transition-colors duration-300 `}
         style={{
           transform: `rotateX(${transform.rotateX}deg) rotateY(${transform.rotateY}deg) scale(${isHover ? 1.02 : 1})`,
           transition: isHover
@@ -70,7 +59,7 @@ function SkillCard({ tech, index }) {
         }}
       >
         <span
-          className={`absolute top-0 right-0 ${handleLevelBg()} w-24 h-24 bg-gradient-to-br from-accent/60 opacity-0 group-hover:opacity-55 via-accent-hover/40 to-transparent rounded-full blur-2xl pointer-events-none z-20`}
+          className={`absolute top-0 right-0  bg-gradient-to-tr from-primary via-primary-hover to-accent w-24 h-24  opacity-0 group-hover:opacity-40  rounded-full blur-2xl pointer-events-none z-20`}
           style={{ transform: "translate(30%,-30%)" }}
         ></span>
 
@@ -89,7 +78,7 @@ function SkillCard({ tech, index }) {
               </h4>
             </div>
             <span
-              className={`inline-flex items-center gap-1.5 px-2 py-0.5  ${handleLevelBg()} rounded-md  border border-border text-[11px] font-medium tracking-wide text-white uppercase w-fit`}
+              className={`inline-flex items-center gap-1.5 px-2 py-0.5  bg-gradient-to-tr from-primary via-primary-hover to-accent rounded-md  border border-border text-[11px] font-medium tracking-wide text-white uppercase w-fit`}
             >
               <span className="w-1 h-1 rounded-full bg-white animate-pulse"></span>
               {tech.level}

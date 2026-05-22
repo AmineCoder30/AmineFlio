@@ -20,11 +20,7 @@ const faq = {
       answer:
         "Yes. I offer retainer agreements for ongoing maintenance, which covers continuous performance monitoring, security patches, technical SEO updates, and feature enhancements.",
     },
-    {
-      question: "What is included in the 'For Sale' templates?",
-      answer:
-        "Templates include production-ready source code, comprehensive technical documentation, responsive design assets, WCAG accessibility compliance, and 30 days of priority support.",
-    },
+
     {
       question: "What does your onboarding process look like?",
       answer:

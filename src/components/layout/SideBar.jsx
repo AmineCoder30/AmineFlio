@@ -51,8 +51,7 @@ function SideBar() {
             </div>
 
             <p className="text-text-secondary text-sm leading-relaxed border-l-2 border-text pl-4 mt-2">
-              Specializing in MERN Stack & Modern Web Technologies. Crafting
-              bold, performant digital experiences.
+              Great products are built, not wished into existence ✨
             </p>
           </div>
 
