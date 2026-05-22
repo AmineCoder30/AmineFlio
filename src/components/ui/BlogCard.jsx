@@ -11,7 +11,7 @@ function BlogCard({ blog }) {
     >
       {/* Decorative Glow Elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-accent via-transparent to-highlight opacity-0 group-hover:opacity-10 transition-opacity duration-700 pointer-events-none"></div>
-      <div className="absolute -bottom-24 -right-24 w-48 h-48 bg-accent rounded-full blur-[50px] group-hover:bg-accent group-hover:scale-150 group-hover:opacity-20 transition-all duration-1000 pointer-events-none"></div>
+      <div className="absolute -bottom-24 -right-24 w-48 h-48 bg-accent rounded-full blur-[50px] group-hover:bg-accent group-hover:scale-150 opacity-20 transition-all duration-1000 pointer-events-none"></div>
 
       {/* Content Container */}
       <div className="relative p-6 sm:p-8 flex flex-col flex-1 justify-between z-10">
