@@ -17,7 +17,7 @@ export default function FixedCta() {
   };
 
   return (
-    <div className="fixed right-10 bottom-40 z-40 flex flex-col items-center gap-3">
+    <div className="fixed right-10 bottom-40 z-10 flex flex-col items-center gap-3">
       {/* Scroll to Top */}
       <button
         onClick={scrollToTop}

@@ -4,7 +4,7 @@ const projectsData = [
     title: "Mernify",
     category: "Web Apps",
     imgSrc:
-      "https://res.cloudinary.com/djmzvj6yf/image/upload/f_auto,q_auto,w_265/v1745940241/mernify_gvmoqr.png",
+      "https://res.cloudinary.com/djmzvj6yf/image/upload/f_auto,q_auto,w_400/v1745940241/mernify_gvmoqr.png",
     lrgImgSrc:
       "https://res.cloudinary.com/djmzvj6yf/image/upload/f_auto,q_auto,w_900/v1745940241/mernify_gvmoqr.png",
     altText: "Mernify chat app screenshot",
@@ -27,7 +27,7 @@ const projectsData = [
     title: "Bicutt",
     category: "Mobile Apps",
     imgSrc:
-      "https://res.cloudinary.com/djmzvj6yf/image/upload/f_auto,q_auto,w_265/v1745940268/tasky_tiujuq.png",
+      "https://res.cloudinary.com/djmzvj6yf/image/upload/f_auto,q_auto,w_400/v1745940268/tasky_tiujuq.png",
     lrgImgSrc:
       "https://res.cloudinary.com/djmzvj6yf/image/upload/f_auto,q_auto,w_900/v1745940268/tasky_tiujuq.png",
     altText: "Tasky dashboard screenshot",
@@ -42,7 +42,7 @@ const projectsData = [
     title: "DeliverEase",
     category: "Web Apps",
     imgSrc:
-      "https://res.cloudinary.com/djmzvj6yf/image/upload/f_auto,q_auto,w_265/v1749559388/Slide_16_9_-_11_ikmbgb.png",
+      "https://res.cloudinary.com/djmzvj6yf/image/upload/f_auto,q_auto,w_400/v1749559388/Slide_16_9_-_11_ikmbgb.png",
     lrgImgSrc:
       "https://res.cloudinary.com/djmzvj6yf/image/upload/f_auto,q_auto,w_900/v1749559388/Slide_16_9_-_11_ikmbgb.png",
     altText: "DeliverEase app screenshot",
@@ -57,7 +57,7 @@ const projectsData = [
     title: "Shopco",
     category: "Web Apps",
     imgSrc:
-      "https://res.cloudinary.com/djmzvj6yf/image/upload/f_auto,q_auto,w_265/v1745940293/shopco_vzxp78.png",
+      "https://res.cloudinary.com/djmzvj6yf/image/upload/f_auto,q_auto,w_400/v1745940293/shopco_vzxp78.png",
     lrgImgSrc:
       "https://res.cloudinary.com/djmzvj6yf/image/upload/f_auto,q_auto,w_900/v1745940293/shopco_vzxp78.png",
     altText: "Shopco ecommerce screenshot",
@@ -72,9 +72,10 @@ const projectsData = [
     title: "ChessDo",
     category: "Mobile Apps",
     imgSrc:
-      "https://res.cloudinary.com/djmzvj6yf/image/upload/f_auto,q_auto,w_265/v1745940310/technest_qndbit.png",
+      "https://res.cloudinary.com/djmzvj6yf/image/upload/f_auto,q_auto,w_400/v1745940310/Chessdo_exeu0b.png",
+
     lrgImgSrc:
-      "https://res.cloudinary.com/djmzvj6yf/image/upload/f_auto,q_auto,w_900/v1745940310/technest_qndbit.png",
+      "https://res.cloudinary.com/djmzvj6yf/image/upload/f_auto,q_auto,w_900/v1745940310/Chessdo_exeu0b.png",
     altText: "ChessDo mobile app screenshot",
     code: "https://github.com/AmineCoder30/ChessDo",
     demo: "",
@@ -87,9 +88,9 @@ const projectsData = [
     title: "Nasamat",
     category: "Mobile Apps",
     imgSrc:
-      "https://res.cloudinary.com/djmzvj6yf/image/upload/f_auto,q_auto,w_265/v1749559385/Slide_16_9_-_9_cpljwm.png",
+      "https://res.cloudinary.com/djmzvj6yf/image/upload/f_auto,q_auto,w_400/v1749559385/Cover_d4hjvh.png",
     lrgImgSrc:
-      "https://res.cloudinary.com/djmzvj6yf/image/upload/f_auto,q_auto,w_900/v1749559385/Slide_16_9_-_9_cpljwm.png",
+      "https://res.cloudinary.com/djmzvj6yf/image/upload/f_auto,q_auto,w_900/v1749559385/Cover_d4hjvh.png",
     altText: "Nasamat mobile app screenshot",
     code: "https://github.com/AmineCoder30/blogfy",
     demo: "https://blog-fy.netlify.app/",

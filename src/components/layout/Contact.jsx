@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import PropTypes from "prop-types";
 import emailjs from "@emailjs/browser";
 import { Title, NotificationCard } from "../ui";
 
@@ -168,8 +169,8 @@ function Contact() {
               Get in touch
             </h3>
             <p className="mt-2 text-sm text-text-secondary">
-              Have a project in mind? Fill out the form and I'll get back to you
-              within 24 hours.
+              Have a project in mind? Fill out the form and I&apos;ll get back
+              to you within 24 hours.
             </p>
           </div>
 
@@ -330,5 +331,12 @@ function Field({ label, error, optional, children, className = "" }) {
     </div>
   );
 }
+Field.propTypes = {
+  label: PropTypes.string.isRequired,
+  error: PropTypes.string,
+  optional: PropTypes.bool,
+  children: PropTypes.node.isRequired,
+  className: PropTypes.string,
+};
 
 export default Contact;
