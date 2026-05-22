@@ -69,6 +69,7 @@ function Contact() {
     email: "",
     userName: "",
     message: "",
+    budget: "",
   });
 
   const userId = import.meta.env.VITE_APP_ID_USER;
@@ -85,6 +86,13 @@ function Contact() {
       case "email":
         if (!value.trim()) return "Email is required";
         if (!/\S+@\S+\.\S+/.test(value)) return "Invalid email address";
+        break;
+      case "budget":
+        if (
+          value &&
+          (isNaN(value) || Number(value) < 200 || Number(value) > 10000)
+        )
+          return "Budget must be between $200 and $5,000";
         break;
       case "message":
         if (!value.trim()) return "Message is required";
@@ -113,6 +121,7 @@ function Contact() {
       userName: validateField("userName", formInfo.userName),
       email: validateField("email", formInfo.email),
       message: validateField("message", formInfo.message),
+      budget: validateField("budget", formInfo.budget),
     };
     setErrors(newErrors);
     return !Object.values(newErrors).some(Boolean);
@@ -133,7 +142,7 @@ function Contact() {
       .sendForm(serviceId, templateId, formRef.current, userId)
       .then(() => {
         setFormInfo(initialState);
-        setErrors({ email: "", userName: "", message: "" });
+        setErrors({ email: "", userName: "", message: "", budget: "" });
         setNotification({
           show: true,
           message: "Message sent! I'll get back to you soon.",
@@ -212,15 +221,18 @@ function Contact() {
             </div>
 
             {/* Budget */}
-            <Field label="Budget" optional>
+            <Field label="Budget" optional error={errors.budget}>
               <input
-                type="text"
+                type="number"
                 id="budget"
                 name="budget"
                 placeholder="e.g. $500 – $2,000"
                 onChange={handleChange}
+                onBlur={handleBlur}
                 value={formInfo.budget}
-                className="w-full px-3.5 py-2.5 rounded-[10px] border border-border bg-input-bg text-sm text-text placeholder:text-text-secondary placeholder:opacity-55 outline-none transition-all duration-200 focus:border-primary focus:shadow-[0_0_0_3px_rgba(249,115,22,0.13)]"
+                className={`w-full px-3.5 py-2.5 rounded-[10px] border ${
+                  errors.budget ? "border-[#E84D10]" : "border-border"
+                } bg-input-bg text-sm text-text placeholder:text-text-secondary placeholder:opacity-55 outline-none transition-all duration-200 focus:border-primary focus:shadow-[0_0_0_3px_rgba(249,115,22,0.13)]`}
               />
             </Field>
 
