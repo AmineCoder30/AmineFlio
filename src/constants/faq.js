@@ -3,33 +3,52 @@ const faq = {
   title: "Frequently Asked Questions",
   highlightWord: "Questions",
   description:
-    "Everything you need to know about the process, pricing, and deliverables. Still have questions? Let's talk.",
+    "A few answers to common questions about working together, from the first idea to launch and beyond.",
   items: [
     {
-      question: "What is your primary tech stack?",
+      question: "How long does an app take to build?",
       answer:
-        "I specialize in the modern React ecosystem—primarily Next.js and TypeScript—paired with Tailwind CSS for layout and styling. For backend architecture, I deploy Node.js with scalable databases like PostgreSQL.",
+        "It depends on the scope and complexity. A small MVP can take a few weeks, while a more complete web or mobile application can take several months. Before starting, I break the project into milestones and provide a clear timeline based on the features we agree on.",
     },
     {
-      question: "What is the typical project timeline?",
+      question: "Do you work with existing projects?",
       answer:
-        "Timelines correspond to project scope. Conversion-focused landing pages take 1-2 weeks, full-scale websites 3-6 weeks, and custom web applications 2-4 months. You'll receive a detailed roadmap before we begin.",
+        "Yes. I can work with an existing codebase to fix bugs, improve the UI, add new features, integrate APIs, or continue development. I first review the project structure and requirements so I can understand the existing setup before making changes.",
     },
     {
-      question: "Do you provide post-launch support?",
+      question: "Can you build an MVP from my idea?",
       answer:
-        "Yes. I offer retainer agreements for ongoing maintenance, which covers continuous performance monitoring, security patches, technical SEO updates, and feature enhancements.",
-    },
-
-    {
-      question: "What does your onboarding process look like?",
-      answer:
-        "We start with a comprehensive discovery call to align on your business objectives. Following that, I deliver a detailed proposal outlining the system architecture, UI/UX direction, and project milestones.",
+        "Yes. I can help turn an idea into a functional MVP, including the frontend, backend, database, authentication, APIs, and deployment. We can focus on the core features first and leave more advanced features for later iterations.",
     },
     {
-      question: "How are payments structured?",
+      question: "Do you provide backend development?",
       answer:
-        "For custom client work, I structure payments as 50% upfront to secure the timeline and 50% upon successful deployment. Larger enterprise projects can be structured around specific performance milestones.",
+        "Yes. I can handle both frontend and backend development, including APIs, authentication, databases, business logic, third-party integrations, and server-side functionality. This allows me to build the complete application rather than only the interface.",
+    },
+    {
+      question: "Can you deploy the application?",
+      answer:
+        "Yes. I can help prepare and deploy the application to platforms such as Vercel, cloud servers, app stores, or other hosting environments depending on the project. I can also help configure domains, environment variables, databases, and other deployment requirements.",
+    },
+    {
+      question: "Do you build AI automations?",
+      answer:
+        "Yes. I can build AI-powered workflows that connect services such as email, databases, messaging platforms, and other APIs. These can be used to automate repetitive tasks, process information, generate responses, and connect different parts of a business workflow.",
+    },
+    {
+      question: "What happens after the project is completed?",
+      answer:
+        "After launch, I can continue helping with bug fixes, maintenance, improvements, and new features when needed. The exact support can be agreed on depending on the project and your requirements.",
+    },
+    {
+      question: "Do you work with international clients?",
+      answer:
+        "Yes. I work remotely with clients from different countries. Communication, project requirements, milestones, and deliverables can all be handled online.",
+    },
+    {
+      question: "How do we get started?",
+      answer:
+        "Send me a brief description of your idea, project, or problem. I'll review the requirements, ask any necessary questions, and we can then agree on the scope, timeline, and next steps before development begins.",
     },
   ],
 };

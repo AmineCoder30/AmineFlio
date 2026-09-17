@@ -167,7 +167,7 @@ html {
   overflow: hidden;
   --mouse-x: 50%;
   --mouse-y: 50%;
-  --spotlight-color: rgba(249, 115, 22, 0.06);
+  --spotlight-color: rgba(251, 146, 60, 0.06);
 }
 
 .dark .card-spotlight {

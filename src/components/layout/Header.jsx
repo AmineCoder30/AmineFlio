@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import ToggleThemeBtn from "../ui/ToggleThemeBtn";
 import BotChat from "../ui/Bot";
 
+
 const openChat = () => {
   window.dispatchEvent(new CustomEvent("open-ai-chat"));
 };

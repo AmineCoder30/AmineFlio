@@ -2,12 +2,9 @@ import React from 'react';
 import { useTypewriter } from '../../hooks/useTypewriter';
 
 const BotMessage = ({ text, scrollRef, isNew = false, onAnimationComplete }) => {
-  // Only use typewriter if the text looks like HTML (starts with <)
-  // Otherwise just show it (or we could use it for everything, but let's stick to the HTML response)
   const isHtml = text.trim().startsWith('<');
   const { displayedText, isComplete } = useTypewriter(isHtml ? text : '', 5, scrollRef, isNew);
 
-  // Notify parent when animation completes
   React.useEffect(() => {
     if (isComplete && onAnimationComplete) {
       onAnimationComplete();
@@ -15,41 +12,52 @@ const BotMessage = ({ text, scrollRef, isNew = false, onAnimationComplete }) => 
   }, [isComplete, onAnimationComplete]);
 
   if (!isHtml) {
-    return <div>{text}</div>;
+    return <div className="text-sm leading-relaxed">{text}</div>;
   }
 
   return (
     <div 
       className="
+        bot-message-content
+
         /* Spacing between blocks */
-        [&>div]:space-y-4
+        [&>div]:space-y-3
 
         /* Headings */
-        [&>div>h2]:text-lg
+        [&>div>h2]:text-base
         [&>div>h2]:font-semibold
-        [&>div>h2]:text-primary
-        [&>div>h2]:tracking-wide
-        [&>div>h2]:mt-6
+        [&>div>h2]:text-text
+        [&>div>h2]:tracking-tight
+        [&>div>h2]:mt-4
+        [&>div>h2]:mb-1.5
         [&>div>h2:first-child]:mt-0
 
         /* Paragraphs */
-        [&>div>p]:text-sm
-        [&>div>p]:text-muted-foreground
+        [&>div>p]:text-[13px]
+        [&>div>p]:text-text-secondary
         [&>div>p]:leading-relaxed
 
         /* Lists */
-        [&>div>ul]:list-disc
-        [&>div>ul]:pl-5
-        [&>div>ul]:space-y-1
-        [&>div>ul]:text-sm
-        [&>div>ul]:text-muted-foreground
+        [&>div>ul]:list-none
+        [&>div>ul]:pl-0
+        [&>div>ul]:space-y-1.5
+        [&>div>ul]:text-[13px]
+        [&>div>ul]:text-text-secondary
 
-        /* List items */
+        /* List items with custom bullet */
         [&>div>ul>li]:leading-relaxed
+        [&>div>ul>li]:pl-4
+        [&>div>ul>li]:relative
+        [&>div>ul>li]:before:content-['▸']
+        [&>div>ul>li]:before:absolute
+        [&>div>ul>li]:before:left-0
+        [&>div>ul>li]:before:text-primary
+        [&>div>ul>li]:before:font-bold
+        [&>div>ul>li]:before:text-xs
 
         /* Strong (highlight) */
         [&>div>strong]:font-semibold
-        [&>div>strong]:text-foreground
+        [&>div>strong]:text-text
       "
       dangerouslySetInnerHTML={{ __html: displayedText }} 
     />

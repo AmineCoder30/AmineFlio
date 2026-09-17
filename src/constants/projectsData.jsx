@@ -1,6 +1,28 @@
 const projectsData = [
   {
     id: 1,
+    title: "EmailCopilot",
+    category: "Web Apps",
+    imgSrc:
+      "https://res.cloudinary.com/djmzvj6yf/image/upload/f_auto,q_auto,w_400/v1745940241/emailcopilotsetup_rd0lnb.png",
+    lrgImgSrc:
+      "https://res.cloudinary.com/djmzvj6yf/image/upload/f_auto,q_auto,w_900/v1745940241/emailcopilotsetup_rd0lnb.png",
+    altText: "EmailCopilot app screenshot",
+    code: "",
+    demo: "https://emailcopilot.io/",
+    description:
+      "AI-powered email outreach platform designed to help businesses automate and manage personalized cold email campaigns. It includes AI-assisted email generation, lead management, email templates, target audience management, campaign analytics, and integrations with email providers.",
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "PostgreSQL",
+      "OpenAI API",
+    ],
+  },
+  {
+    id: 2,
     title: "Mernify",
     category: "Web Apps",
     imgSrc:
@@ -23,37 +45,37 @@ const projectsData = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     title: "Bicutt",
     category: "Mobile Apps",
     imgSrc:
-      "https://res.cloudinary.com/djmzvj6yf/image/upload/f_auto,q_auto,w_400/v1745940268/tasky_tiujuq.png",
+      "https://res.cloudinary.com/djmzvj6yf/image/upload/f_auto,q_auto,w_400/v1745940268/bicutt_uukjyr.png",
     lrgImgSrc:
-      "https://res.cloudinary.com/djmzvj6yf/image/upload/f_auto,q_auto,w_900/v1745940268/tasky_tiujuq.png",
-    altText: "Tasky dashboard screenshot",
-    code: "https://github.com/AmineCoder30/task-manager",
-    demo: "https://task-manager-khaki-eta.vercel.app/",
+      "https://res.cloudinary.com/djmzvj6yf/image/upload/f_auto,q_auto,w_900/v1745940268/bicutt_uukjyr.png",
+    altText: "Bicutt  screenshot",
+    code: "",
+    demo: "",
     description:
-      "A mobile android app built with React Native, offering a user-friendly interface for managing tasks and to-do lists. Features include task creation, editing, and deletion, as well as real-time updates and notifications.",
+      "Bicutt is a modern barber booking platform that makes it easy for customers to discover barbers, choose available services and time slots, and book appointments online",
     technologies: ["React Native", "Expo", "TailwindCSS"],
   },
+  // {
+  //   id: 4,
+  //   title: "DeliverEase",
+  //   category: "Web Apps",
+  //   imgSrc:
+  //     "https://res.cloudinary.com/djmzvj6yf/image/upload/f_auto,q_auto,w_400/v1749559388/Slide_16_9_-_11_ikmbgb.png",
+  //   lrgImgSrc:
+  //     "https://res.cloudinary.com/djmzvj6yf/image/upload/f_auto,q_auto,w_900/v1749559388/Slide_16_9_-_11_ikmbgb.png",
+  //   altText: "DeliverEase app screenshot",
+  //   code: "https://github.com/AmineCoder30/DeliverEase",
+  //   demo: "https://deliverease.netlify.app/",
+  //   description:
+  //     "Food delivery platform with restaurant browsing, order tracking, and secure payments. Built with a focus on performance and user experience.",
+  //   technologies: ["React", "Vite", "TypeScript", "Firebase", "TailwindCSS"],
+  // },
   {
-    id: 3,
-    title: "DeliverEase",
-    category: "Web Apps",
-    imgSrc:
-      "https://res.cloudinary.com/djmzvj6yf/image/upload/f_auto,q_auto,w_400/v1749559388/Slide_16_9_-_11_ikmbgb.png",
-    lrgImgSrc:
-      "https://res.cloudinary.com/djmzvj6yf/image/upload/f_auto,q_auto,w_900/v1749559388/Slide_16_9_-_11_ikmbgb.png",
-    altText: "DeliverEase app screenshot",
-    code: "https://github.com/AmineCoder30/DeliverEase",
-    demo: "https://deliverease.netlify.app/",
-    description:
-      "Food delivery platform with restaurant browsing, order tracking, and secure payments. Built with a focus on performance and user experience.",
-    technologies: ["React", "Vite", "TypeScript", "Firebase", "TailwindCSS"],
-  },
-  {
-    id: 4,
+    id: 5,
     title: "Shopco",
     category: "Web Apps",
     imgSrc:
@@ -68,7 +90,7 @@ const projectsData = [
     technologies: ["React", "Vite", "Firebase", "TailwindCSS"],
   },
   {
-    id: 5,
+    id: 6,
     title: "ChessDo",
     category: "Mobile Apps",
     imgSrc:
@@ -84,7 +106,7 @@ const projectsData = [
     technologies: ["React Native", "Expo", "TailwindCSS"],
   },
   {
-    id: 6,
+    id: 7,
     title: "Nasamat",
     category: "Mobile Apps",
     imgSrc:

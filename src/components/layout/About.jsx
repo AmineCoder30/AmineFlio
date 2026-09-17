@@ -10,8 +10,11 @@ function About() {
         <div className="mb-8">
           <Title partOne="Build Web" PartTwo="& Mobile Apps" />
           <p className="text-text-secondary w-full md:w-[500px] text-wrap text-base sm:text-lg mt-6">
-            I design and develop fast, modern, and user-focused digital
-            experiences for businesses and brands.
+            I build modern web & mobile apps that turn ideas into real products.
+          </p>
+
+          <p className="text-text-secondary w-full md:w-[500px] text-wrap text-base sm:text-lg ">
+            🚀 From MVPs to production-ready applications.
           </p>
         </div>
 
@@ -20,7 +23,7 @@ function About() {
         <div className="flex flex-wrap gap-6 md:gap-10 mt-10">
           <div className="text-text">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter">
-              +5
+              +6
             </h2>
             <p className="text-text-secondary uppercase text-xs sm:text-sm md:text-base font-bold tracking-widest mt-2">
               Years of <br /> Experience
