@@ -23,6 +23,21 @@ const projectsData = [
   },
   {
     id: 2,
+    title: "Bicutt",
+    category: "Mobile Apps",
+    imgSrc:
+      "https://res.cloudinary.com/djmzvj6yf/image/upload/f_auto,q_auto,w_400/v1745940268/bicutt_uukjyr.png",
+    lrgImgSrc:
+      "https://res.cloudinary.com/djmzvj6yf/image/upload/f_auto,q_auto,w_900/v1745940268/bicutt_uukjyr.png",
+    altText: "Bicutt  screenshot",
+    code: "",
+    demo: "",
+    description:
+      "Bicutt is a modern barber booking platform that makes it easy for customers to discover barbers, choose available services and time slots, and book appointments online",
+    technologies: ["React Native", "Expo", "TailwindCSS"],
+  },
+  {
+    id: 3,
     title: "Mernify",
     category: "Web Apps",
     imgSrc:
@@ -44,21 +59,7 @@ const projectsData = [
       "TailwindCSS",
     ],
   },
-  {
-    id: 3,
-    title: "Bicutt",
-    category: "Mobile Apps",
-    imgSrc:
-      "https://res.cloudinary.com/djmzvj6yf/image/upload/f_auto,q_auto,w_400/v1745940268/bicutt_uukjyr.png",
-    lrgImgSrc:
-      "https://res.cloudinary.com/djmzvj6yf/image/upload/f_auto,q_auto,w_900/v1745940268/bicutt_uukjyr.png",
-    altText: "Bicutt  screenshot",
-    code: "",
-    demo: "",
-    description:
-      "Bicutt is a modern barber booking platform that makes it easy for customers to discover barbers, choose available services and time slots, and book appointments online",
-    technologies: ["React Native", "Expo", "TailwindCSS"],
-  },
+
   // {
   //   id: 4,
   //   title: "DeliverEase",
@@ -84,7 +85,7 @@ const projectsData = [
       "https://res.cloudinary.com/djmzvj6yf/image/upload/f_auto,q_auto,w_900/v1745940293/shopco_vzxp78.png",
     altText: "Shopco ecommerce screenshot",
     code: "https://github.com/AmineCoder30/shopco",
-    demo: "https://closhop.netlify.app/",
+    demo: "",
     description:
       "Modern fashion e-commerce platform with product filtering, authentication, and responsive checkout experience powered by Firebase.",
     technologies: ["React", "Vite", "Firebase", "TailwindCSS"],

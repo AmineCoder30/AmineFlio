@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-
+import TextBlink from "../ui/TextBlink";
 import BotMessage from "../ui/BotMessage";
 import { getProjectEstimation } from "../../services/gemini";
 import { Send, X, Bot, Sparkles, ArrowDown } from "lucide-react";
@@ -149,7 +149,9 @@ export default function AiAssistant() {
                     AI Assistant
                     <Sparkles className="w-3 h-3 text-primary" />
                   </h3>
-                  <p className="text-[11px] text-text-secondary mt-0.5">Always online · Ask me anything</p>
+                  <p className="text-[11px] text-text-secondary mt-0.5">
+                    Always online · Ask me anything
+                  </p>
                 </div>
               </div>
               <button
@@ -215,20 +217,7 @@ export default function AiAssistant() {
               })}
 
               {/* Typing indicator */}
-              {isLoading && (
-                <div className="flex items-end gap-2 justify-start">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-lg bg-primary/10 flex items-center justify-center mb-0.5">
-                    <Bot className="w-3 h-3 text-primary" />
-                  </div>
-                  <div className="bg-sidebar-bg px-4 py-3 rounded-2xl rounded-bl-sm border border-border">
-                    <div className="flex items-center gap-1">
-                      <span className="w-1.5 h-1.5 bg-text-secondary/50 rounded-full animate-bounce [animation-delay:0ms]"></span>
-                      <span className="w-1.5 h-1.5 bg-text-secondary/50 rounded-full animate-bounce [animation-delay:150ms]"></span>
-                      <span className="w-1.5 h-1.5 bg-text-secondary/50 rounded-full animate-bounce [animation-delay:300ms]"></span>
-                    </div>
-                  </div>
-                </div>
-              )}
+              {isLoading && <TextBlink text="thinking..." />}
             </div>
 
             {/* Scroll to bottom button */}

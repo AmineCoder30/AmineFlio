@@ -68,9 +68,6 @@ Now decide the correct mode and produce the JSX output only.
     return text;
   } catch (error) {
     console.error("Error fetching estimation from Gemini:", error);
-    return (
-      "I'm sorry, I encountered an error while trying to estimate your project. Please try again later. Error details: " +
-      error.message
-    );
+    return "I'm sorry, I encountered an error while trying to estimate your project. Please try again later.";
   }
 };
