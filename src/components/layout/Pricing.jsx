@@ -11,24 +11,21 @@ export default function Pricing() {
 
   const handleWhatsApp = (plan) => {
     const message = `السلام، مهتم بـ Plan ${plan.name} من الموقع ديالك. بغيت نعرف التفاصيل والثمن.`;
-
     const url = `https://wa.me/212651167495?text=${encodeURIComponent(message)}`;
 
-    window.open(url, "_blank");
+    window.open(url, "_blank", "noopener,noreferrer");
   };
 
   return (
-    <section id="pricing" className="py-20 ">
-      <div className="relative mx-auto max-w-7xl  z-10">
-        <div>
-          <Title partOne={"Clear Pricing"} PartTwo={"No Hidden Costs"} />
-        </div>
+    <section id="pricing" className="py-16 md:py-20">
+      <div className="relative z-10 mx-auto max-w-7xl">
+        <Title partOne="Clear Pricing" PartTwo="No Hidden Costs" />
 
-        <div className="mx-auto mb-12 flex w-full max-w-md items-center rounded-full border border-border bg-card-bg p-1 shadow-sm mt-16">
+        <div className="mx-auto mb-10 mt-10 flex w-full max-w-md items-center rounded-full border border-border bg-card-bg p-1 shadow-sm">
           <button
             type="button"
             onClick={() => setActiveType("website")}
-            className={`flex w-1/2 items-center justify-center gap-2 rounded-full px-4 py-2.5 text-sm font-semibold transition-colors cursor-pointer ${
+            className={`flex w-1/2 items-center justify-center gap-2 rounded-full px-3 py-2 text-sm font-semibold transition-colors ${
               activeType === "website"
                 ? "bg-accent text-white shadow-md"
                 : "text-text-secondary hover:bg-background"
@@ -37,10 +34,11 @@ export default function Pricing() {
             <Globe size={16} strokeWidth={2.2} />
             {pricing.switcher.website}
           </button>
+
           <button
             type="button"
             onClick={() => setActiveType("mobile")}
-            className={`flex w-1/2 items-center justify-center gap-2 rounded-full px-4 py-2.5 text-sm font-semibold transition-colors cursor-pointer ${
+            className={`flex w-1/2 items-center justify-center gap-2 rounded-full px-3 py-2 text-sm font-semibold transition-colors ${
               activeType === "mobile"
                 ? "bg-accent text-white shadow-md"
                 : "text-text-secondary hover:bg-background"
@@ -51,26 +49,26 @@ export default function Pricing() {
           </button>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 items-stretch gap-5 md:grid-cols-2 lg:grid-cols-3 lg:gap-6">
           {plans.map((plan, index) => {
             const isFeatured = index === 1;
 
             return (
               <article
                 key={plan.name}
-                className={`group relative rounded-3xl border p-7 md:p-8 transition-all duration-500 hover:-translate-y-2 flex flex-col mt-4 ${
+                className={`group relative mt-3 flex flex-col rounded-2xl border p-5 transition-all duration-300 hover:-translate-y-1 md:p-6 ${
                   isFeatured
-                    ? "bg-card-bg border-accent shadow-soft-hover z-10"
-                    : "bg-card-bg border-border shadow-sm hover:shadow-xl hover:shadow-accent/10 hover:border-accent/50 z-0"
+                    ? "z-10 border-accent bg-card-bg shadow-soft-hover"
+                    : "border-border bg-card-bg shadow-sm hover:border-accent/50 hover:shadow-lg hover:shadow-accent/10"
                 }`}
               >
                 {plan.badge && (
-                  <div className="absolute -top-3.5 left-0 right-0 flex justify-center z-20">
+                  <div className="absolute -top-3 left-0 right-0 z-20 flex justify-center">
                     <span
-                      className={`inline-flex rounded-full px-4 py-1.5 text-xs font-bold tracking-wide whitespace-nowrap ${
+                      className={`whitespace-nowrap rounded-full px-3 py-1 text-[11px] font-bold tracking-wide ${
                         isFeatured
                           ? "bg-gradient-to-r from-accent to-accent-hover text-white shadow-glow"
-                          : "bg-accent/10 text-accent bg-card-bg border border-accent/20"
+                          : "border border-accent/20 bg-card-bg text-accent"
                       }`}
                     >
                       {plan.badge}
@@ -78,35 +76,46 @@ export default function Pricing() {
                   </div>
                 )}
 
-                <h3 className="text-2xl font-bold mb-2 text-text">
+                <h3 className="mb-1.5 text-xl font-bold text-text">
                   {plan.name}
                 </h3>
-                <p className="text-sm mb-6 leading-relaxed min-h-[3rem] text-text-secondary">
+
+                <p className="mb-4 text-sm leading-relaxed text-text-secondary">
                   {plan.description}
                 </p>
 
-                <div className="mb-7 flex items-end gap-1">
-                  <span className="text-4xl font-bold text-text">
+                <div className="mb-5 flex flex-wrap items-baseline gap-x-1.5 gap-y-0.5">
+                  <span className="text-3xl font-bold tracking-tight text-text">
                     {plan.price}
                   </span>
-                  <span className="pb-1 text-sm font-medium text-text-secondary">
-                    {plan.period}
-                  </span>
+
+                  {plan.period && (
+                    <span className="text-xs font-medium text-text-secondary">
+                      {plan.period}
+                    </span>
+                  )}
                 </div>
 
-                <ul className="mb-8 space-y-4 flex-1">
+                <div className="mb-3 border-t border-border" />
+
+                <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-text-secondary">
+                  What&rsquo;s included
+                </p>
+
+                <ul className="mb-6 flex-1 space-y-2.5">
                   {plan.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-3">
+                    <li key={feature} className="flex items-start gap-2.5">
                       <span
-                        className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full ${
+                        className={`mt-0.5 flex h-[18px] w-[18px] shrink-0 items-center justify-center rounded-full ${
                           isFeatured
-                            ? "bg-accent/20 text-accent ring-1 ring-accent/30"
+                            ? "bg-accent/15 text-accent"
                             : "bg-accent/10 text-accent"
                         }`}
                       >
-                        <Check size={13} strokeWidth={3} />
+                        <Check size={12} strokeWidth={3} />
                       </span>
-                      <span className="text-sm leading-relaxed text-text">
+
+                      <span className="text-sm leading-5 text-text">
                         {feature}
                       </span>
                     </li>
@@ -114,15 +123,13 @@ export default function Pricing() {
                 </ul>
 
                 <button
-                  className={`w-full justify-center rounded-md py-3 font-semibold transition-colors ${
+                  type="button"
+                  className={`mt-auto w-full rounded-lg px-4 py-2.5 text-sm font-semibold transition-all ${
                     isFeatured
                       ? "bg-gradient-to-r from-accent to-accent-hover text-white hover:opacity-90"
                       : "border border-border text-text hover:border-accent hover:text-accent"
                   }`}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleWhatsApp(plan);
-                  }}
+                  onClick={() => handleWhatsApp(plan)}
                 >
                   {plan.cta}
                 </button>

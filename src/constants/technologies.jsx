@@ -5,7 +5,7 @@ import {
   SiExpo,
   SiTypescript,
   SiNextdotjs,
-  SiSupabase,
+  SiPython,
 } from "react-icons/si";
 
 // Array of technologies with names, icons, specific colors, and size
@@ -62,12 +62,12 @@ const technologies = [
     docs: "https://www.typescriptlang.org/docs/",
   },
   {
-    name: "Supabase",
-    icon: <SiSupabase style={{ color: "#3ECF8E", fontSize: "2rem" }} />,
+    name: "Python",
+    icon: <SiPython style={{ color: "#3776AB", fontSize: "2rem" }} />,
     description:
-      "Building modern applications with a powerful open-source backend-as-a-service platform.",
+      "Developing data-driven applications and automating tasks with a versatile and powerful programming language.",
     level: "Intermediate",
-    docs: "https://supabase.com/docs",
+    docs: "https://docs.python.org/3/",
   },
 ];
 
