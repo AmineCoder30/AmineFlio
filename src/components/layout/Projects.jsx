@@ -3,10 +3,16 @@ import { useState } from "react";
 
 import { ProjectDetails, Title, ProjectCard, CategoryNavigation } from "../ui";
 import projectsData from "../../constants/projectsData";
+import { useTranslation } from "react-i18next";
 
-const categories = ["All", "Web Apps", "Mobile Apps"];
+const categories = [
+  { key: "All", labelKey: "sections.categories.all" },
+  { key: "Web Apps", labelKey: "sections.categories.webApps" },
+  { key: "Mobile Apps", labelKey: "sections.categories.mobileApps" },
+];
 
 function Projects() {
+  const { t } = useTranslation();
   // State to manage active category, project ID, and project details visibility
   const [activeCategory, setActiveCategory] = useState("All");
   const [projectID, setProjectID] = useState(1);
@@ -19,7 +25,7 @@ function Projects() {
       : projectsData.filter((project) => project.category === activeCategory);
   return (
     <div className="py-20 text-text" id="projects">
-      <Title partOne="Recent" PartTwo="Projects" />
+      <Title partOne={t("sections.projects.0")} PartTwo={t("sections.projects.1")} />
       {showProjectDetails && (
         <ProjectDetails
           projectID={projectID}
@@ -29,7 +35,10 @@ function Projects() {
       )}
       {/* Category Navigation Component */}
       <CategoryNavigation
-        categories={categories}
+        categories={categories.map((category) => ({
+          ...category,
+          label: t(category.labelKey),
+        }))}
         activeCategory={activeCategory}
         setActiveCategory={setActiveCategory}
       />
@@ -38,7 +47,12 @@ function Projects() {
         {filteredProjects.map((project) => (
           <ProjectCard
             key={project.id}
-            project={project}
+            project={{
+              ...project,
+              title: t(`data.projects.${project.id}.title`, { defaultValue: project.title }),
+              description: t(`data.projects.${project.id}.description`, { defaultValue: project.description }),
+              category: t(`sections.categories.${project.category === "Web Apps" ? "webApps" : "mobileApps"}`),
+            }}
             setProjectID={setProjectID}
             SetShowProjectDetails={SetShowProjectDetails}
           />

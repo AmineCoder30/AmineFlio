@@ -3,31 +3,31 @@ import { User, Wrench, Briefcase, Phone, SquarePen } from "lucide-react";
 const navItems = [
   {
     id: 1,
-    name: "About",
+    translationKey: "about",
     url: "#",
     icon: <User size={20} />,
   },
   {
     id: 2,
-    name: "Skills",
+    translationKey: "skills",
     url: "#skills",
     icon: <Wrench size={20} />,
   },
   {
     id: 3,
-    name: "Projects",
+    translationKey: "projects",
     url: "#projects",
     icon: <Briefcase size={20} />,
   },
   {
     id: 4,
-    name: "Blogs",
+    translationKey: "blogs",
     url: "#blogs",
     icon: <SquarePen size={20} />,
   },
   {
     id: 5,
-    name: "Contact",
+    translationKey: "contact",
     url: "#contact",
     icon: <Phone size={20} />,
   },

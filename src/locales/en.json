@@ -1,0 +1,134 @@
+{
+  "translation": {
+    "navigation": {
+      "about": "About",
+      "skills": "Skills",
+      "projects": "Projects",
+      "blogs": "Blogs",
+      "contact": "Contact"
+    },
+    "header": {
+      "letsTalk": "Let's Talk",
+      "language": "Language"
+    },
+    "sidebar": {
+      "available": "Available for work",
+      "role": "Full Stack Developer",
+      "tagline": "Great products are built, not wished into existence ✨",
+      "toggleContact": "Toggle contact info"
+    },
+    "about": {
+      "titleOne": "Build Web",
+      "titleTwo": "& Mobile Apps",
+      "intro": "I build modern web & mobile apps that turn ideas into real products.",
+      "mvp": "🚀 From MVPs to production-ready applications.",
+      "experience": "Years of Experience",
+      "projects": "Projects Completed",
+      "clients": "Worldwide Clients",
+      "doingOne": "what i'm",
+      "doingTwo": "doing",
+      "letsTalk": "Let's Talk"
+    },
+    "sections": {
+      "skills": ["Things I'm", "Great At"],
+      "projects": ["Recent", "Projects"],
+      "testimonials": ["Real Results", "from Clients"],
+      "pricing": ["Clear Pricing", "No Hidden Costs"],
+      "faq": ["Questions", "& Answers"],
+      "blogs": ["Latest", "Blogs"],
+      "categories": {
+        "all": "All",
+        "webApps": "Web Apps",
+        "mobileApps": "Mobile Apps"
+      },
+      "labels": {
+        "article": "Article",
+        "readArticle": "Read Article",
+        "explore": "Explore",
+        "included": "What's included",
+        "previousTestimonial": "Previous testimonial",
+        "nextTestimonial": "Next testimonial",
+        "viewDetails": "View Details",
+        "code": "Code",
+        "demo": "Demo"
+      }
+    },
+    "projects": {
+      "previous": "Previous Project",
+      "next": "Next Project",
+      "close": "Close"
+    },
+    "contact": {
+      "title": ["LET'S BUILD", "SUCCESS"],
+      "badge": "Contact",
+      "heading": "Get in touch",
+      "description": "Have a project in mind? Fill out the form and I'll get back to you within 24 hours.",
+      "fields": { "name": "Name", "email": "Email", "budget": "Budget", "message": "Message" },
+      "placeholders": { "name": "Your name", "email": "you@example.com", "budget": "e.g. $500 – $2,000", "message": "Tell me about your project…" },
+      "sending": "Sending…",
+      "send": "Send message",
+      "details": "Contact details",
+      "map": "Google Map of Meknes, Morocco",
+      "optional": "optional",
+      "detailsLabels": { "address": "Address", "email": "Email", "phone": "Phone" },
+      "errors": {
+        "nameRequired": "Name is required",
+        "nameLength": "Name must be at least 3 characters",
+        "emailRequired": "Email is required",
+        "emailInvalid": "Invalid email address",
+        "budgetRange": "Budget must be between $200 and $5,000",
+        "messageRequired": "Message is required",
+        "messageLength": "Message must be at least 10 characters"
+      },
+      "notifications": {
+        "fixErrors": "Please fix the errors before submitting.",
+        "sent": "Message sent! I'll get back to you soon.",
+        "failed": "Failed to send. Please try again later."
+      }
+    },
+    "pricing": {
+      "project": "/project",
+      "whatsapp": "Hello, I am interested in the {{plan}} plan. I would like to know more details and the price."
+    },
+    "footer": {
+      "description": "Crafting robust web applications and digital experiences with care, detail, and a touch of magic.",
+      "github": "GitHub",
+      "rights": "All rights reserved.",
+      "builtWith": "Built with",
+      "andReact": "& React"
+    },
+    "data": {
+      "blogs": {
+        "1": {
+          "title": "JavaScript Array Methods",
+          "description": "Explore essential JavaScript array methods that every web developer should master. This guide covers map, filter, reduce, and more with practical examples."
+        },
+        "2": {
+          "title": "Automate Vite + Tailwind Setup",
+          "description": "Learn how to streamline your development process by automating the creation of Vite React applications with Tailwind CSS and a dynamic folder structure."
+        },
+        "3": {
+          "title": "Top Web Dev Interview Repos",
+          "description": "Discover the best all-in-one repositories for web development interviews in 2025, including coding challenges, system design questions, and behavioral interview tips."
+        }
+      },
+      "testimonials": {
+        "0": {
+          "name": "creative2tg",
+          "country": "Canada",
+          "text": "We had complex requirements, and they delivered exactly what we needed. Incredible value, flawless execution, and fantastic communication. A 10/10 experience."
+        },
+        "1": {
+          "name": "Hassan",
+          "country": "Saudi Arabia",
+          "text": "Beyond the stunning design, the engineering quality was exceptional. Clean, highly maintainable, and well-documented codebase. A true professional."
+        },
+        "2": {
+          "name": "Jasim",
+          "country": "Morocco",
+          "text": "The infrastructure provided exceeded all expectations. It was trivially easy to customize, extensively documented, and the design system is bulletproof. Incredible ROI."
+        }
+      }
+    }
+  }
+}

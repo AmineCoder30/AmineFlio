@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 const ServiceCard = ({ title, description, features = [] }) => {
   return (
-    <div className="group relative w-full cursor-pointer overflow-hidden rounded-3xl border border-border bg-card-bg shadow-lg transition-all duration-500 hover:shadow-2xl">
+    <div className="group relative w-full cursor-pointer overflow-hidden rounded-3xl border border-border bg-card-bg  transition-all duration-500 hover:shadow-2xl">
       {/* Animated gradient backgrounds */}
       <div className="absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100">
         <div className="absolute -right-32 top-1/4 h-80 w-80 rounded-full bg-gradient-to-br from-amber-400/20 to-orange-700/20 blur-3xl transition-all duration-1000 group-hover:right-0 group-hover:scale-125" />

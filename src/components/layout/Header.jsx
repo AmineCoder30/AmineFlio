@@ -1,13 +1,16 @@
 import PropTypes from "prop-types";
 import ToggleThemeBtn from "../ui/ToggleThemeBtn";
-import BotChat from "../ui/Bot";
+// import BotChat from "../ui/Bot";
+import LanguageSwitcher from "../ui/LanguageSwitcher";
+import { useTranslation } from "react-i18next";
 
-
-const openChat = () => {
-  window.dispatchEvent(new CustomEvent("open-ai-chat"));
-};
+// const openChat = () => {
+//   window.dispatchEvent(new CustomEvent("open-ai-chat"));
+// };
 
 function Header() {
+  const { t } = useTranslation();
+
   return (
     <div className="absolute  top-0 left-0 w-full border-b border-border  flex-1 p-4 flex justify-between items-center">
       {/* Logo */}
@@ -15,8 +18,6 @@ function Header() {
         href="#"
         className="group relative inline-flex items-center gap-2.5 select-none no-underline"
       >
- 
-
         {/* Logo Text & Underline */}
         <div className="flex flex-col items-start pt-1">
           <span className="text-2xl font-extrabold text-text group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-text group-hover:to-accent transition-all duration-300 leading-none">
@@ -49,14 +50,15 @@ function Header() {
 
       {/* Desktop Navigation */}
       <div className="flex items-center gap-2">
+        <LanguageSwitcher />
         <ToggleThemeBtn />
-        <BotChat handleClick={openChat} />
+        {/* <BotChat handleClick={openChat} /> */}
         <button
           type="submit"
           className="cursor-pointer hidden md:block  text-text  w-28 h-10 rounded-md border bg-card-hover border-border hover:scale-105 duration-200  hover:border-border hover:from-accent-hover hover:to-accent"
         >
           <a href="#contact" className="w-full h-full">
-            Let&apos;s Talk
+            {t("header.letsTalk")}
           </a>
         </button>
       </div>

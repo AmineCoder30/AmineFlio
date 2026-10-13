@@ -91,14 +91,14 @@ function CategoryNavigation({ categories, activeCategory, setActiveCategory }) {
         {categories.map((category, index) => (
           <button
             key={index}
-            onClick={() => setActiveCategory(category)}
+            onClick={() => setActiveCategory(category.key)}
             className={`${
-              activeCategory === category
+              activeCategory === category.key
                 ? "text-white font-medium bg-accent-hover"
                 : "text-text-secondary hover:text-accent"
             } border border-border w-28 transition-colors duration-300 whitespace-nowrap text-sm rounded-md p-1`}
           >
-            {category}
+            {category.label}
           </button>
         ))}
       </nav>
@@ -117,7 +117,12 @@ function CategoryNavigation({ categories, activeCategory, setActiveCategory }) {
 }
 
 CategoryNavigation.propTypes = {
-  categories: PropTypes.arrayOf(PropTypes.string).isRequired,
+  categories: PropTypes.arrayOf(
+    PropTypes.shape({
+      key: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
   activeCategory: PropTypes.string.isRequired,
   setActiveCategory: PropTypes.func.isRequired,
 };

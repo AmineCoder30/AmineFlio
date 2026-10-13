@@ -1,20 +1,22 @@
 import { ServiceCard, Title } from "../ui";
 import services from "../../constants/servicesList";
+import { useTranslation } from "react-i18next";
 
 function About() {
+  const { t } = useTranslation();
   return (
     <div className="pb-20 pt-10" id="about">
       {/* <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8 pb-10 sm:pb-20"> */}
       {/* Left Side: Info & Stats */}
       <div className="flex-1 w-full flex flex-col">
         <div className="mb-8">
-          <Title partOne="Build Web" PartTwo="& Mobile Apps" />
+          <Title partOne={t("about.titleOne")} PartTwo={t("about.titleTwo")} />
           <p className="text-text-secondary w-full md:w-[500px] text-wrap text-base sm:text-lg mt-6">
-            I build modern web & mobile apps that turn ideas into real products.
+            {t("about.intro")}
           </p>
 
           <p className="text-text-secondary w-full md:w-[500px] text-wrap text-base sm:text-lg ">
-            🚀 From MVPs to production-ready applications.
+            {t("about.mvp")}
           </p>
         </div>
 
@@ -26,7 +28,7 @@ function About() {
               +6
             </h2>
             <p className="text-text-secondary uppercase text-xs sm:text-sm md:text-base font-bold tracking-widest mt-2">
-              Years of <br /> Experience
+              {t("about.experience")}
             </p>
           </div>
           <div className="text-text">
@@ -34,7 +36,7 @@ function About() {
               +50
             </h2>
             <p className="text-text-secondary uppercase text-xs sm:text-sm md:text-base font-bold tracking-widest mt-2">
-              Projects <br /> Completed
+              {t("about.projects")}
             </p>
           </div>
           <div className="text-text">
@@ -42,7 +44,7 @@ function About() {
               +20
             </h2>
             <p className="text-text-secondary uppercase text-xs sm:text-sm md:text-base font-bold tracking-widest mt-2">
-              WORLDWIDE <br /> CLIENTS
+              {t("about.clients")}
             </p>
           </div>
         </div>
@@ -58,18 +60,20 @@ function About() {
       {/* </div> */}
 
       <div className="mt-20">
-        <Title partOne="what i'm" PartTwo="doing" />
+        <Title partOne={t("about.doingOne")} PartTwo={t("about.doingTwo")} />
         <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto ">
           {services.map((service, index) => (
             <ServiceCard
               key={index}
               indx={index + 1}
               Icon={service.Icon}
-              title={service.title}
-              description={service.description}
+              title={t(`data.services.${index}.title`, { defaultValue: service.title })}
+              description={t(`data.services.${index}.description`, { defaultValue: service.description })}
               classes={service.classes}
               background={service.background}
-              features={service.features}
+              features={service.features.map((feature, featureIndex) =>
+                t(`data.services.${index}.features.${featureIndex}`, { defaultValue: feature }),
+              )}
             />
           ))}
         </div>
@@ -78,7 +82,7 @@ function About() {
           className="cursor-pointer mt-4 text-white bg-gradient-to-r from-accent to-accent-hover w-28 h-10 rounded-md border border-border hover:scale-105 duration-200  hover:border-border hover:from-accent-hover hover:to-accent"
         >
           <a href="#contact" className="w-full h-full">
-            Let&apos;s Talk
+            {t("about.letsTalk")}
           </a>
         </button>
       </div>

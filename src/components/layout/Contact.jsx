@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import PropTypes from "prop-types";
 import emailjs from "@emailjs/browser";
 import { Title, NotificationCard } from "../ui";
+import { useTranslation } from "react-i18next";
 
 /* ─── tiny icon helpers ─── */
 const IconLocation = () => (
@@ -55,6 +56,11 @@ const contactDetails = [
 ];
 
 function Contact() {
+  const { t } = useTranslation();
+  const localizedContactDetails = contactDetails.map((item) => ({
+    ...item,
+    label: t(`contact.detailsLabels.${item.label.toLowerCase()}`),
+  }));
   const initialState = { email: "", budget: "", userName: "", message: "" };
   const formRef = useRef();
 
@@ -79,25 +85,24 @@ function Contact() {
   const validateField = (name, value) => {
     switch (name) {
       case "userName":
-        if (!value.trim()) return "Name is required";
-        if (value.trim().length < 3)
-          return "Name must be at least 3 characters";
+        if (!value.trim()) return t("contact.errors.nameRequired");
+        if (value.trim().length < 3) return t("contact.errors.nameLength");
         break;
       case "email":
-        if (!value.trim()) return "Email is required";
-        if (!/\S+@\S+\.\S+/.test(value)) return "Invalid email address";
+        if (!value.trim()) return t("contact.errors.emailRequired");
+        if (!/\S+@\S+\.\S+/.test(value)) return t("contact.errors.emailInvalid");
         break;
       case "budget":
         if (
           value &&
           (isNaN(value) || Number(value) < 200 || Number(value) > 10000)
         )
-          return "Budget must be between $200 and $5,000";
+          return t("contact.errors.budgetRange");
         break;
       case "message":
-        if (!value.trim()) return "Message is required";
+        if (!value.trim()) return t("contact.errors.messageRequired");
         if (value.trim().length < 10)
-          return "Message must be at least 10 characters";
+          return t("contact.errors.messageLength");
         break;
       default:
         break;
@@ -132,7 +137,7 @@ function Contact() {
     if (!validateForm()) {
       setNotification({
         show: true,
-        message: "Please fix the errors before submitting.",
+        message: t("contact.notifications.fixErrors"),
         type: "error",
       });
       return;
@@ -145,7 +150,7 @@ function Contact() {
         setErrors({ email: "", userName: "", message: "", budget: "" });
         setNotification({
           show: true,
-          message: "Message sent! I'll get back to you soon.",
+          message: t("contact.notifications.sent"),
           type: "success",
         });
       })
@@ -153,7 +158,7 @@ function Contact() {
         console.error("Email sending error:", e);
         setNotification({
           show: true,
-          message: "Failed to send. Please try again later.",
+          message: t("contact.notifications.failed"),
           type: "error",
         });
       })
@@ -164,7 +169,7 @@ function Contact() {
 
   return (
     <div className="py-16" id="contact">
-      <Title partOne="LET'S BUILD" PartTwo="SUCCESS" />
+      <Title partOne={t("contact.title.0")} PartTwo={t("contact.title.1")} />
 
       <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* ── Contact Form ── */}
@@ -172,14 +177,13 @@ function Contact() {
           {/* Header */}
           <div className="mb-8">
             <span className="inline-block text-xs font-bold tracking-widest uppercase mb-3 px-3 py-1 rounded-full bg-highlight text-primary">
-              Contact
+              {t("contact.badge")}
             </span>
             <h3 className="text-3xl font-black tracking-tight leading-tight text-text">
-              Get in touch
+              {t("contact.heading")}
             </h3>
             <p className="mt-2 text-sm text-text-secondary">
-              Have a project in mind? Fill out the form and I&apos;ll get back
-              to you within 24 hours.
+              {t("contact.description")}
             </p>
           </div>
 
@@ -190,12 +194,12 @@ function Contact() {
           >
             {/* Name + Email row */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-              <Field label="Name" error={errors.userName}>
+              <Field label={t("contact.fields.name")} error={errors.userName}>
                 <input
                   type="text"
                   id="userName"
                   name="userName"
-                  placeholder="Your name"
+                  placeholder={t("contact.placeholders.name")}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={formInfo.userName}
@@ -204,12 +208,12 @@ function Contact() {
                   } bg-input-bg text-sm text-text placeholder:text-text-secondary placeholder:opacity-55 outline-none transition-all duration-200 focus:border-primary focus:shadow-[0_0_0_3px_rgba(249,115,22,0.13)]`}
                 />
               </Field>
-              <Field label="Email" error={errors.email}>
+              <Field label={t("contact.fields.email")} error={errors.email}>
                 <input
                   type="email"
                   id="email"
                   name="email"
-                  placeholder="you@example.com"
+                  placeholder={t("contact.placeholders.email")}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={formInfo.email}
@@ -221,12 +225,12 @@ function Contact() {
             </div>
 
             {/* Budget */}
-            <Field label="Budget" optional error={errors.budget}>
+            <Field label={t("contact.fields.budget")} optional error={errors.budget}>
               <input
                 type="number"
                 id="budget"
                 name="budget"
-                placeholder="e.g. $500 – $2,000"
+                placeholder={t("contact.placeholders.budget")}
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={formInfo.budget}
@@ -237,11 +241,11 @@ function Contact() {
             </Field>
 
             {/* Message */}
-            <Field label="Message" error={errors.message} className="flex-1">
+            <Field label={t("contact.fields.message")} error={errors.message} className="flex-1">
               <textarea
                 id="message"
                 name="message"
-                placeholder="Tell me about your project…"
+                placeholder={t("contact.placeholders.message")}
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={formInfo.message}
@@ -266,10 +270,10 @@ function Contact() {
                 {sending ? (
                   <>
                     <span className="w-4 h-4 rounded-full border-2 border-border border-t-text-secondary inline-block animate-[spin_0.7s_linear_infinite]" />
-                    Sending…
+                    {t("contact.sending")}
                   </>
                 ) : (
-                  <>Send message →</>
+                  <>{t("contact.send")} →</>
                 )}
               </button>
             </div>
@@ -289,17 +293,17 @@ function Contact() {
               allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Google Map of Meknes, Morocco"
+              title={t("contact.map")}
             />
           </div>
 
           {/* Contact info card */}
           <div className="rounded-2xl p-6 bg-card-bg border border-border">
             <p className="text-xs font-bold tracking-widest uppercase mb-5 text-text-secondary">
-              Contact details
+              {t("contact.details")}
             </p>
             <div className="flex flex-col gap-4">
-              {contactDetails.map(({ icon, label, value }) => (
+              {localizedContactDetails.map(({ icon, label, value }) => (
                 <div key={label} className="flex items-center gap-4">
                   <div className="flex items-center justify-center rounded-xl flex-shrink-0 w-[42px] h-[42px] bg-highlight text-primary">
                     {icon}
@@ -330,12 +334,15 @@ function Contact() {
 
 /* ── helpers ── */
 function Field({ label, error, optional, children, className = "" }) {
+  const { t } = useTranslation();
   return (
     <div className={`flex flex-col gap-1.5 ${className}`}>
       <label className="text-xs font-semibold tracking-wide text-text-secondary">
         {label}
         {optional && (
-          <span className="ml-1.5 font-normal opacity-60">(optional)</span>
+        <span className="ml-1.5 font-normal opacity-60">
+          ({t("contact.optional")})
+        </span>
         )}
       </label>
       {children}

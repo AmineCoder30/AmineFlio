@@ -1,4 +1,8 @@
+import { useTranslation } from "react-i18next";
+
 function Footer() {
+  const { t } = useTranslation();
+
   return (
     <footer className="w-full relative overflow-hidden  py-16   mt-20">
       <div className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80 pointer-events-none opacity-20">
@@ -12,8 +16,7 @@ function Footer() {
               Mohamed Amine<span className="text-accent">.</span>
             </h3>
             <p className="text-text-secondary text-sm leading-relaxed">
-              Crafting robust web applications and digital experiences with
-              care, detail, and a touch of magic.
+              {t("footer.description")}
             </p>
           </div>
 
@@ -24,7 +27,7 @@ function Footer() {
               rel="noreferrer"
               className="text-text-secondary hover:text-accent hover:-translate-y-1 transition-all duration-300"
             >
-              <span className="sr-only">GitHub</span>
+              <span className="sr-only">{t("footer.github")}</span>
               <svg
                 className="h-6 w-6"
                 fill="currentColor"
@@ -43,14 +46,14 @@ function Footer() {
 
         <div className="mt-16 pt-8 flex flex-col md:flex-row items-center justify-between border-t border-border gap-4">
           <p className="text-xs leading-5 text-text-secondary">
-            &copy; {new Date().getFullYear()} Mohamed Amine. All rights
-            reserved.
+            &copy; {new Date().getFullYear()} Mohamed Amine.{" "}
+            {t("footer.rights")}
           </p>
           <div className="flex gap-x-4 text-xs leading-5 text-text-secondary">
             <span>
-              Built with{" "}
+              {t("footer.builtWith")}{" "}
               <span className="text-accent animate-pulse inline-block">♥</span>{" "}
-              &amp; React
+              {t("footer.andReact")}
             </span>
           </div>
         </div>

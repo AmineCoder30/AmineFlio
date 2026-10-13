@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 // import { Bot } from "lucide-react";
 import navItems from "../../constants/navItems";
+import { useTranslation } from "react-i18next";
 
 function Navbar() {
+  const { t } = useTranslation();
   const [activeItem, setActiveItem] = useState(1);
 
   useEffect(() => {
@@ -49,7 +51,7 @@ function Navbar() {
             {item.icon}
           </span>
           <span className={`text-xs  group-hover:text-accent  `}>
-            {item.name}
+            {t(`navigation.${item.translationKey}`)}
           </span>
         </a>
       ))}

@@ -3,8 +3,10 @@ import socialMediaLinks from "../../constants/socialMedia";
 import avatar from "../../assets/avatar.png";
 // import { ContactInfo } from "../ui";
 import { ArrowDown } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 function SideBar() {
+  const { t } = useTranslation();
   const [showSocialMedia, setShowSocialMedia] = React.useState(false);
 
   return (
@@ -12,7 +14,7 @@ function SideBar() {
       <button
         className="absolute top-0 right-0 xl:hidden z-40 bg-accent hover:bg-accent-hover text-background p-3 rounded-bl-2xl transition-transform duration-300"
         onClick={() => setShowSocialMedia(!showSocialMedia)}
-        aria-label="Toggle contact info"
+        aria-label={t("sidebar.toggleContact")}
       >
         <ArrowDown
           size={24}
@@ -26,7 +28,7 @@ function SideBar() {
           <div className="absolute top-4 left-4 flex items-center gap-2 z-10 bg-surface border border-border px-3 py-1 rounded-full">
             <span className="w-2 h-2 rounded-full bg-accent animate-pulse relative"></span>
             <span className="text-[10px] font-bold uppercase tracking-widest text-text">
-              Available for work
+              {t("sidebar.available")}
             </span>
           </div>
 
@@ -46,12 +48,12 @@ function SideBar() {
               </h1>
 
               <div className="inline-block text-text border border-border font-bold text-xs uppercase tracking-[0.2em] px-3 py-1.5 rounded-sm">
-                Full Stack Developer
+                {t("sidebar.role")}
               </div>
             </div>
 
             <p className="text-text-secondary text-sm leading-relaxed border-l-2 border-text pl-4 mt-2">
-              Great products are built, not wished into existence ✨
+              {t("sidebar.tagline")}
             </p>
           </div>
 

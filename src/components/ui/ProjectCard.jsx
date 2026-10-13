@@ -1,7 +1,9 @@
 import { Maximize2, Github, ExternalLink } from "lucide-react";
 import PropTypes from "prop-types";
+import { useTranslation } from "react-i18next";
 
 function ProjectCard({ project, setProjectID, SetShowProjectDetails }) {
+  const { t } = useTranslation();
   return (
     <div
       key={project.id}
@@ -33,7 +35,7 @@ function ProjectCard({ project, setProjectID, SetShowProjectDetails }) {
                 SetShowProjectDetails(true);
               }}
               className="p-3 rounded-full bg-accent text-white shadow-xl hover:scale-110 hover:bg-accent-hover transition-all duration-300"
-              title="View Details"
+              title={t("sections.labels.viewDetails")}
             >
               <Maximize2 size={16} strokeWidth={2.5} />
             </button>
@@ -65,7 +67,7 @@ function ProjectCard({ project, setProjectID, SetShowProjectDetails }) {
             }`}
             title={project.code ? "View Code" : "Code Not Available"}
           >
-            Code
+            {t("sections.labels.code")}
             <Github
               size={15}
               className={
@@ -90,7 +92,7 @@ function ProjectCard({ project, setProjectID, SetShowProjectDetails }) {
             }`}
             title={project.demo ? "View Demo" : "Demo Not Available"}
           >
-            Demo
+            {t("sections.labels.demo")}
             <ExternalLink
               size={15}
               className={

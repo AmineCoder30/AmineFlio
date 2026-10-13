@@ -1,6 +1,8 @@
 import PropTypes from "prop-types";
+import { useTranslation } from "react-i18next";
 
 function BlogCard({ blog }) {
+  const { t } = useTranslation();
   return (
     <a
       key={blog.id}
@@ -19,7 +21,7 @@ function BlogCard({ blog }) {
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-3">
               <span className="text-xs font-bold tracking-widest text-accent uppercase">
-                Article
+                {t("sections.labels.article")}
               </span>
               <span className="h-px w-8 bg-border"></span>
             </div>
@@ -40,7 +42,7 @@ function BlogCard({ blog }) {
         {/* Action Button & Metadata */}
         <div className="mt-auto flex items-center justify-between">
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface text-text text-sm font-semibold border border-border group-hover:bg-accent group-hover:text-white group-hover:border-accent transition-all duration-300 shadow-sm group-hover:shadow-accent/20">
-            <span>Read Article</span>
+            <span>{t("sections.labels.readArticle")}</span>
             <svg
               className="w-4 h-4 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
               fill="none"

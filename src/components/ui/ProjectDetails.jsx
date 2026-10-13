@@ -7,17 +7,23 @@ import {
   X,
 } from "lucide-react";
 import PropTypes from "prop-types";
+import { useTranslation } from "react-i18next";
 
 import projectsData from "../../constants/projectsData";
 
 function ProjectDetails({ projectID, SetShowProjectDetails, setProjectID }) {
+  const { t } = useTranslation();
   const [project, setProject] = useState({});
   const [isClosing, setIsClosing] = useState(false);
 
   useEffect(() => {
     const project = projectsData.find((p) => p.id === projectID);
-    setProject(project || {});
-  }, [projectID]);
+    setProject(project ? {
+      ...project,
+      title: t(`data.projects.${project.id}.title`, { defaultValue: project.title }),
+      description: t(`data.projects.${project.id}.description`, { defaultValue: project.description }),
+    } : {});
+  }, [projectID, t]);
 
   const handleClose = () => {
     setIsClosing(true);
@@ -58,7 +64,7 @@ function ProjectDetails({ projectID, SetShowProjectDetails, setProjectID }) {
               }
               disabled={projectID === 1}
               className="p-2 sm:p-2.5 rounded-full bg-black/40 backdrop-blur-md border border-white/10 hover:bg-accent hover:border-accent disabled:opacity-30 transition-all duration-300 transform hover:scale-110 active:scale-95"
-              title="Previous Project"
+              title={t("projects.previous")}
             >
               <ChevronLeft size={22} strokeWidth={2.5} />
             </button>
@@ -70,7 +76,7 @@ function ProjectDetails({ projectID, SetShowProjectDetails, setProjectID }) {
               }
               disabled={projectID === projectsData.length}
               className="p-2 sm:p-2.5 rounded-full bg-black/40 backdrop-blur-md border border-white/10 hover:bg-accent hover:border-accent disabled:opacity-30 transition-all duration-300 transform hover:scale-110 active:scale-95"
-              title="Next Project"
+              title={t("projects.next")}
             >
               <ChevronRight size={22} strokeWidth={2.5} />
             </button>
@@ -79,7 +85,7 @@ function ProjectDetails({ projectID, SetShowProjectDetails, setProjectID }) {
           <button
             onClick={handleClose}
             className="p-2 sm:p-2.5 rounded-full bg-black/40 backdrop-blur-md border border-white/10 hover:bg-red-500 hover:border-red-500 hover:rotate-90 transition-all duration-300 pointer-events-auto"
-            title="Close"
+            title={t("projects.close")}
           >
             <X size={22} strokeWidth={2.5} />
           </button>
@@ -136,7 +142,7 @@ function ProjectDetails({ projectID, SetShowProjectDetails, setProjectID }) {
               }`}
               title={project.code ? "View Source Code" : "Code Not Available"}
             >
-              Code
+              {t("sections.labels.code")}
               <Github size={18} />
             </a>
             <a
@@ -151,7 +157,7 @@ function ProjectDetails({ projectID, SetShowProjectDetails, setProjectID }) {
               }`}
               title={project.demo ? "Visit Live Demo" : "Demo Not Available"}
             >
-              Demo
+              {t("sections.labels.demo")}
               <ExternalLink size={18} />
             </a>
           </div>

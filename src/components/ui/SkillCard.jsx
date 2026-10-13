@@ -1,8 +1,10 @@
 import PropTypes from "prop-types";
+import { useTranslation } from "react-i18next";
 import { ArrowUpRight } from "lucide-react";
 import { useRef, useState } from "react";
 
 function SkillCard({ tech, index }) {
+  const { t } = useTranslation();
   const cardRef = useRef(null);
   const [transform, setTransform] = useState({
     rotateX: 0,
@@ -103,7 +105,7 @@ function SkillCard({ tech, index }) {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 text-xs font-bold text-text-secondary hover:text-accent transition-colors duration-200 uppercase tracking-widest"
           >
-            Explore{" "}
+            {t("sections.labels.explore")}{" "}
             <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </a>
         </div>
