@@ -14,17 +14,22 @@ import testimonials from "../../constants/testimonials";
 import { useTranslation } from "react-i18next";
 
 export default function Testimonials() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isRTL = i18n.dir() === "rtl";
   return (
     <section id="testimonials" className="py-20">
       <div>
         <div>
-          <Title partOne={t("sections.testimonials.0")} PartTwo={t("sections.testimonials.1")} />
+          <Title
+            partOne={t("sections.testimonials.0")}
+            PartTwo={t("sections.testimonials.1")}
+          />
         </div>
 
         {/* Swiper Card */}
         <div className="mx-auto max-w-4xl relative mt-16 px-2">
           <Swiper
+            dir={isRTL ? "rtl" : "ltr"}
             modules={[Autoplay, Pagination, Navigation]}
             spaceBetween={30}
             slidesPerView={1}
@@ -63,7 +68,8 @@ export default function Testimonials() {
                     <Quote
                       size={22}
                       strokeWidth={2}
-                      className="text-text fill-text/20"
+                      color="white"
+                      className="text-text "
                     />
                   </div>
 
@@ -84,7 +90,11 @@ export default function Testimonials() {
 
                     {/* Testimonial text */}
                     <blockquote className="text-xl md:text-2xl font-medium text-text leading-relaxed mb-10 flex-1">
-                      &ldquo;{t(`data.testimonials.${index}.text`, { defaultValue: testimonial.text })}&rdquo;
+                      &ldquo;
+                      {t(`data.testimonials.${index}.text`, {
+                        defaultValue: testimonial.text,
+                      })}
+                      &rdquo;
                     </blockquote>
 
                     {/* Author */}
@@ -104,12 +114,16 @@ export default function Testimonials() {
                       </div>
                       <div className="min-w-0">
                         <p className="text-base font-bold text-text truncate">
-                          {t(`data.testimonials.${index}.name`, { defaultValue: testimonial.name })}
+                          {t(`data.testimonials.${index}.name`, {
+                            defaultValue: testimonial.name,
+                          })}
                         </p>
                         <div className="flex items-center gap-1 text-text-secondary">
                           <MapPin size={14} strokeWidth={2} />
                           <p className="text-sm font-medium truncate">
-                            {t(`data.testimonials.${index}.country`, { defaultValue: testimonial.country })}
+                            {t(`data.testimonials.${index}.country`, {
+                              defaultValue: testimonial.country,
+                            })}
                           </p>
                         </div>
                       </div>
@@ -126,14 +140,22 @@ export default function Testimonials() {
               className="custom-prev flex h-11 w-11 items-center justify-center rounded-full border border-border bg-card-bg text-text-secondary hover:text-accent hover:border-accent transition-all duration-200 cursor-pointer z-10"
               aria-label={t("sections.labels.previousTestimonial")}
             >
-              <ChevronLeft size={20} strokeWidth={2.5} />
+              {isRTL ? (
+                <ChevronRight size={20} strokeWidth={2.5} />
+              ) : (
+                <ChevronLeft size={20} strokeWidth={2.5} />
+              )}
             </button>
             <div className="custom-pagination flex gap-2.5 items-center justify-center z-10 [&>.custom-bullet]:block [&>.custom-bullet]:h-2.5 [&>.custom-bullet]:w-2.5 [&>.custom-bullet]:bg-border [&>.custom-bullet]:rounded-full [&>.custom-bullet]:cursor-pointer [&>.custom-bullet]:transition-all [&>.custom-bullet]:duration-300 hover:[&>.custom-bullet]:bg-text-secondary/30 [&>.custom-bullet-active]:!w-8 [&>.custom-bullet-active]:!bg-accent"></div>
             <button
               className="custom-next flex h-11 w-11 items-center justify-center rounded-full border border-border bg-card-bg text-text-secondary hover:text-accent hover:border-accent transition-all duration-200 cursor-pointer z-10"
               aria-label={t("sections.labels.nextTestimonial")}
             >
-              <ChevronRight size={20} strokeWidth={2.5} />
+              {isRTL ? (
+                <ChevronLeft size={20} strokeWidth={2.5} />
+              ) : (
+                <ChevronRight size={20} strokeWidth={2.5} />
+              )}
             </button>
           </div>
         </div>

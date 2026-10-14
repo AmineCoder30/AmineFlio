@@ -9,7 +9,8 @@
     },
     "header": {
       "letsTalk": "Let's Talk",
-      "language": "Language"
+      "language": "Language",
+      "logo": ["Amine", "Mohammed"]
     },
     "sidebar": {
       "available": "Available for work",
@@ -63,14 +64,28 @@
       "badge": "Contact",
       "heading": "Get in touch",
       "description": "Have a project in mind? Fill out the form and I'll get back to you within 24 hours.",
-      "fields": { "name": "Name", "email": "Email", "budget": "Budget", "message": "Message" },
-      "placeholders": { "name": "Your name", "email": "you@example.com", "budget": "e.g. $500 – $2,000", "message": "Tell me about your project…" },
+      "fields": {
+        "name": "Name",
+        "email": "Email",
+        "budget": "Budget",
+        "message": "Message"
+      },
+      "placeholders": {
+        "name": "Your name",
+        "email": "you@example.com",
+        "budget": "e.g. $500 – $2,000",
+        "message": "Tell me about your project…"
+      },
       "sending": "Sending…",
       "send": "Send message",
       "details": "Contact details",
       "map": "Google Map of Meknes, Morocco",
       "optional": "optional",
-      "detailsLabels": { "address": "Address", "email": "Email", "phone": "Phone" },
+      "detailsLabels": {
+        "address": "Address",
+        "email": "Email",
+        "phone": "Phone"
+      },
       "errors": {
         "nameRequired": "Name is required",
         "nameLength": "Name must be at least 3 characters",

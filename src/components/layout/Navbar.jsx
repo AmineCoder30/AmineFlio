@@ -5,29 +5,35 @@ import { useTranslation } from "react-i18next";
 
 function Navbar() {
   const { t } = useTranslation();
-  const [activeItem, setActiveItem] = useState(1);
+
+  const [activeItem, setActiveItem] = useState("#about");
 
   useEffect(() => {
     const handleScroll = () => {
-      let currentId = 1;
-      for (let i = 0; i < navItems.length; i++) {
-        const section = document.getElementById(
-          navItems[i].url.replace("#", "") || "about"
-        );
+      let currentUrl = navItems[0]?.url ?? "#about";
+
+      for (const item of navItems) {
+        const sectionId = item.url.replace("#", "") || "about";
+        const section = document.getElementById(sectionId);
+
         if (section) {
           const rect = section.getBoundingClientRect();
+
           if (rect.top <= 100 && rect.bottom > 100) {
-            currentId = navItems[i].id;
+            currentUrl = item.url;
             break;
           }
         }
       }
-      setActiveItem(currentId);
+
+      setActiveItem(currentUrl);
     };
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // set on mount
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [navItems]);
 
   const handleItemClick = (id) => {
     setActiveItem(id);
@@ -39,9 +45,9 @@ function Navbar() {
         <a
           key={item.id}
           href={item.url}
-          onClick={() => handleItemClick(item.id)}
+          onClick={() => handleItemClick(item.url)}
           className={`group relative hover:scale-105 duration-200 flex flex-col justify-center items-center gap-1 transition-all hover:text-accent ${
-            activeItem === item.id ? "text-accent font-semibold" : "text-text"
+            activeItem === item.url ? "text-accent font-semibold" : "text-text"
           }`}
         >
           <span

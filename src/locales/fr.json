@@ -9,7 +9,8 @@
     },
     "header": {
       "letsTalk": "Parlons-en",
-      "language": "Langue"
+      "language": "Langue",
+      "logo": ["Amine", "Mohammed"]
     },
     "sidebar": {
       "available": "Disponible pour travailler",
@@ -63,14 +64,28 @@
       "badge": "Contact",
       "heading": "Prenons contact",
       "description": "Vous avez un projet en tête ? Remplissez le formulaire et je vous répondrai sous 24 heures.",
-      "fields": { "name": "Nom", "email": "E-mail", "budget": "Budget", "message": "Message" },
-      "placeholders": { "name": "Votre nom", "email": "vous@exemple.com", "budget": "ex. 500 – 2 000 $", "message": "Parlez-moi de votre projet…" },
+      "fields": {
+        "name": "Nom",
+        "email": "E-mail",
+        "budget": "Budget",
+        "message": "Message"
+      },
+      "placeholders": {
+        "name": "Votre nom",
+        "email": "vous@exemple.com",
+        "budget": "ex. 500 – 2 000 $",
+        "message": "Parlez-moi de votre projet…"
+      },
       "sending": "Envoi…",
       "send": "Envoyer le message",
       "details": "Coordonnées",
       "map": "Carte de Meknès, Maroc",
       "optional": "facultatif",
-      "detailsLabels": { "address": "Adresse", "email": "E-mail", "phone": "Téléphone" },
+      "detailsLabels": {
+        "address": "Adresse",
+        "email": "E-mail",
+        "phone": "Téléphone"
+      },
       "errors": {
         "nameRequired": "Le nom est obligatoire",
         "nameLength": "Le nom doit contenir au moins 3 caractères",
@@ -152,47 +167,196 @@
         }
       ],
       "projects": {
-        "1": { "title": "EmailCopilot", "description": "Plateforme d'e-mails assistée par IA pour automatiser et gérer des campagnes personnalisées." },
-        "2": { "title": "Bicutt", "description": "Plateforme moderne de réservation chez les barbiers, avec choix des services, créneaux et rendez-vous en ligne." },
-        "3": { "title": "Mernify", "description": "Application de chat en temps réel basée sur MERN et Socket.io, avec authentification et salons de discussion." },
-        "5": { "title": "Shopco", "description": "Plateforme e-commerce de mode avec filtres produits, authentification et paiement responsive." },
-        "6": { "title": "ChessDo", "description": "Application interactive d'apprentissage des échecs en React Native, avec leçons, puzzles et entraînement." },
-        "7": { "title": "Nasamat", "description": "Application moderne du Coran offrant une expérience fluide de lecture et d'écoute, avec recherche et favoris." }
+        "1": {
+          "title": "EmailCopilot",
+          "description": "Plateforme d'e-mails assistée par IA pour automatiser et gérer des campagnes personnalisées."
+        },
+        "2": {
+          "title": "Bicutt",
+          "description": "Plateforme moderne de réservation chez les barbiers, avec choix des services, créneaux et rendez-vous en ligne."
+        },
+        "3": {
+          "title": "Mernify",
+          "description": "Application de chat en temps réel basée sur MERN et Socket.io, avec authentification et salons de discussion."
+        },
+        "5": {
+          "title": "Shopco",
+          "description": "Plateforme e-commerce de mode avec filtres produits, authentification et paiement responsive."
+        },
+        "6": {
+          "title": "ChessDo",
+          "description": "Application interactive d'apprentissage des échecs en React Native, avec leçons, puzzles et entraînement."
+        },
+        "7": {
+          "title": "Nasamat",
+          "description": "Application moderne du Coran offrant une expérience fluide de lecture et d'écoute, avec recherche et favoris."
+        }
       },
       "faq": [
-        { "question": "Combien de temps faut-il pour créer une application ?", "answer": "Cela dépend du périmètre et de la complexité. Un petit MVP peut prendre quelques semaines, tandis qu'une application complète peut prendre plusieurs mois." },
-        { "question": "Travaillez-vous sur des projets existants ?", "answer": "Oui. Je peux corriger les bugs, améliorer l'interface, ajouter des fonctionnalités, intégrer des APIs ou poursuivre un projet existant." },
-        { "question": "Pouvez-vous créer un MVP à partir de mon idée ?", "answer": "Oui. Je peux transformer votre idée en MVP fonctionnel avec frontend, backend, base de données, authentification et déploiement." },
-        { "question": "Proposez-vous du développement backend ?", "answer": "Oui. Je prends en charge les APIs, l'authentification, les bases de données, la logique métier et les intégrations externes." },
-        { "question": "Pouvez-vous déployer l'application ?", "answer": "Oui. Je peux préparer et déployer l'application sur Vercel, des serveurs cloud ou les stores mobiles selon le projet." },
-        { "question": "Créez-vous des automatisations IA ?", "answer": "Oui. Je crée des workflows reliant e-mails, bases de données, messageries et APIs pour automatiser les tâches répétitives." },
-        { "question": "Que se passe-t-il après la fin du projet ?", "answer": "Après le lancement, je peux continuer à aider pour les bugs, la maintenance, les améliorations et les nouvelles fonctionnalités." },
-        { "question": "Travaillez-vous avec des clients internationaux ?", "answer": "Oui. Je travaille à distance avec des clients de différents pays et tout peut être géré en ligne." },
-        { "question": "Comment commencer ?", "answer": "Envoyez-moi une brève description de votre idée ou problème. Nous définirons ensuite le périmètre, le calendrier et les prochaines étapes." }
+        {
+          "question": "Combien de temps faut-il pour créer une application ?",
+          "answer": "Cela dépend du périmètre et de la complexité. Un petit MVP peut prendre quelques semaines, tandis qu'une application complète peut prendre plusieurs mois."
+        },
+        {
+          "question": "Travaillez-vous sur des projets existants ?",
+          "answer": "Oui. Je peux corriger les bugs, améliorer l'interface, ajouter des fonctionnalités, intégrer des APIs ou poursuivre un projet existant."
+        },
+        {
+          "question": "Pouvez-vous créer un MVP à partir de mon idée ?",
+          "answer": "Oui. Je peux transformer votre idée en MVP fonctionnel avec frontend, backend, base de données, authentification et déploiement."
+        },
+        {
+          "question": "Proposez-vous du développement backend ?",
+          "answer": "Oui. Je prends en charge les APIs, l'authentification, les bases de données, la logique métier et les intégrations externes."
+        },
+        {
+          "question": "Pouvez-vous déployer l'application ?",
+          "answer": "Oui. Je peux préparer et déployer l'application sur Vercel, des serveurs cloud ou les stores mobiles selon le projet."
+        },
+        {
+          "question": "Créez-vous des automatisations IA ?",
+          "answer": "Oui. Je crée des workflows reliant e-mails, bases de données, messageries et APIs pour automatiser les tâches répétitives."
+        },
+        {
+          "question": "Que se passe-t-il après la fin du projet ?",
+          "answer": "Après le lancement, je peux continuer à aider pour les bugs, la maintenance, les améliorations et les nouvelles fonctionnalités."
+        },
+        {
+          "question": "Travaillez-vous avec des clients internationaux ?",
+          "answer": "Oui. Je travaille à distance avec des clients de différents pays et tout peut être géré en ligne."
+        },
+        {
+          "question": "Comment commencer ?",
+          "answer": "Envoyez-moi une brève description de votre idée ou problème. Nous définirons ensuite le périmètre, le calendrier et les prochaines étapes."
+        }
       ],
       "pricing": {
-        "switcher": { "website": "Développement web", "mobile": "Applications mobiles" },
+        "switcher": {
+          "website": "Développement web",
+          "mobile": "Applications mobiles"
+        },
         "plans": {
           "website": [
-            { "name": "Page d'atterrissage", "description": "Une page responsive pour présenter votre offre et convertir les visiteurs.", "badge": "", "cta": "Démarrer le projet", "features": ["Une page personnalisée", "Design responsive", "Intégration d'un formulaire", "SEO technique essentiel", "Optimisation des performances", "2 cycles de révision"] },
-            { "name": "Site professionnel", "description": "Un site multipage pour renforcer votre marque et soutenir votre croissance.", "badge": "Le plus populaire", "cta": "Créer votre site", "features": ["Jusqu'à 8 pages personnalisées", "Interface responsive et accessible", "Intégration CMS si nécessaire", "Formulaires et intégrations", "Configuration analytics", "SEO technique essentiel", "Support anti-bugs de 30 jours"] },
-            { "name": "Application web sur mesure", "description": "Une application web conçue autour de vos besoins et objectifs.", "badge": "", "cta": "Discuter du projet", "features": ["Frontend et backend sur mesure", "Conception et intégration de base de données", "Authentification et permissions", "Intégrations d'APIs tierces", "Tableaux de bord et workflows", "Support au déploiement"] }
+            {
+              "name": "Page d'atterrissage",
+              "description": "Une page responsive pour présenter votre offre et convertir les visiteurs.",
+              "badge": "",
+              "cta": "Démarrer le projet",
+              "features": [
+                "Une page personnalisée",
+                "Design responsive",
+                "Intégration d'un formulaire",
+                "SEO technique essentiel",
+                "Optimisation des performances",
+                "2 cycles de révision"
+              ]
+            },
+            {
+              "name": "Site professionnel",
+              "description": "Un site multipage pour renforcer votre marque et soutenir votre croissance.",
+              "badge": "Le plus populaire",
+              "cta": "Créer votre site",
+              "features": [
+                "Jusqu'à 8 pages personnalisées",
+                "Interface responsive et accessible",
+                "Intégration CMS si nécessaire",
+                "Formulaires et intégrations",
+                "Configuration analytics",
+                "SEO technique essentiel",
+                "Support anti-bugs de 30 jours"
+              ]
+            },
+            {
+              "name": "Application web sur mesure",
+              "description": "Une application web conçue autour de vos besoins et objectifs.",
+              "badge": "",
+              "cta": "Discuter du projet",
+              "features": [
+                "Frontend et backend sur mesure",
+                "Conception et intégration de base de données",
+                "Authentification et permissions",
+                "Intégrations d'APIs tierces",
+                "Tableaux de bord et workflows",
+                "Support au déploiement"
+              ]
+            }
           ],
           "mobile": [
-            { "name": "MVP mobile", "description": "Une application iOS et Android avec les fonctionnalités essentielles pour valider votre idée.", "badge": "", "cta": "Créer votre MVP", "features": ["React Native et Expo", "Écrans et navigation essentiels", "Intégration de l'authentification", "Backend ou API de base", "Builds iOS et Android", "Tests et transfert"] },
-            { "name": "Application de production", "description": "Une application mobile complète avec une interface soignée et des intégrations fiables.", "badge": "Le plus populaire", "cta": "Lancer votre application", "features": ["UI et UX mobile sur mesure", "Intégration backend et base de données", "Notifications push si nécessaire", "APIs et intégrations tierces", "Tests et revue des performances", "Aide à la soumission sur les stores", "Support anti-bugs de 30 jours"] },
-            { "name": "Application avancée", "description": "Un produit mobile complexe avec workflows et intégrations avancés.", "badge": "", "cta": "Discuter du projet", "features": ["Architecture applicative sur mesure", "Authentification et rôles avancés", "Intégrations APIs complexes", "Intégration d'un dashboard admin", "Solutions backend évolutives", "Planification du déploiement"] }
+            {
+              "name": "MVP mobile",
+              "description": "Une application iOS et Android avec les fonctionnalités essentielles pour valider votre idée.",
+              "badge": "",
+              "cta": "Créer votre MVP",
+              "features": [
+                "React Native et Expo",
+                "Écrans et navigation essentiels",
+                "Intégration de l'authentification",
+                "Backend ou API de base",
+                "Builds iOS et Android",
+                "Tests et transfert"
+              ]
+            },
+            {
+              "name": "Application de production",
+              "description": "Une application mobile complète avec une interface soignée et des intégrations fiables.",
+              "badge": "Le plus populaire",
+              "cta": "Lancer votre application",
+              "features": [
+                "UI et UX mobile sur mesure",
+                "Intégration backend et base de données",
+                "Notifications push si nécessaire",
+                "APIs et intégrations tierces",
+                "Tests et revue des performances",
+                "Aide à la soumission sur les stores",
+                "Support anti-bugs de 30 jours"
+              ]
+            },
+            {
+              "name": "Application avancée",
+              "description": "Un produit mobile complexe avec workflows et intégrations avancés.",
+              "badge": "",
+              "cta": "Discuter du projet",
+              "features": [
+                "Architecture applicative sur mesure",
+                "Authentification et rôles avancés",
+                "Intégrations APIs complexes",
+                "Intégration d'un dashboard admin",
+                "Solutions backend évolutives",
+                "Planification du déploiement"
+              ]
+            }
           ]
         }
       },
       "technologies": [
-        { "description": "Création d'interfaces modernes et interactives avec une architecture de composants évolutive.", "level": "Expert" },
-        { "description": "Conception rapide d'interfaces propres, responsives et modernes.", "level": "Expert" },
-        { "description": "Développement de systèmes backend performants et d'APIs évolutives.", "level": "Expert" },
-        { "description": "Création d'applications mobiles multiplateformes offrant une expérience native fluide.", "level": "Expert" },
-        { "description": "Conteneurisation des applications pour des workflows fiables de développement et de déploiement.", "level": "Intermédiaire" },
-        { "description": "Développement d'applications évolutives et maintenables grâce au typage fort.", "level": "Intermédiaire" },
-        { "description": "Développement d'applications orientées données et automatisation avec un langage polyvalent.", "level": "Intermédiaire" }
+        {
+          "description": "Création d'interfaces modernes et interactives avec une architecture de composants évolutive.",
+          "level": "Expert"
+        },
+        {
+          "description": "Conception rapide d'interfaces propres, responsives et modernes.",
+          "level": "Expert"
+        },
+        {
+          "description": "Développement de systèmes backend performants et d'APIs évolutives.",
+          "level": "Expert"
+        },
+        {
+          "description": "Création d'applications mobiles multiplateformes offrant une expérience native fluide.",
+          "level": "Expert"
+        },
+        {
+          "description": "Conteneurisation des applications pour des workflows fiables de développement et de déploiement.",
+          "level": "Intermédiaire"
+        },
+        {
+          "description": "Développement d'applications évolutives et maintenables grâce au typage fort.",
+          "level": "Intermédiaire"
+        },
+        {
+          "description": "Développement d'applications orientées données et automatisation avec un langage polyvalent.",
+          "level": "Intermédiaire"
+        }
       ]
     }
   }

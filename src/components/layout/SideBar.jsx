@@ -43,8 +43,8 @@ function SideBar() {
           <div className="flex flex-col gap-4">
             <div>
               <h1 className="text-3xl lg:text-4xl font-black text-text uppercase tracking-tighter leading-none mb-4 flex flex-col">
-                Amine
-                <span className="text-accent mt-1">Mohamed</span>
+                {t("header.logo.0")}
+                <span className="text-accent mt-1">{t("header.logo.1")}</span>
               </h1>
 
               <div className="inline-block text-text border border-border font-bold text-xs uppercase tracking-[0.2em] px-3 py-1.5 rounded-sm">

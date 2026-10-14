@@ -20,8 +20,8 @@ function Header() {
       >
         {/* Logo Text & Underline */}
         <div className="flex flex-col items-start pt-1">
-          <span className="text-2xl font-extrabold text-text group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-text group-hover:to-accent transition-all duration-300 leading-none">
-            Amine
+          <span className="text-2xl font-extrabold text-text group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-text group-hover:to-accent transition-all duration-300 ">
+            {t("header.logo.0")}
           </span>
           <svg
             viewBox="0 0 120 10"

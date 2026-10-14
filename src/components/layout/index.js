@@ -10,7 +10,6 @@ import Navbar from "./Navbar";
 import Testimonials from "./Testimonials";
 import Pricing from "./Pricing";
 import Faq from "./Faq";
-import AiAssistant from "./AiAssistant";
 
 export {
   About,
@@ -25,5 +24,4 @@ export {
   Testimonials,
   Pricing,
   Faq,
-  AiAssistant,
 };

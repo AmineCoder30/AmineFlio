@@ -10,10 +10,11 @@ function Footer() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-        <div className="flex flex-col items-center justify-between gap-8 md:flex-row md:items-start text-center md:text-left">
+        <div className="flex flex-col items-center justify-between gap-8 md:flex-row md:items-start text-center md:text-start">
           <div className="space-y-4 max-w-sm">
             <h3 className="text-2xl font-bold tracking-tighter text-text">
-              Mohamed Amine<span className="text-accent">.</span>
+              {t("header.logo.0")} {t("header.logo.1")}
+              <span className="text-accent">.</span>
             </h3>
             <p className="text-text-secondary text-sm leading-relaxed">
               {t("footer.description")}
