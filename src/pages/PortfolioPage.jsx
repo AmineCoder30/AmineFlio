@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import {
   About,
   Contact,
@@ -15,44 +14,33 @@ import {
 } from "../components/layout";
 import FixedCta from "../components/ui/FixedCta";
 import { ThemeProvider } from "../context/ToggleTheme";
-import i18n from "../i18n";
+
 import PropTypes from "prop-types";
+import SEO from "../components/layout/SEO";
 import "../App.css";
 
-const seo = {
-  en: {
-    title: "Amine Mohamed | Full-Stack Web & Mobile Developer",
-    description:
-      "Amine Mohamed is a full-stack developer building modern web applications, mobile apps, and AI-powered solutions.",
-  },
-  fr: {
-    title: "Amine Mohamed | Développeur Web & Mobile Full-Stack",
-    description:
-      "Amine Mohamed est un développeur full-stack qui crée des applications web, mobiles et des solutions basées sur l'IA.",
-  },
-  ar: {
-    title: "أمين محمد | مطور ويب وتطبيقات جوال Full-Stack",
-    description:
-      "أمين محمد مطور Full-Stack متخصص في بناء تطبيقات الويب والجوال الحديثة وحلول الذكاء الاصطناعي.",
-  },
-};
+// const seo = {
+//   en: {
+//     title: "Amine Mohamed | Full-Stack Web & Mobile Developer",
+//     description:
+//       "Amine Mohamed is a full-stack developer building modern web applications, mobile apps, and AI-powered solutions.",
+//   },
+//   fr: {
+//     title: "Amine Mohamed | Développeur Web & Mobile Full-Stack",
+//     description:
+//       "Amine Mohamed est un développeur full-stack qui crée des applications web, mobiles et des solutions basées sur l'IA.",
+//   },
+//   ar: {
+//     title: "أمين محمد | مطور ويب وتطبيقات جوال Full-Stack",
+//     description:
+//       "أمين محمد مطور Full-Stack متخصص في بناء تطبيقات الويب والجوال الحديثة وحلول الذكاء الاصطناعي.",
+//   },
+// };
 
 function PortfolioPage({ language }) {
-  useEffect(() => {
-    i18n.changeLanguage(language);
-    document.documentElement.lang = language;
-    document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
-    document.title = seo[language].title;
-
-    const description = document.querySelector('meta[name="description"]');
-    description?.setAttribute("content", seo[language].description);
-
-    const canonical = document.querySelector('link[rel="canonical"]');
-    canonical?.setAttribute("href", `https://amine.website/${language}`);
-  }, [language]);
-
   return (
     <ThemeProvider>
+      <SEO lang={language} />
       <div
         style={{
           fontFamily:
